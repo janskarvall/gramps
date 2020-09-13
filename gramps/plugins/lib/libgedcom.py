@@ -802,7 +802,7 @@ CONT_RE = re.compile(r"\s*\d+\s+CONT\s?(.*)$")
 CONC_RE = re.compile(r"\s*\d+\s+CONC\s?(.*)$")
 PERSON_RE = re.compile(r"\s*\d+\s+\@(\S+)\@\s+INDI(.*)$")
 MOD = re.compile(r"\s*(INT|EST|CAL)\s+(.*)$")
-CAL = re.compile(r"\s*(ABT|BEF|AFT)?\s*@#D?([^@]+)@\s*(.*)$")
+CAL = re.compile(r"\s*(ABT|BEF|AFT|FROM|TO)?\s*@#D?([^@]+)@\s*(.*)$")
 RANGE = re.compile(
     r"\s*BET\s+@#D?([^@]+)@\s*(.*)\s+AND\s+@#D?([^@]+)@\s*(.*)$")
 RANGE1 = re.compile(r"\s*BET\s+\s*(.*)\s+AND\s+@#D?([^@]+)@\s*(.*)$")

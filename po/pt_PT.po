@@ -12,8 +12,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GRAMPS 5.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-06-05 19:16+0100\n"
-"PO-Revision-Date: 2021-06-14 13:37+0000\n"
+"POT-Creation-Date: 2021-06-29 14:29+0200\n"
+"PO-Revision-Date: 2021-06-05 08:56+0000\n"
 "Last-Translator: Pedro Albuquerque <pmra@gmx.com>\n"
 "Language-Team: Portuguese (Portugal) <https://hosted.weblate.org/projects/"
 "gramps-project/gramps/pt_PT/>\n"
@@ -68,6 +68,11 @@ msgstr "Equipa de desenvolvimento do Gramps"
 #: ../data/gramps.desktop.in:4
 msgid "Genealogy System"
 msgstr "Sistema de genealogia"
+
+#: ../data/gramps.desktop.in:7
+#, fuzzy
+msgid "gramps"
+msgstr "Gramps"
 
 #: ../data/gramps.desktop.in:12
 msgid "Genealogy;Family History;Research;Family Tree;GEDCOM;"
@@ -365,7 +370,7 @@ msgstr ""
 "<b>Filtrar indivíduos</b><br/>No separador Indivíduos, pode \"filtrar\" "
 "indivíduos com base em muitos critérios. Para definir um novo filtro vá a "
 "\"Editar &gt; Editor de filtros individuais\". Aí, pode dar um nome ao seu "
-"filtro e adicionar e combinar regras usando as várias regras pré-definidas. "
+"filtro e adicionar e combinar regras usando as várias regras predefinidas. "
 "Por exemplo, pode definir um filtro para procurar todos os indivíduos "
 "adoptados na árvore genealógica, ou todos os indivíduos sem data de "
 "nascimento. Para obter os resultados, grave o seu filtro e seleccione-o ao "
@@ -391,7 +396,7 @@ msgid ""
 "typing. The view will jump to the first Family Name matching the letters you "
 "enter."
 msgstr ""
-"<b>Localizar indivíduos</b><br/>Por pré-definição, cada apelido no separador "
+"<b>Localizar indivíduos</b><br/>Por predefinição, cada apelido no separador "
 "Indivíduos é listado apenas uma vez. Ao clicar na seta à esquerda de um "
 "nome, a lista expande-se a fim de mostrar todos os indivíduos com aquele "
 "apelido. Para localizar qualquer apelido numa longa lista, seleccione o "
@@ -761,7 +766,7 @@ msgid ""
 msgstr ""
 "<b>Listar eventos</b><br/>Os eventos são adicionados com o uso do editor "
 "aberto a partir de \"Indivíduos &gt; Editar indivíduo &gt; Eventos\". Existe "
-"uma longa lista de tipos de eventos pré-definidos. Pode adicionar o seu "
+"uma longa lista de tipos de eventos predefinidos. Pode adicionar o seu "
 "próprio tipo de evento ao escrevê-lo no campo de texto, será adicionado aos "
 "eventos disponíveis mas não será traduzido."
 
@@ -830,7 +835,7 @@ msgid ""
 "&gt; Person Filter Editor\"."
 msgstr ""
 "<b>Filtros</b><br/>Os filtros permitem-lhe limitar os indivíduos mostrados "
-"no separador Indivíduos. Além dos diversos filtros pré-definidos, pode criar "
+"no separador Indivíduos. Além dos diversos filtros predefinidos, pode criar "
 "filtros personalizados, limitados só pela sua imaginação. Vá a \"Editar &gt; "
 "Editor de filtros de indivíduo\"."
 
@@ -1012,7 +1017,7 @@ msgid ""
 msgstr ""
 "<b>Não fala inglês?</b><br/>Há voluntários que traduziram o Gramps para mais "
 "de 40 idiomas. Se o Gramps suporta o seu idioma e não o vê, configure o "
-"idioma pré-definido no seu sistema operativo e reinicie o Gramps."
+"idioma predefinido no seu sistema operativo e reinicie o Gramps."
 
 #: ../data/tips.xml:116
 msgid ""
@@ -1363,8 +1368,8 @@ msgstr ""
 "árvore genealógica\n"
 "  -i, --import=NOME_DO_FICHEIRO              Importar de ficheiro\n"
 "  -e, -export=NOME_DO_FICHEIRO               Exportar para ficheiro\n"
-"  -r, --remove=ÁRVORE_GENEALÓGICA_PADRÃO     Remover árvore genealógica ("
-"usar expressões regulares)\n"
+"  -r, --remove=ÁRVORE_GENEALÓGICA_PADRÃO     Remover árvore genealógica "
+"(usar expressões regulares)\n"
 "  -f, --format=FORMATO                       Especificar o formato da árvore "
 "genealógica\n"
 "  -a,--action=ACÇÂO                          Especificar acção\n"
@@ -1389,14 +1394,14 @@ msgstr ""
 "  -S, --safe                                 Iniciar o Gramps em modo de "
 "segurança\n"
 "                                             (usar temporariamente as "
-"pré-definições)\n"
-"  -D, --default=[APXFE]                      Repor as prédefinições\n"
+"predefinições)\n"
+"  -D, --default=[APXFE]                      Repor as predefinições\n"
 "                 A - as extensões são limpas\n"
-"                 P - Preferências para as pré-definições\n"
+"                 P - Preferências para as predefinições\n"
 "                 X - os livros são limpos, relatórios e definições de "
-"ferramenta para as pré-definições\n"
+"ferramenta para as predefinições\n"
 "                 F - os filtros são limpos\n"
-"                 E - tudo para as pré-definições ou limpo\n"
+"                 E - tudo para as predefinições ou limpo\n"
 
 #: ../gramps/cli/argparser.py:95
 msgid ""
@@ -1563,7 +1568,7 @@ msgstr "Definições actuais do Gramps: %(name)s:%(value)s"
 
 #: ../gramps/cli/argparser.py:380
 msgid "DEFAULT"
-msgstr "PRÉ-DEFINIÇÃO"
+msgstr "PREDEFINIÇÃO"
 
 #. Translators: indent "New" to match "Current"
 #: ../gramps/cli/argparser.py:387
@@ -2128,12 +2133,12 @@ msgstr ":"
 #: ../gramps/gen/datehandler/__init__.py:88
 #, python-format
 msgid "Date parser for '%s' not available, using default"
-msgstr "Analisador de data indisponível para \"%s\", a usar pré-definido"
+msgstr "Analisador de data indisponível para \"%s\", a usar predefinido"
 
 #: ../gramps/gen/datehandler/__init__.py:105
 #, python-format
 msgid "Date displayer for '%s' not available, using default"
-msgstr "Visualizador de data indisponível para \"%s\", a usar pré-definido"
+msgstr "Visualizador de data indisponível para \"%s\", a usar predefinido"
 
 #. Translators: Numeric year, month, day
 #: ../gramps/gen/datehandler/_datedisplay.py:71
@@ -2145,7 +2150,7 @@ msgstr "AAAA-MM-DD (ISO)"
 #: ../gramps/gen/datehandler/_datedisplay.py:79
 msgctxt "date format"
 msgid "Numerical"
-msgstr "Pré-definição do sistema"
+msgstr "Predefinição do sistema"
 
 #. Translators: Full month name, day, year
 #: ../gramps/gen/datehandler/_datedisplay.py:82
@@ -2360,20 +2365,35 @@ msgstr "{short_month} {year}"
 #. Translators: If there is no special inflection for
 #. "from <Month>" in your language, DON'T translate this.
 #. Otherwise, translate to "from" in ENGLISH!!! ENGLISH!!!
-#: ../gramps/gen/datehandler/_datedisplay.py:429
+#: ../gramps/gen/datehandler/_datedisplay.py:437
+#: ../gramps/gen/datehandler/_datedisplay.py:475
 msgctxt "from-date"
 msgid ""
 msgstr "from"
 
+#: ../gramps/gen/datehandler/_datedisplay.py:438
+#, python-brace-format
+msgid "{date_quality}from {date_start}{nonstd_calendar_and_ny}"
+msgstr "{date_quality}de {date_start}{nonstd_calendar_and_ny}"
+
+#. Translators: If there is no special inflection for
+#. "from <Month>" in your language, DON'T translate this.
+#. Otherwise, translate to "from" in ENGLISH!!! ENGLISH!!!
 #. Translators: If there is no special inflection for
 #. "to <Month>" in your language, DON'T translate this.
 #. Otherwise, translate to "to" in ENGLISH!!! ENGLISH!!!
-#: ../gramps/gen/datehandler/_datedisplay.py:434
+#: ../gramps/gen/datehandler/_datedisplay.py:456
+#: ../gramps/gen/datehandler/_datedisplay.py:480
 msgctxt "to-date"
 msgid ""
 msgstr "to"
 
-#: ../gramps/gen/datehandler/_datedisplay.py:435
+#: ../gramps/gen/datehandler/_datedisplay.py:457
+#, python-brace-format
+msgid "{date_quality}to {date_stop}{nonstd_calendar_and_ny}"
+msgstr "{date_quality}a {date_stop}{nonstd_calendar_and_ny}"
+
+#: ../gramps/gen/datehandler/_datedisplay.py:481
 #, python-brace-format
 msgid "{date_quality}from {date_start} to {date_stop}{nonstd_calendar_and_ny}"
 msgstr "{date_quality}de {date_start} a {date_stop}{nonstd_calendar_and_ny}"
@@ -2381,7 +2401,7 @@ msgstr "{date_quality}de {date_start} a {date_stop}{nonstd_calendar_and_ny}"
 #. Translators: If there is no special inflection for
 #. "between <Month>" in your language, DON'T translate this.
 #. Otherwise, translate to "between" in ENGLISH!!! ENGLISH!!!
-#: ../gramps/gen/datehandler/_datedisplay.py:454
+#: ../gramps/gen/datehandler/_datedisplay.py:500
 msgctxt "between-date"
 msgid ""
 msgstr "between"
@@ -2389,12 +2409,12 @@ msgstr "between"
 #. Translators: If there is no special inflection for
 #. "and <Month>" in your language, DON'T translate this.
 #. Otherwise, translate to "and" in ENGLISH!!! ENGLISH!!!
-#: ../gramps/gen/datehandler/_datedisplay.py:459
+#: ../gramps/gen/datehandler/_datedisplay.py:505
 msgctxt "and-date"
 msgid ""
 msgstr "and"
 
-#: ../gramps/gen/datehandler/_datedisplay.py:460
+#: ../gramps/gen/datehandler/_datedisplay.py:506
 #, python-brace-format
 msgid ""
 "{date_quality}between {date_start} and {date_stop}{nonstd_calendar_and_ny}"
@@ -2403,7 +2423,7 @@ msgstr "{date_quality}entre {date_start} e {date_stop}{nonstd_calendar_and_ny}"
 #. Translators: If there is no special inflection for
 #. "before <Month>" in your language, DON'T translate this.
 #. Otherwise, translate to "before" in ENGLISH!!! ENGLISH!!!
-#: ../gramps/gen/datehandler/_datedisplay.py:493
+#: ../gramps/gen/datehandler/_datedisplay.py:547
 msgctxt "before-date"
 msgid ""
 msgstr "before"
@@ -2411,7 +2431,7 @@ msgstr "before"
 #. Translators: If there is no special inflection for
 #. "after <Month>" in your language, DON'T translate this.
 #. Otherwise, translate to "after" in ENGLISH!!! ENGLISH!!!
-#: ../gramps/gen/datehandler/_datedisplay.py:498
+#: ../gramps/gen/datehandler/_datedisplay.py:552
 msgctxt "after-date"
 msgid ""
 msgstr "after"
@@ -2419,7 +2439,7 @@ msgstr "after"
 #. Translators: If there is no special inflection for
 #. "about <Month>" in your language, DON'T translate this.
 #. Otherwise, translate to "about" in ENGLISH!!! ENGLISH!!!
-#: ../gramps/gen/datehandler/_datedisplay.py:503
+#: ../gramps/gen/datehandler/_datedisplay.py:557
 msgctxt "about-date"
 msgid ""
 msgstr "about"
@@ -2427,7 +2447,7 @@ msgstr "about"
 #. Translators: If there is no special inflection for
 #. "estimated <Month>" in your language, DON'T translate this.
 #. Otherwise, translate to "estimated" in ENGLISH!!! ENGLISH!!!
-#: ../gramps/gen/datehandler/_datedisplay.py:508
+#: ../gramps/gen/datehandler/_datedisplay.py:562
 msgctxt "estimated-date"
 msgid ""
 msgstr "estimated"
@@ -2435,41 +2455,41 @@ msgstr "estimated"
 #. Translators: If there is no special inflection for
 #. "calculated <Month>" in your language, DON'T translate this.
 #. Otherwise, translate to "calculated" in ENGLISH!!! ENGLISH!!!
-#: ../gramps/gen/datehandler/_datedisplay.py:513
+#: ../gramps/gen/datehandler/_datedisplay.py:567
 msgctxt "calculated-date"
 msgid ""
 msgstr "calculated"
 
-#: ../gramps/gen/datehandler/_datedisplay.py:532
+#: ../gramps/gen/datehandler/_datedisplay.py:586
 #, python-brace-format
 msgid "{date_quality}{noncompound_modifier}{date}{nonstd_calendar_and_ny}"
 msgstr "{date_quality}{noncompound_modifier}{date}{nonstd_calendar_and_ny}"
 
 #. Translators: this month is ALREADY inflected: ignore it
-#: ../gramps/gen/datehandler/_datedisplay.py:651
+#: ../gramps/gen/datehandler/_datedisplay.py:705
 #, python-brace-format
 msgid "{long_month} {day:d}, {year}"
 msgstr "{long_month} {day:d}, {year}"
 
 #. Translators: this month is ALREADY inflected: ignore it
-#: ../gramps/gen/datehandler/_datedisplay.py:677
+#: ../gramps/gen/datehandler/_datedisplay.py:731
 #, python-brace-format
 msgid "{short_month} {day:d}, {year}"
 msgstr "{short_month} {day:d}, {year}"
 
 #. Translators: this month is ALREADY inflected: ignore it
-#: ../gramps/gen/datehandler/_datedisplay.py:703
+#: ../gramps/gen/datehandler/_datedisplay.py:757
 #, python-brace-format
 msgid "{day:d} {long_month} {year}"
 msgstr "{day:d} {long_month} {year}"
 
 #. Translators: this month is ALREADY inflected: ignore it
-#: ../gramps/gen/datehandler/_datedisplay.py:729
+#: ../gramps/gen/datehandler/_datedisplay.py:783
 #, python-brace-format
 msgid "{day:d} {short_month} {year}"
 msgstr "{day:d} {short_month} {year}"
 
-#: ../gramps/gen/datehandler/_dateparser.py:421
+#: ../gramps/gen/datehandler/_dateparser.py:430
 msgid "today"
 msgstr "hoje"
 
@@ -2656,37 +2676,37 @@ msgctxt "alternative month names for December"
 msgid "|"
 msgstr "Dezembro"
 
-#: ../gramps/gen/datehandler/_datestrings.py:131 ../gramps/gen/lib/date.py:609
+#: ../gramps/gen/datehandler/_datestrings.py:131 ../gramps/gen/lib/date.py:675
 msgctxt "calendar"
 msgid "Gregorian"
 msgstr "Gregoriano"
 
-#: ../gramps/gen/datehandler/_datestrings.py:132 ../gramps/gen/lib/date.py:610
+#: ../gramps/gen/datehandler/_datestrings.py:132 ../gramps/gen/lib/date.py:676
 msgctxt "calendar"
 msgid "Julian"
 msgstr "Juliano"
 
-#: ../gramps/gen/datehandler/_datestrings.py:133 ../gramps/gen/lib/date.py:611
+#: ../gramps/gen/datehandler/_datestrings.py:133 ../gramps/gen/lib/date.py:677
 msgctxt "calendar"
 msgid "Hebrew"
 msgstr "Hebreu"
 
-#: ../gramps/gen/datehandler/_datestrings.py:134 ../gramps/gen/lib/date.py:612
+#: ../gramps/gen/datehandler/_datestrings.py:134 ../gramps/gen/lib/date.py:678
 msgctxt "calendar"
 msgid "French Republican"
 msgstr "Republicano francês"
 
-#: ../gramps/gen/datehandler/_datestrings.py:135 ../gramps/gen/lib/date.py:613
+#: ../gramps/gen/datehandler/_datestrings.py:135 ../gramps/gen/lib/date.py:679
 msgctxt "calendar"
 msgid "Persian"
 msgstr "Persa"
 
-#: ../gramps/gen/datehandler/_datestrings.py:136 ../gramps/gen/lib/date.py:614
+#: ../gramps/gen/datehandler/_datestrings.py:136 ../gramps/gen/lib/date.py:680
 msgctxt "calendar"
 msgid "Islamic"
 msgstr "Islâmico"
 
-#: ../gramps/gen/datehandler/_datestrings.py:137 ../gramps/gen/lib/date.py:615
+#: ../gramps/gen/datehandler/_datestrings.py:137 ../gramps/gen/lib/date.py:681
 msgctxt "calendar"
 msgid "Swedish"
 msgstr "Sueco"
@@ -3336,7 +3356,7 @@ msgstr ","
 
 #: ../gramps/gen/display/name.py:352
 msgid "Default format (defined by Gramps preferences)"
-msgstr "Formato pré-definido (nas preferências do Gramps)"
+msgstr "Formato predefinido (nas preferências do Gramps)"
 
 #: ../gramps/gen/display/name.py:354
 msgid "Surname, Given Suffix"
@@ -6682,7 +6702,7 @@ msgid "Notes"
 msgstr "Notas"
 
 #: ../gramps/gen/lib/address.py:111 ../gramps/gen/lib/citation.py:106
-#: ../gramps/gen/lib/date.py:706 ../gramps/gen/lib/event.py:146
+#: ../gramps/gen/lib/date.py:772 ../gramps/gen/lib/event.py:146
 #: ../gramps/gen/lib/ldsord.py:182 ../gramps/gen/lib/media.py:163
 #: ../gramps/gen/lib/name.py:157 ../gramps/gen/lib/placename.py:101
 #: ../gramps/gen/lib/placeref.py:94
@@ -7199,15 +7219,15 @@ msgstr "Última alteração"
 msgid "Tags"
 msgstr "Etiquetas"
 
-#: ../gramps/gen/lib/date.py:290 ../gramps/gen/lib/date.py:325
-#: ../gramps/gen/lib/date.py:331 ../gramps/gen/lib/date.py:333
-#: ../gramps/gen/lib/date.py:350
+#: ../gramps/gen/lib/date.py:354 ../gramps/gen/lib/date.py:389
+#: ../gramps/gen/lib/date.py:395 ../gramps/gen/lib/date.py:397
+#: ../gramps/gen/lib/date.py:414
 msgctxt "age"
 msgid "about"
 msgstr "cerca de"
 
 #. Translators: leave all/any {...} untranslated
-#: ../gramps/gen/lib/date.py:427 ../gramps/gen/lib/date.py:434
+#: ../gramps/gen/lib/date.py:491 ../gramps/gen/lib/date.py:498
 #, python-brace-format
 msgid "{number_of} year"
 msgid_plural "{number_of} years"
@@ -7215,7 +7235,7 @@ msgstr[0] "{number_of} ano"
 msgstr[1] "{number_of} anos"
 
 #. Translators: leave all/any {...} untranslated
-#: ../gramps/gen/lib/date.py:443
+#: ../gramps/gen/lib/date.py:507
 #, python-brace-format
 msgid "{number_of} month"
 msgid_plural "{number_of} months"
@@ -7223,34 +7243,34 @@ msgstr[0] "{number_of} mês"
 msgstr[1] "{number_of} meses"
 
 #. Translators: leave all/any {...} untranslated
-#: ../gramps/gen/lib/date.py:454
+#: ../gramps/gen/lib/date.py:518
 #, python-brace-format
 msgid "{number_of} day"
 msgid_plural "{number_of} days"
 msgstr[0] "{number_of} dia"
 msgstr[1] "{number_of} dias"
 
-#: ../gramps/gen/lib/date.py:710
+#: ../gramps/gen/lib/date.py:776
 #: ../gramps/plugins/drawreport/drawplugins.gpr.py:75
 #: ../gramps/plugins/gramplet/gramplet.gpr.py:74
 #: ../gramps/plugins/gramplet/gramplet.gpr.py:80
 msgid "Calendar"
 msgstr "Calendário"
 
-#: ../gramps/gen/lib/date.py:712
+#: ../gramps/gen/lib/date.py:778
 msgid "Modifier"
 msgstr "Modificador"
 
-#: ../gramps/gen/lib/date.py:714
+#: ../gramps/gen/lib/date.py:780
 msgid "Quality"
 msgstr "Qualidade"
 
-#: ../gramps/gen/lib/date.py:716 ../gramps/gui/editors/filtereditor.py:836
+#: ../gramps/gen/lib/date.py:782 ../gramps/gui/editors/filtereditor.py:836
 #: ../gramps/gui/glade/rule.glade:967
 msgid "Values"
 msgstr "Valores"
 
-#: ../gramps/gen/lib/date.py:719 ../gramps/gen/lib/placename.py:99
+#: ../gramps/gen/lib/date.py:785 ../gramps/gen/lib/placename.py:99
 #: ../gramps/gen/lib/styledtext.py:322
 #: ../gramps/gen/plug/report/_constants.py:54 ../gramps/gui/clipboard.py:613
 #: ../gramps/gui/clipboard.py:621 ../gramps/gui/configure.py:1396
@@ -7262,56 +7282,65 @@ msgstr "Valores"
 msgid "Text"
 msgstr "Texto"
 
-#: ../gramps/gen/lib/date.py:721
+#: ../gramps/gen/lib/date.py:787
 msgid "Sort value"
 msgstr "Ordenar por"
 
-#: ../gramps/gen/lib/date.py:723
+#: ../gramps/gen/lib/date.py:789
 msgid "New year begins"
 msgstr "Novo ano inicia"
 
-#: ../gramps/gen/lib/date.py:1856
+#: ../gramps/gen/lib/date.py:2015
 msgctxt "date-quality"
 msgid "none"
 msgstr "nenhum"
 
-#: ../gramps/gen/lib/date.py:1857
+#: ../gramps/gen/lib/date.py:2016
 msgid "calculated"
 msgstr "calculada"
 
-#: ../gramps/gen/lib/date.py:1857
+#: ../gramps/gen/lib/date.py:2016
 msgid "estimated"
 msgstr "estimada"
 
-#: ../gramps/gen/lib/date.py:1871
+#: ../gramps/gen/lib/date.py:2030
 msgctxt "date-modifier"
 msgid "none"
 msgstr "nenhum"
 
-#: ../gramps/gen/lib/date.py:1872 ../gramps/plugins/webreport/basepage.py:3248
+#: ../gramps/gen/lib/date.py:2031 ../gramps/plugins/webreport/basepage.py:3248
 msgid "about"
 msgstr "cerca de"
 
-#: ../gramps/gen/lib/date.py:1872 ../gramps/plugins/lib/libprogen.py:1841
+#: ../gramps/gen/lib/date.py:2031 ../gramps/plugins/lib/libprogen.py:1841
 #: ../gramps/plugins/webreport/basepage.py:3244
 msgid "after"
 msgstr "depois de"
 
-#: ../gramps/gen/lib/date.py:1872 ../gramps/plugins/webreport/basepage.py:3246
+#: ../gramps/gen/lib/date.py:2031 ../gramps/plugins/webreport/basepage.py:3246
 msgid "before"
 msgstr "antes de"
 
-#: ../gramps/gen/lib/date.py:1873
+#: ../gramps/gen/lib/date.py:2032
+msgid "from"
+msgstr ""
+
+#: ../gramps/gen/lib/date.py:2032
 msgid "range"
 msgstr "intervalo"
 
-#: ../gramps/gen/lib/date.py:1873
+#: ../gramps/gen/lib/date.py:2032
 msgid "span"
 msgstr "período"
 
-#: ../gramps/gen/lib/date.py:1873
+#: ../gramps/gen/lib/date.py:2032
 msgid "textonly"
 msgstr "só texto"
+
+#: ../gramps/gen/lib/date.py:2032
+#, fuzzy
+msgid "to"
+msgstr "Parar"
 
 #: ../gramps/gen/lib/event.py:136 ../gramps/gen/lib/eventref.py:109
 #: ../gramps/gui/clipboard.py:335 ../gramps/gui/configure.py:661
@@ -8368,7 +8397,7 @@ msgstr "Herdado"
 #: ../gramps/gen/lib/nameorigintype.py:77
 msgctxt "Surname"
 msgid "Given"
-msgstr "Recebido"
+msgstr "Atribuído"
 
 #: ../gramps/gen/lib/nameorigintype.py:78
 msgctxt "Surname"
@@ -8506,7 +8535,7 @@ msgstr "Ligação"
 
 #: ../gramps/gen/lib/notetype.py:87
 msgid "Person Note"
-msgstr "Nota de indivíduo"
+msgstr "Nota de pessoa"
 
 #: ../gramps/gen/lib/notetype.py:88
 msgid "Name Note"
@@ -8663,7 +8692,7 @@ msgstr "Famílias"
 
 #: ../gramps/gen/lib/person.py:203
 msgid "Parent families"
-msgstr "Famílias-mãe"
+msgstr "Famílias mãe"
 
 #: ../gramps/gen/lib/person.py:209 ../gramps/gen/lib/repo.py:103
 #: ../gramps/gui/merge/mergeperson.py:268
@@ -8808,7 +8837,7 @@ msgstr "Quinta"
 
 #: ../gramps/gen/lib/placetype.py:83 ../gramps/plugins/view/geoplaces.py:616
 msgid "Building"
-msgstr "Edifício"
+msgstr "Edíficio"
 
 #: ../gramps/gen/lib/placetype.py:84 ../gramps/plugins/gramplet/leak.py:95
 #: ../gramps/plugins/view/geoplaces.py:619
@@ -9029,7 +9058,7 @@ msgstr "Realce"
 
 #: ../gramps/gen/lib/styledtexttagtype.py:68
 msgid "Superscript"
-msgstr "Sobrescrito"
+msgstr "Acima da linha"
 
 #: ../gramps/gen/lib/styledtexttagtype.py:69
 #: ../gramps/gui/glade/editlink.glade:171
@@ -9092,7 +9121,7 @@ msgstr "URL"
 
 #: ../gramps/gen/lib/urltype.py:49
 msgid "E-mail"
-msgstr "Correio electrónico"
+msgstr "E-mail"
 
 #: ../gramps/gen/lib/urltype.py:50
 msgid "Web Home"
@@ -9120,7 +9149,7 @@ msgstr "Unir citação"
 
 #: ../gramps/gen/merge/mergeeventquery.py:59
 msgid "Merge Event Objects"
-msgstr "Unir objectos de evento"
+msgstr "Combinar objectos de evento"
 
 #: ../gramps/gen/merge/mergefamilyquery.py:90
 msgid "A parent should be a father or mother."
@@ -9137,7 +9166,7 @@ msgid ""
 "break the relationship between them."
 msgstr ""
 "Impossível unir um progenitor e um filho. Para unir estes indivíduos deve "
-"antes desfazer a relação existente entre eles."
+"antes desfazer a relação existente entre elas."
 
 #: ../gramps/gen/merge/mergefamilyquery.py:135
 msgid "Merge Family"
@@ -9157,8 +9186,8 @@ msgid ""
 "Spouses cannot be merged. To merge these people, you must first break the "
 "relationship between them."
 msgstr ""
-"Os cônjuges não podem ser unidos. Para unir estes indivíduos deve antes "
-"desfazer a relação existente entre eles."
+"Os cônjuges não podem ser unidos. Para poder unir estes indivíduos deve "
+"antes desfazer a relação existente entre elas."
 
 #: ../gramps/gen/merge/mergepersonquery.py:118
 msgid "Merge Person"
@@ -9210,7 +9239,7 @@ msgid ""
 "  but is not known to the module.  Ignoring..."
 msgstr ""
 "A opção '%(opt_name)s' está presente em %(file)s\n"
-"  mas é desconhecida para o módulo. A ignorar..."
+"mas é desconhecida para o módulo. A ignorar..."
 
 #: ../gramps/gen/plug/_pluginreg.py:59
 msgid "Stable"
@@ -9333,7 +9362,7 @@ msgstr "Sem nome de ficheiro"
 #: ../gramps/gen/plug/docbackend/docbackend.py:141
 #, python-format
 msgid "File %s already open, close it first."
-msgstr "O ficheiro %s já aberto, feche-o primeiro."
+msgstr "Ficheiro %s já aberto, feche-o primeiro."
 
 #: ../gramps/gen/plug/docbackend/docbackend.py:147
 #: ../gramps/gen/plug/docbackend/docbackend.py:150
@@ -9360,7 +9389,7 @@ msgstr "O ficheiro %s já aberto, feche-o primeiro."
 #: ../gramps/plugins/export/exportcsv.py:261
 #: ../gramps/plugins/export/exportcsv.py:265
 #: ../gramps/plugins/export/exportftree.py:136
-#: ../gramps/plugins/export/exportgedcom.py:1597
+#: ../gramps/plugins/export/exportgedcom.py:1608
 #: ../gramps/plugins/export/exportgeneweb.py:109
 #: ../gramps/plugins/export/exportgeneweb.py:113
 #: ../gramps/plugins/export/exportvcalendar.py:123
@@ -9386,11 +9415,11 @@ msgstr "Impossível criar %s"
 #: ../gramps/plugins/importer/importprogen.glade:380
 #: ../gramps/plugins/webreport/webcal.py:492
 msgid "Default"
-msgstr "Pré-definição"
+msgstr "Predefinição"
 
 #: ../gramps/gen/plug/docgen/graphdoc.py:69
 msgid "PostScript / Helvetica"
-msgstr "Postscript/Helvética"
+msgstr "Postscript/Helvetica"
 
 #: ../gramps/gen/plug/docgen/graphdoc.py:70
 msgid "TrueType / FreeSans"
@@ -9498,8 +9527,9 @@ msgid ""
 "Choose the font family. If international characters don't show, use FreeSans "
 "font. FreeSans is available from: http://www.nongnu.org/freefont/"
 msgstr ""
-"Escolha a família da letra. Se não vê os caracteres internacionais, use a "
-"letra FreeSans, disponível em http://www.nongnu.org/freefont/"
+"Escolha a família da letra. Se os caracteres internacionais não são exibidos "
+"correctamente, use a letra FreeSans, disponível em http://www.nongnu.org/"
+"freefont/"
 
 #: ../gramps/gen/plug/docgen/graphdoc.py:152
 #: ../gramps/gui/widgets/styledtexteditor.py:78
@@ -9530,9 +9560,8 @@ msgid ""
 "horizontally. Only valid for dot and pdf via Ghostscript."
 msgstr ""
 "O GraphViz pode criar gráficos muito grandes, espalhando o gráfico através "
-"de uma matriz rectangular de páginas. Esta opção controla o número "
-"horizontal de páginas na matriz. Só para formatos de saída dot e PDF via "
-"Ghostscript."
+"de uma matriz retangular de páginas. Esta opção controla o número horizontal "
+"de páginas na matriz. Só para formatos de saída dot e PDF via Ghostscript."
 
 #: ../gramps/gen/plug/docgen/graphdoc.py:171
 msgid "Number of Vertical Pages"
@@ -9545,7 +9574,7 @@ msgid ""
 "vertically. Only valid for dot and pdf via Ghostscript."
 msgstr ""
 "O GraphViz pode criar gráficos muito grandes, espalhando o gráfico através "
-"de uma matriz rectangular de páginas. Esta opção controla o número vertical "
+"de uma matriz retangular de páginas. Esta opção controla o número vertical "
 "de páginas na matriz. Só para formatos de saída dot e PDF via Ghostscript."
 
 #: ../gramps/gen/plug/docgen/graphdoc.py:179
@@ -9562,7 +9591,7 @@ msgstr ""
 
 #: ../gramps/gen/plug/docgen/graphdoc.py:187
 msgid "Connecting lines"
-msgstr "Linhas de ligação"
+msgstr "Ligar linhas"
 
 #: ../gramps/gen/plug/docgen/graphdoc.py:190
 msgid "How the lines between objects will be drawn."
@@ -9570,11 +9599,11 @@ msgstr "Como são desenhadas as linhas entre objectos."
 
 #: ../gramps/gen/plug/docgen/graphdoc.py:193
 msgid "Alternate line attachment"
-msgstr "Ligação alternativa da linha"
+msgstr "Anexo de linha alternativo"
 
 #: ../gramps/gen/plug/docgen/graphdoc.py:194
 msgid "Whether lines attach to nodes differently"
-msgstr "Se as linhas se ligam aos nós de forma diferente"
+msgstr "Se as linhas se anexam aos nós de forma diferente"
 
 #: ../gramps/gen/plug/docgen/graphdoc.py:210
 msgid "Graphviz Options"
@@ -9602,20 +9631,20 @@ msgid ""
 msgstr ""
 "Afecta o espaço e a escala dos nós no gráfico.\n"
 "Se o gráfico for menor que a área de impressão:\n"
-"  comprimir não altera o espaço;\n"
-"  preencher aumenta o espaço para encher a área de impressão em largura e "
+"  Comprimir não altera o espaço;\n"
+"  Preencher aumenta o espaço para encher a área de impressão em largura e "
 "altura;\n"
-"  expandir aumenta o espaço uniformemente para manter as proporções.\n"
+"  Expandir aumenta o espaço uniformemente para manter as proporções.\n"
 "Se o gráfico for maior que a área de impressão:\n"
-"  comprimir encolhe o gráfico para obter menos espaço às custas da simetria;"
-"\n"
-"  preencher encolhe o gráfico para encher a área de impressão após aumentar "
+"  Comprimir encolhe o gráfico para obter menos espaço às custas da "
+"simetria;\n"
+"  Preencher encolhe o gráfico para encher a área de impressão após aumentar "
 "o espaço entre os nós;\n"
-"  expandir encolhe o gráfico uniformemente para encher a área de impressão."
+"  Expandir encolhe o gráfico uniformemente para encher a área de impressão."
 
 #: ../gramps/gen/plug/docgen/graphdoc.py:233
 msgid "DPI"
-msgstr "Resolução"
+msgstr "PPP"
 
 #: ../gramps/gen/plug/docgen/graphdoc.py:234
 msgid ""
@@ -9624,12 +9653,12 @@ msgid ""
 "DPI."
 msgstr ""
 "Pontos por polegada. Ao criar imagens, tais como ficheiros gif ou png para "
-"páginas Web, tente valores como 100 ou 300 PPP. Para ficheiros PostScript ou "
+"páginas Web, tente valors como 100 ou 300 PPP. Para ficheiros PostScript ou "
 "PDF, use sempre 72 PPP."
 
 #: ../gramps/gen/plug/docgen/graphdoc.py:241
 msgid "Node spacing"
-msgstr "Espaço entre nós"
+msgstr "Espaço dos nós"
 
 #: ../gramps/gen/plug/docgen/graphdoc.py:242
 msgid ""
@@ -9637,13 +9666,13 @@ msgid ""
 "vertical graphs, this corresponds to spacing between columns.  For "
 "horizontal graphs, this corresponds to spacing between rows."
 msgstr ""
-"O espaço mínimo, em polegadas, entre nós individuais. Para gráficos "
+"O espaço mínimo, em polegadas, entre nós invididuais. Para gráficos "
 "verticais isto corresponde ao espaço entre as colunas. Para gráficos "
 "horizontais, corresponde ao espaço entre linhas."
 
 #: ../gramps/gen/plug/docgen/graphdoc.py:249
 msgid "Rank spacing"
-msgstr "Espaço entre linhas"
+msgstr "Espaço das linhas"
 
 #: ../gramps/gen/plug/docgen/graphdoc.py:250
 msgid ""
@@ -9679,7 +9708,7 @@ msgstr "Este texto será adicionado ao gráfico."
 #: ../gramps/gen/plug/docgen/graphdoc.py:273
 #: ../gramps/gen/plug/docgen/treedoc.py:206
 msgid "Note location"
-msgstr "Posição da nota"
+msgstr "Localização da nota"
 
 #: ../gramps/gen/plug/docgen/graphdoc.py:276
 #: ../gramps/gen/plug/docgen/treedoc.py:209
@@ -9803,7 +9832,7 @@ msgstr "Baloiço"
 
 #: ../gramps/gen/plug/docgen/treedoc.py:84
 msgid "Mesh"
-msgstr "Malha"
+msgstr "Mistura"
 
 #: ../gramps/gen/plug/docgen/treedoc.py:89
 msgid "Tiny"
@@ -10011,19 +10040,22 @@ msgstr "O estilo usado para o cabeçalho de geração."
 
 #: ../gramps/gen/plug/report/endnotes.py:68
 msgid "The basic style used for the endnotes source display."
-msgstr "O estilo básico usado para as fontes nas notas finais."
+msgstr "O estilo básico usado para a exibição das fontes nas notas finais."
 
 #: ../gramps/gen/plug/report/endnotes.py:76
 msgid "The basic style used for the endnotes notes display."
-msgstr "O estilo básico usado para as notas nas notas finais."
+msgstr "O estilo básico usado para a exibição das notas nas notas finais."
 
 #: ../gramps/gen/plug/report/endnotes.py:84
 msgid "The basic style used for the endnotes reference display."
-msgstr "O estilo básico usado para as referências nas notas finais."
+msgstr ""
+"O estilo básico usado para a exibição das referências nas notas finais."
 
 #: ../gramps/gen/plug/report/endnotes.py:92
 msgid "The basic style used for the endnotes reference notes display."
-msgstr "O estilo básico usado para as notas de referências nas notas finais."
+msgstr ""
+"O estilo básico usado para a exibição das notas de referências nas notas "
+"finais."
 
 #: ../gramps/gen/plug/report/stdoptions.py:58
 msgid "Translation"
@@ -10062,22 +10094,22 @@ msgstr "Indivíduos vivos"
 #: ../gramps/gen/plug/report/stdoptions.py:190
 msgctxt "'living people'"
 msgid "Included, and all data"
-msgstr "Incluídos, com todos os dados"
+msgstr "Incluídos com todos os dados"
 
 #: ../gramps/gen/plug/report/stdoptions.py:194
 msgctxt "'living people'"
 msgid "Full names, but data removed"
-msgstr "Nomes completos, dados removidos"
+msgstr "Nomes completos e dados removidos"
 
 #: ../gramps/gen/plug/report/stdoptions.py:196
 msgctxt "'living people'"
 msgid "Given names replaced, and data removed"
-msgstr "Nomes próprios substituídos, dados removidos"
+msgstr "Nomes próprios substituídos e dados removidos"
 
 #: ../gramps/gen/plug/report/stdoptions.py:198
 msgctxt "'living people'"
 msgid "Complete names replaced, and data removed"
-msgstr "Nomes completos substituídos, dados removidos"
+msgstr "Nomes completos substituídos e dados removidos"
 
 #: ../gramps/gen/plug/report/stdoptions.py:201
 msgctxt "'living people'"
@@ -10136,7 +10168,7 @@ msgstr "Numa linha própria"
 
 #: ../gramps/gen/plug/report/stdoptions.py:361
 msgid "Whether (and where) to include Gramps IDs"
-msgstr "Incluir ou não (e onde) IDs Gramps"
+msgstr "Incluir (e onde) IDs Gramps"
 
 #: ../gramps/gen/plug/report/stdoptions.py:364
 msgid "Whether to include Gramps IDs"
@@ -10245,7 +10277,7 @@ msgstr "Erro ao ler %s"
 #: ../gramps/gen/plug/utils.py:319
 #, python-format
 msgid "Error: unknown file type: '%s'"
-msgstr "Erro: tipo de ficheiro \"%s\" desconhecido"
+msgstr "Erro: tipo de ficheiro desconhecido: \"%s\""
 
 #: ../gramps/gen/plug/utils.py:325
 #, python-format
@@ -10260,7 +10292,7 @@ msgstr "\"%s\" é para esta versão do Gramps."
 #: ../gramps/gen/plug/utils.py:356
 #, python-format
 msgid "'%s' is NOT for this version of Gramps."
-msgstr "\"%s\" NÃO é para esta versão do Gramps."
+msgstr "\"%s\" não é para esta versão do Gramps."
 
 #: ../gramps/gen/plug/utils.py:357
 #, python-format
@@ -10270,7 +10302,7 @@ msgstr "É para a versão %(v1)d.%(v2)d"
 #: ../gramps/gen/plug/utils.py:367
 #, python-format
 msgid "Error: missing gramps_target_version in '%s'..."
-msgstr "Erro: gramps_target_version em falta em \"%s\"..."
+msgstr "Erro: gramps_target_version não encontrado em \"%s\"..."
 
 #: ../gramps/gen/plug/utils.py:379
 #, python-format
@@ -10405,32 +10437,32 @@ msgstr "antigo companheiro(a)"
 #: ../gramps/gen/relationship.py:2212
 msgctxt "male,unknown relation"
 msgid "partner"
-msgstr "companheiro"
+msgstr "parceiro"
 
 #: ../gramps/gen/relationship.py:2214
 msgctxt "female,unknown relation"
 msgid "partner"
-msgstr "companheira"
+msgstr "parceira"
 
 #: ../gramps/gen/relationship.py:2216
 msgctxt "gender unknown,unknown relation"
 msgid "partner"
-msgstr "companheiro(a)"
+msgstr "parceiro(a)"
 
 #: ../gramps/gen/relationship.py:2221
 msgctxt "male,unknown relation"
 msgid "former partner"
-msgstr "antigo companheiro"
+msgstr "antigo parceiro"
 
 #: ../gramps/gen/relationship.py:2223
 msgctxt "female,unknown relation"
 msgid "former partner"
-msgstr "antiga companheira"
+msgstr "antiga parceira"
 
 #: ../gramps/gen/relationship.py:2225
 msgctxt "gender unknown,unknown relation"
 msgid "former partner"
-msgstr "antigo companheiro(a)"
+msgstr "antigo(a) parceira(a)"
 
 #: ../gramps/gen/relationship.py:2318
 #, python-format
@@ -10438,7 +10470,8 @@ msgid ""
 "Family relationship translator not available for language '%s'. Using "
 "'english' instead."
 msgstr ""
-"Tradutor de parentescos não disponível para o idioma \"%s\", a usar o inglês."
+"Tradutor de parentescos não disponível para o idioma \"%s\", a usar \"english"
+"\"."
 
 #: ../gramps/gen/utils/alive.py:145 ../gramps/plugins/importer/importcsv.py:205
 msgid "death date"
@@ -10581,7 +10614,7 @@ msgstr "Alemão"
 
 #: ../gramps/gen/utils/grampslocale.py:78
 msgid "German (Austria)"
-msgstr "Alemão (Áustria)"
+msgstr ""
 
 #: ../gramps/gen/utils/grampslocale.py:79
 msgid "Greek"
@@ -10776,7 +10809,7 @@ msgid ""
 "WARNING: PIL module not loaded.  Image cropping in report files will be "
 "impaired."
 msgstr ""
-"AVISO: módulo PIL não carregado. O recorte de imagens nos relatórios será "
+"AVISO: módulo PIL não carregado. Recorte de imagens nos relatórios será "
 "prejudicado."
 
 #: ../gramps/gen/utils/keyword.py:54
@@ -10919,7 +10952,7 @@ msgstr "PREFIXO"
 
 #: ../gramps/gen/utils/keyword.py:72
 msgid "NICKNAME"
-msgstr "DIMINUTIVO"
+msgstr "Diminutivo"
 
 #: ../gramps/gen/utils/keyword.py:73
 msgid "FAMILYNICK"
@@ -11243,7 +11276,7 @@ msgstr "Contribuições por"
 #. Translators: Translate this to your name in your native language
 #: ../gramps/gui/aboutdialog.py:120
 msgid "translator-credits"
-msgstr "Pedro Albuquerque <pmra@protonmail.com>"
+msgstr "Pedro Albuquerque <pagramps@openmailbox.org>"
 
 #: ../gramps/gui/aboutdialog.py:131
 #, python-format
@@ -11253,7 +11286,7 @@ msgstr "Distribuição: %s"
 #: ../gramps/gui/aboutdialog.py:142
 #, python-format
 msgid "OS: %s"
-msgstr "SO: %s"
+msgstr "OS: %s"
 
 #: ../gramps/gui/clipboard.py:70
 msgctxt "manual"
@@ -11536,7 +11569,7 @@ msgstr ""
 #: ../gramps/gui/editors/displaytabs/addrembedlist.py:75
 #: ../gramps/plugins/view/repoview.py:92
 msgid "State/County"
-msgstr "Distrito/Concelho"
+msgstr "Distrito"
 
 #: ../gramps/gui/configure.py:623 ../gramps/plugins/view/repoview.py:94
 msgid "ZIP/Postal Code"
@@ -11545,7 +11578,7 @@ msgstr "Código Postal"
 #: ../gramps/gui/configure.py:628 ../gramps/gui/plug/_windows.py:623
 #: ../gramps/plugins/view/repoview.py:95
 msgid "Email"
-msgstr "Correio electrónico"
+msgstr "E-mail"
 
 #: ../gramps/gui/configure.py:629
 msgid "Researcher"
@@ -11581,11 +11614,11 @@ msgstr "Esquema de cores"
 
 #: ../gramps/gui/configure.py:693
 msgid "Restore to defaults"
-msgstr "Repor pré-definições"
+msgstr "Repor predefinições"
 
 #: ../gramps/gui/configure.py:695
 msgid "Restore colors for current theme to default."
-msgstr "Restaurar cores do tema actual para a pré-definição."
+msgstr "Restaurar cores do tema actual para a predefinição."
 
 #: ../gramps/gui/configure.py:701
 msgid "Colors for Male persons"
@@ -11625,7 +11658,7 @@ msgstr "Contorno para Falecido"
 
 #: ../gramps/gui/configure.py:730
 msgid "Default background"
-msgstr "Fundo pré-definido"
+msgstr "Fundo predefinido"
 
 #: ../gramps/gui/configure.py:731
 msgid "Background for Married"
@@ -11649,7 +11682,7 @@ msgstr "Fundo para Divorciado"
 
 #: ../gramps/gui/configure.py:738
 msgid "Default border"
-msgstr "Contorno pré-definido"
+msgstr "Contorno predefinido"
 
 #: ../gramps/gui/configure.py:739
 msgid "Border for Divorced"
@@ -11819,7 +11852,7 @@ msgstr "Previsão de apelidos"
 
 #: ../gramps/gui/configure.py:1308
 msgid "Default family relationship"
-msgstr "Relação familiar pré-definida"
+msgstr "Relação familiar predefinida"
 
 #: ../gramps/gui/configure.py:1315
 msgid "Height multiple surname box (pixels)"
@@ -11847,7 +11880,7 @@ msgid ""
 "Show or hide text beside Navigator buttons (People, Families, Events...).\n"
 "Requires Gramps restart to apply."
 msgstr ""
-"Mostrar ou ocultar texto nos botões do navegador (Indivíduos, Famílias, "
+"Mostrar ou ocultar texto nos botões do navegador (Indiv´iduos, Famílias, "
 "Eventos...).\n"
 "Requer reinício do Gramps."
 
@@ -11862,7 +11895,7 @@ msgstr ""
 
 #: ../gramps/gui/configure.py:1371
 msgid "Default text used for conditions"
-msgstr "Texto pré-definido usado para condições"
+msgstr "Texto predefinido usado para condições"
 
 #: ../gramps/gui/configure.py:1376
 msgid "Missing surname"
@@ -11890,7 +11923,7 @@ msgstr "Registo privado"
 
 #: ../gramps/gui/configure.py:1462
 msgid "Change is not immediate"
-msgstr "A mudança não é imediata"
+msgstr "Mudança não é imediata"
 
 #: ../gramps/gui/configure.py:1463
 msgid ""
@@ -11977,7 +12010,7 @@ msgstr "Definições gerais do Gramps"
 
 #: ../gramps/gui/configure.py:1554
 msgid "Add default source on GEDCOM import"
-msgstr "Adicionar fonte pré-definida na importação GEDCOM"
+msgstr "Adicionar fonte predefinida na importação GEDCOM"
 
 #: ../gramps/gui/configure.py:1573
 msgid "Add tag on import"
@@ -11989,7 +12022,7 @@ msgid ""
 "Clear to set default value."
 msgstr ""
 "A etiqueta especificada será adicionada ao importar.\n"
-"Limpe para usar a pré-definição."
+"Limpe para usar a predefinição."
 
 #: ../gramps/gui/configure.py:1581
 msgid "Enable spelling checker"
@@ -12001,7 +12034,7 @@ msgid ""
 "GtkSpell not loaded. Spell checking will not be available.\n"
 "To build it for Gramps see %(gramps_wiki_build_spell_url)s"
 msgstr ""
-"O GtkSpell não carregado. A correcção ortográfica não estará disponível.\n"
+"GtkSpell não carregado. A correcção ortográfica não estará disponível.\n"
 "Para o instalar para o Gramps veja %(gramps_wiki_build_spell_url)s"
 
 #: ../gramps/gui/configure.py:1596
@@ -12306,7 +12339,7 @@ msgstr "Escolher letra"
 
 #: ../gramps/gui/configure.py:2004 ../gramps/gui/configure.py:2109
 msgid "Select default death symbol"
-msgstr "Seleccionar símbolo de falecido pré-definido"
+msgstr "Seleccionar símbolo de falecido predefinido"
 
 #: ../gramps/gui/configure.py:2013
 msgid "Genealogical Symbols"
@@ -13781,7 +13814,7 @@ msgstr "Editar citação (%s)"
 msgid "Delete Citation (%s)"
 msgstr "Eliminar citação (%s)"
 
-#: ../gramps/gui/editors/editdate.py:76 ../gramps/gui/editors/editdate.py:85
+#: ../gramps/gui/editors/editdate.py:76 ../gramps/gui/editors/editdate.py:87
 msgid "Regular"
 msgstr "Regular"
 
@@ -13802,31 +13835,40 @@ msgid "Range"
 msgstr "Intervalo"
 
 #: ../gramps/gui/editors/editdate.py:81
+msgid "From"
+msgstr ""
+
+#: ../gramps/gui/editors/editdate.py:82
+#, fuzzy
+msgid "To"
+msgstr "Superior"
+
+#: ../gramps/gui/editors/editdate.py:83
 msgid "Span"
 msgstr "Duração"
 
-#: ../gramps/gui/editors/editdate.py:82
+#: ../gramps/gui/editors/editdate.py:84
 msgid "Text only"
 msgstr "Só texto"
 
-#: ../gramps/gui/editors/editdate.py:86
+#: ../gramps/gui/editors/editdate.py:88
 msgid "Estimated"
 msgstr "Estimada"
 
-#: ../gramps/gui/editors/editdate.py:87
+#: ../gramps/gui/editors/editdate.py:89
 msgid "Calculated"
 msgstr "Calculada"
 
-#: ../gramps/gui/editors/editdate.py:99
+#: ../gramps/gui/editors/editdate.py:101
 msgctxt "manual"
 msgid "Editing_dates"
 msgstr "Editar_datas"
 
-#: ../gramps/gui/editors/editdate.py:126 ../gramps/gui/editors/editdate.py:279
+#: ../gramps/gui/editors/editdate.py:128 ../gramps/gui/editors/editdate.py:281
 msgid "Date selection"
 msgstr "Selecção de data"
 
-#: ../gramps/gui/editors/editdate.py:269
+#: ../gramps/gui/editors/editdate.py:271
 #, python-brace-format
 msgid "Correct the date or switch from `{cur_mode}' to `{text_mode}'"
 msgstr "Corrija a data ou mude de \"{cur_mode}\" para \"{text_mode}\""
@@ -15291,8 +15333,8 @@ msgid ""
 "This resets the filter parameters to empty state.  The 'Find' button should "
 "be used to actually update the view to its defaults."
 msgstr ""
-"Repõe os parâmetros de filtragem num estado vazio. Deve utilizar \"Procurar\""
-" para realmente actualizar a vista para as pré-definições."
+"Repõe os parâmetros de filtragem num estado vazio. Deve utilizar \"Procurar"
+"\" para realmente actualizar a vista para as predefinições."
 
 #: ../gramps/gui/filters/sidebar/_sidebarfilter.py:88
 msgid "Reset"
@@ -15768,7 +15810,7 @@ msgstr ""
 "correctamente às fontes. Os atributos podem ser usados para indivíduos, "
 "famílias, eventos e multimédia.\n"
 "\n"
-"Nota: diversos atributos pré-definidos são valores existentes no formato "
+"Nota: diversos atributos predefinidos são valores existentes no formato "
 "GEDCOM."
 
 #: ../gramps/gui/glade/editchildref.glade:97
@@ -16421,7 +16463,7 @@ msgid ""
 "format (extra formats can be set in the Preferences)."
 msgstr ""
 "Os indivíduos são mostrados de acordo com o formato de nome indicado nas "
-"preferências (pré-definição).\n"
+"preferências (predefinição).\n"
 "Aqui pode certificar-se de que este indivíduo é mostrado de acordo com um "
 "formato de nome personalizado (pode definir formatos adicionais nas "
 "preferências)."
@@ -16438,7 +16480,7 @@ msgid ""
 "format (extra formats can be set in the Preferences)."
 msgstr ""
 "Os indivíduos são ordenados de acordo com o formato de nome indicado nas "
-"preferências (pré-definição).\n"
+"preferências (predefinição).\n"
 "Aqui pode certificar-se de que este indivíduo é ordenado de acordo com um "
 "formato de nome personalizado (pode definir formatos adicionais nas "
 "preferências)."
@@ -16894,7 +16936,7 @@ msgstr ""
 
 #: ../gramps/gui/glade/editurl.glade:205
 msgid "Open the web address in the default browser."
-msgstr "Abrir o endereço da Internet no navegador pré-definido."
+msgstr "Abrir o endereço da Internet no navegador predefinido."
 
 #: ../gramps/gui/glade/editurl.glade:217
 msgid "A descriptive caption of the Internet location you are storing."
@@ -19073,7 +19115,7 @@ msgstr "Formato de saída"
 #: ../gramps/gui/plug/report/_docreportdialog.py:194
 #: ../gramps/gui/plug/report/_graphreportdialog.py:162
 msgid "Open with default viewer"
-msgstr "Abrir com o programa pré-definido"
+msgstr "Abir com o programa predefinido"
 
 #: ../gramps/gui/plug/report/_docreportdialog.py:237
 msgid "CSS file"
@@ -19224,7 +19266,7 @@ msgstr "O relatório não pôde ser criado"
 #: ../gramps/gui/plug/report/_styleeditor.py:192
 #: ../gramps/plugins/importer/importgedcom.glade:12
 msgid "default"
-msgstr "pré-definição"
+msgstr "predefinição"
 
 #: ../gramps/gui/plug/report/_styleeditor.py:96
 #: ../gramps/gui/plug/report/_styleeditor.py:125
@@ -19869,9 +19911,9 @@ msgid ""
 "person you want as 'Home Person', then confirm your choice via the menu Edit "
 "-> Set Home Person."
 msgstr ""
-"Tem de definir um \"indivíduo inicial\". Seleccione o separador Indivíduos, "
-"seleccione o indivíduo que deseja como \"indivíduo inicial\" e confirme a "
-"sua escolha através do menu Editar->Definir indivíduo inicial."
+"Tem de definir um \"indivíduo predefinido\". Seleccione o separador "
+"Indivíduos, seleccione o indivíduo que deseja como \"indivíduo inicial\" e "
+"confirme a sua escolha através do menu Editar->Definir indivíduo inicial."
 
 #: ../gramps/gui/views/navigationview.py:334
 #: ../gramps/gui/views/navigationview.py:338
@@ -20117,7 +20159,7 @@ msgstr "Remover um gramplet"
 
 #: ../gramps/gui/widgets/grampletbar.py:510
 msgid "Restore default gramplets"
-msgstr "Restaurar os gramplets pré-definidos"
+msgstr "Restaurar os gramplets predefinidos"
 
 #: ../gramps/gui/widgets/grampletbar.py:520
 msgid "Gramplet Bar Help"
@@ -20129,15 +20171,15 @@ msgstr "Acerca dos gramplets"
 
 #: ../gramps/gui/widgets/grampletbar.py:564
 msgid "Restore to defaults?"
-msgstr "Restaurar pré-definição?"
+msgstr "Restaurar predefinição?"
 
 #: ../gramps/gui/widgets/grampletbar.py:565
 msgid ""
 "The gramplet bar will be restored to contain its default gramplets.  This "
 "action cannot be undone."
 msgstr ""
-"A barra de gramplets será restaurada para mostrar os gramplets pré-"
-"definidos. Esta acção não poderá ser desfeita."
+"A barra de gramplets será restaurada para mostrar os gramplets predefinidos. "
+"Esta acção não poderá ser desfeita."
 
 #: ../gramps/gui/widgets/grampletpane.py:816
 msgid "Drag Properties Button to move and click it for setup"
@@ -20195,7 +20237,7 @@ msgid ""
 "Double-click on the picture to view it in the default image viewer "
 "application."
 msgstr ""
-"Duplo clique na imagem para a abrir no programa de imagens pré-definido."
+"Duplo clique na imagem para a abrir no programa de imagens predefinido."
 
 #: ../gramps/gui/widgets/photo.py:87
 msgid "Make Active Media"
@@ -22268,11 +22310,11 @@ msgstr "E-MAIL"
 msgid "WWW"
 msgstr "WWW"
 
-#: ../gramps/plugins/export/exportgedcom.py:1426
+#: ../gramps/plugins/export/exportgedcom.py:1437
 msgid "Writing media"
 msgstr "Escrever multimédia"
 
-#: ../gramps/plugins/export/exportgedcom.py:1600
+#: ../gramps/plugins/export/exportgedcom.py:1611
 msgid "GEDCOM Export failed"
 msgstr "Falha na exportação GEDCOM"
 
@@ -25241,7 +25283,7 @@ msgstr "Separação"
 msgid "GeneWeb import"
 msgstr "Importação GeneWeb"
 
-#: ../gramps/plugins/importer/importgeneweb.py:912
+#: ../gramps/plugins/importer/importgeneweb.py:925
 #, python-brace-format
 msgid "Invalid date {date} in {gw_snippet}, preserving date as text."
 msgstr "Data {date} inválida em {gw_snippet}, a manter a data como texto."
@@ -25403,7 +25445,7 @@ msgid ""
 "Default Tagtext\n"
 "(out of Settings)."
 msgstr ""
-"Etiqueta pré-definida\n"
+"Etiqueta predefinida\n"
 "(fora das definições)."
 
 #: ../gramps/plugins/importer/importprogen.glade:443
@@ -25412,7 +25454,7 @@ msgstr "Nome de ficheiro importado."
 
 #: ../gramps/plugins/importer/importprogen.glade:492
 msgid "Default (System-)Date."
-msgstr "Data (do sistema) pré-definida."
+msgstr "Data (do sistema) predefinida."
 
 #: ../gramps/plugins/importer/importprogen.glade:766
 #: ../gramps/plugins/importer/importprogen.glade:781
@@ -25422,14 +25464,14 @@ msgstr "Data (do sistema) pré-definida."
 #: ../gramps/plugins/importer/importprogen.glade:841
 #: ../gramps/plugins/importer/importprogen.glade:856
 msgid "Combined default text + filename + date."
-msgstr "Texto + nome de ficheiro + data (do sistema) pré-definidos combinados."
+msgstr "Texto + nome de ficheiro + data (do sistema) predefinidos combinados."
 
 #: ../gramps/plugins/importer/importprogen.glade:1111
 msgid ""
 "Copy Default Text\n"
 "to all Tag Text'."
 msgstr ""
-"Copiar texto pré-definido\n"
+"Copiar texto predefinido\n"
 "para todas as etiquetas'."
 
 #: ../gramps/plugins/importer/importprogen.glade:1130
@@ -25437,16 +25479,16 @@ msgid ""
 "Copy Default Filename\n"
 "to all sensitive Tag Text'."
 msgstr ""
-"Copiar nome de ficheiro pré-definido\n"
-"para todas as etiquetas sensitivas."
+"Copiar nome de ficheiro predefinido\n"
+"para todas as etiquetas' sensitivas."
 
 #: ../gramps/plugins/importer/importprogen.glade:1149
 msgid ""
 "Copy Default Date\n"
 "to all sensitive Tag Text'."
 msgstr ""
-"Copiar data pré-definida\n"
-"para todas as etiquetas sensitivas."
+"Copiar data predefinida\n"
+"para todas as etiquetas' sensitivas."
 
 #: ../gramps/plugins/importer/importprogen.glade:1164
 msgid "  Objects"
@@ -25810,7 +25852,7 @@ msgid "Number of new objects imported:\n"
 msgstr "Número de novos objectos importados:\n"
 
 #: ../gramps/plugins/importer/importxml.py:302
-#, python-format
+#, fuzzy, python-format
 msgid ""
 "\n"
 "The imported file was not self-contained.\n"
@@ -25821,7 +25863,7 @@ msgid ""
 "'Unknown' objects are referenced by note %(unknown)s.\n"
 msgstr ""
 "\n"
-"O ficheiro importado não era independente.\n"
+" O ficheiro importado não era independente.\n"
 "Para corrigir isto, foram criados %(new)d objectos e o\n"
 "seu atributo foi definido como \"Desconhecido\". A\n"
 "separação por categoria é representada pelo número\n"
@@ -25843,10 +25885,12 @@ msgstr ""
 "caso não esteja definida, relativos à pasta do utilizador.\n"
 
 #: ../gramps/plugins/importer/importxml.py:321
+#, fuzzy
 msgid ""
 "\n"
 "Objects that are candidates to be merged:\n"
 msgstr ""
+"\n"
 "\n"
 "Objectos candidatos a união:\n"
 
@@ -25962,7 +26006,7 @@ msgid "Old xml file"
 msgstr "Ficheiro XML antigo"
 
 #: ../gramps/plugins/importer/importxml.py:1212
-#: ../gramps/plugins/importer/importxml.py:2710
+#: ../gramps/plugins/importer/importxml.py:2714
 #, python-format
 msgid "Witness name: %s"
 msgstr "Nome da testemunha: %s"
@@ -25998,17 +26042,17 @@ msgstr "Todas as referências a uma nota devem ter o atributo \"hlink\"."
 
 #. Translators: leave the {date} and {xml} untranslated in the format string,
 #. but you may re-order them if needed.
-#: ../gramps/plugins/importer/importxml.py:2528
+#: ../gramps/plugins/importer/importxml.py:2532
 #, python-brace-format
 msgid "Invalid date {date} in XML {xml}, preserving XML as text"
 msgstr "Data {date} inválida no XML {xml}, a manter XML como texto"
 
-#: ../gramps/plugins/importer/importxml.py:2580
+#: ../gramps/plugins/importer/importxml.py:2584
 #, python-format
 msgid "Witness comment: %s"
 msgstr "Comentário da testemunha: %s"
 
-#: ../gramps/plugins/importer/importxml.py:3233
+#: ../gramps/plugins/importer/importxml.py:3237
 #, python-format
 msgctxt "father"
 msgid ""
@@ -26018,7 +26062,7 @@ msgstr ""
 "Erro: o pai \"%(father)s\" da família \"%(family)s\" não tem referência à "
 "família. Referência adicionada."
 
-#: ../gramps/plugins/importer/importxml.py:3249
+#: ../gramps/plugins/importer/importxml.py:3253
 #, python-format
 msgctxt "mother"
 msgid ""
@@ -26028,7 +26072,7 @@ msgstr ""
 "Erro: a mãe \"%(mother)s\" da família \"%(family)s\" não tem referência à "
 "família. Referência adicionada."
 
-#: ../gramps/plugins/importer/importxml.py:3271
+#: ../gramps/plugins/importer/importxml.py:3275
 #, python-format
 msgctxt "child"
 msgid ""
@@ -30055,7 +30099,7 @@ msgstr "_Definir indivíduo inicial"
 #: ../gramps/plugins/view/pedigreeview.py:694
 #: ../gramps/plugins/view/relview.py:436
 msgid "Go to the home person"
-msgstr "Ir para o indivíduo inicial"
+msgstr "Ir para o indivíduo predefinido"
 
 #: ../gramps/plugins/lib/libpersonview.py:260
 #: ../gramps/plugins/lib/libplaceview.py:332
@@ -34375,8 +34419,8 @@ msgstr ""
 "Se aceitar as alterações, o Gramps modificará os itens seleccionados.\n"
 "\n"
 "Os apelidos compostos são mostrados como listas de [prefixo, apelido, "
-"ligação].\n"
-"Por exemplo, com as pré-definições, o nome \"de Mascarenhas da Silva e "
+"conector].\n"
+"Por exemplo, com as predefinições, o nome \"de Mascarenhas da Silva e "
 "Lencastre\" é mostrado como:\n"
 "       [de, Mascarenhas]-[da, Silva, e]-[,Lencastre]\n"
 "\n"
@@ -34394,7 +34438,7 @@ msgstr "Extração de nome e título"
 
 #: ../gramps/plugins/tool/patchnames.py:115
 msgid "Default prefix and connector settings"
-msgstr "Pré-definições de prefixo e ligação"
+msgstr "Predefinições de prefixo e conector"
 
 #: ../gramps/plugins/tool/patchnames.py:121
 msgid "Prefixes to search for:"
@@ -35001,7 +35045,7 @@ msgstr "Remove objectos não usados da base de dados"
 
 #: ../gramps/plugins/tool/tools.gpr.py:376
 msgid "Reorders the Gramps IDs according to Gramps' default rules."
-msgstr "Reordena as IDs Gramps de acordo com as regras pré-definidas."
+msgstr "Reordena as IDs Gramps de acordo com as regras predefinidas."
 
 #: ../gramps/plugins/tool/tools.gpr.py:398
 #: ../gramps/plugins/tool/tools.gpr.py:399
@@ -36223,7 +36267,7 @@ msgstr "Editor de filtros de multimédia"
 
 #: ../gramps/plugins/view/mediaview.py:386
 msgid "View in the default viewer"
-msgstr "Mostrar no programa pré-definido"
+msgstr "Mostrar no programa predefinido"
 
 #: ../gramps/plugins/view/mediaview.py:490
 msgid "Cannot merge media objects."
@@ -37120,19 +37164,22 @@ msgid "Creating address book pages ..."
 msgstr "A criar páginas de livro de endereços..."
 
 #: ../gramps/plugins/webreport/narrativeweb.py:1826
-#, python-format
+#, fuzzy, python-format
 msgid "Narrative Website Report for the %s language"
-msgstr "Relatório Página web narrativa para o idioma %s"
+msgstr "Relatório Página web narrada para o idioma %s"
 
 #: ../gramps/plugins/webreport/narrativeweb.py:1828
+#, fuzzy
 msgid "Narrative Website Report"
 msgstr "Relatório Página web narrativa"
 
 #: ../gramps/plugins/webreport/narrativeweb.py:1941
+#, fuzzy
 msgid "Store website in .tar.gz archive"
-msgstr "Armazenar o sítio web num arquivo .tar.gz"
+msgstr "Armazenar as páginas web num arquivo .tar.gz"
 
 #: ../gramps/plugins/webreport/narrativeweb.py:1943
+#, fuzzy
 msgid "Whether to store the website in an archive file"
 msgstr "Se deve armazenar as páginas web num arquivo .tar.gz"
 
@@ -37146,17 +37193,20 @@ msgid "My Family Tree"
 msgstr "A minha árvore genealógica"
 
 #: ../gramps/plugins/webreport/narrativeweb.py:1960
+#, fuzzy
 msgid "Website title"
 msgstr "Título da página web"
 
 #: ../gramps/plugins/webreport/narrativeweb.py:1961
+#, fuzzy
 msgid "The title of the website"
-msgstr "O título da página web"
+msgstr "O título da página Web"
 
 #: ../gramps/plugins/webreport/narrativeweb.py:1966
+#, fuzzy
 msgid "Select filter to restrict people that appear on the website"
 msgstr ""
-"Seleccionar filtro para restringir os indivíduos que aparecem na página web"
+"Seleccionar filtro para restringir os indivíduos que aparecem na página Web"
 
 #: ../gramps/plugins/webreport/narrativeweb.py:1975
 msgid "Show the relationship between the current person and the active person"
@@ -37201,11 +37251,11 @@ msgstr "Folha de estilo"
 
 #: ../gramps/plugins/webreport/narrativeweb.py:2021
 msgid "The default stylesheet to be used for the pages"
-msgstr "A folha de estilo pré-definida a usar nas páginas"
+msgstr "A folha de estilo predefinida a usar nas páginas"
 
 #: ../gramps/plugins/webreport/narrativeweb.py:2027
 msgid "Horizontal -- Default"
-msgstr "Horizontal -- pré-definição"
+msgstr "Horizontal -- predefinição"
 
 #: ../gramps/plugins/webreport/narrativeweb.py:2028
 msgid "Vertical   -- Left Side"
@@ -37240,7 +37290,7 @@ msgstr "Disposição de referências a citações"
 msgid ""
 "Determine the default layout for the Source Page's Citation Referents section"
 msgstr ""
-"Determine a disposição pré-definida para a secção \"Referências a citações\" "
+"Determine a disposição predefinida para a secção \"Referências a citações\" "
 "da página de fontes"
 
 #: ../gramps/plugins/webreport/narrativeweb.py:2055
@@ -37260,6 +37310,7 @@ msgid "Add previous/next to the navigation bar."
 msgstr "Adicionar anterior/seguinte à barra de navegação."
 
 #: ../gramps/plugins/webreport/narrativeweb.py:2065
+#, fuzzy
 msgid "This is a secure site (HTTPS)"
 msgstr "Esta é uma página segura (https)"
 
@@ -37306,8 +37357,8 @@ msgid ""
 "the next field."
 msgstr ""
 "Se vai mostrar a página web narrativa em vários idiomas.\n"
-"Veja o separador de traduções para adicionar mais idiomas além do pré-"
-"definido no campo seguinte."
+"Veja o separador de traduções para adicionar mais idiomas além do "
+"predefinido no campo seguinte."
 
 #: ../gramps/plugins/webreport/narrativeweb.py:2128
 msgid "Sort all children in birth order"
@@ -37355,7 +37406,7 @@ msgid ""
 "or include them just before attributes."
 msgstr ""
 "Incluir notas narrativas a seguir ao nome, sexo e idade ao óbito "
-"(pré-definição) ou incluir mesmo antes dos atributos."
+"(predefinição) ou incluir mesmo antes dos atributos."
 
 #: ../gramps/plugins/webreport/narrativeweb.py:2166
 msgid "Page Generation"
@@ -37604,11 +37655,13 @@ msgid "Whether to include a parents column"
 msgstr "Se deve incluir uma coluna para pais"
 
 #: ../gramps/plugins/webreport/narrativeweb.py:2358
+#, fuzzy
 msgid "Include half and/or step-siblings on the individual pages"
 msgstr ""
 "Incluir os meio-irmãos e os irmãos por afinidade nas páginas individuais"
 
 #: ../gramps/plugins/webreport/narrativeweb.py:2361
+#, fuzzy
 msgid ""
 "Whether to include half and/or step-siblings with the parents and siblings"
 msgstr ""
@@ -37631,18 +37684,22 @@ msgid "Add a complete events list and relevant pages or not"
 msgstr "Se deve adicionar uma lista de eventos completa e páginas relevantes"
 
 #: ../gramps/plugins/webreport/narrativeweb.py:2383
+#, fuzzy
 msgid "Include place pages"
 msgstr "Incluir páginas de locais"
 
 #: ../gramps/plugins/webreport/narrativeweb.py:2385
+#, fuzzy
 msgid "Whether or not to include the place pages."
 msgstr "Se deve ou não incluir páginas de locais."
 
 #: ../gramps/plugins/webreport/narrativeweb.py:2388
+#, fuzzy
 msgid "Include source pages"
 msgstr "Incluir páginas de fontes"
 
 #: ../gramps/plugins/webreport/narrativeweb.py:2390
+#, fuzzy
 msgid "Whether or not to include the source pages."
 msgstr "Se deve ou não incluir páginas de fontes."
 
@@ -37651,6 +37708,7 @@ msgid "Include repository pages"
 msgstr "Incluir páginas de repositório"
 
 #: ../gramps/plugins/webreport/narrativeweb.py:2395
+#, fuzzy
 msgid "Whether or not to include the repository pages."
 msgstr "Se deve incluir páginas de repositórios."
 
@@ -37687,6 +37745,7 @@ msgid "Place Map Options"
 msgstr "Opções dos mapas de locais"
 
 #: ../gramps/plugins/webreport/narrativeweb.py:2425
+#, fuzzy
 msgid "Stamen Map"
 msgstr "StamenMap"
 
@@ -37745,6 +37804,7 @@ msgid "Google/ FamilyMap Option"
 msgstr "Opções do Google/FamilyMap"
 
 #: ../gramps/plugins/webreport/narrativeweb.py:2464
+#, fuzzy
 msgid ""
 "Select which option that you would like to have for the Google Maps family-"
 "map pages..."
@@ -37777,6 +37837,7 @@ msgid "Stamen Option"
 msgstr "Opções de Stamen"
 
 #: ../gramps/plugins/webreport/narrativeweb.py:2481
+#, fuzzy
 msgid ""
 "Select which option that you would like to have for the Stamen map map-"
 "pages..."
@@ -37784,10 +37845,12 @@ msgstr ""
 "Seleccione a opção que gostaria de ter para as páginas de mapas Stamenmap..."
 
 #: ../gramps/plugins/webreport/narrativeweb.py:2493
+#, fuzzy
 msgid "Other inclusion (CMS, web calendar, PHP)"
-msgstr "Outras (CMS, web calendar, PHP)"
+msgstr "Outras (CMS, Web Calendar, Php)"
 
 #: ../gramps/plugins/webreport/narrativeweb.py:2497
+#, fuzzy
 msgid "Do we include these pages in a CMS web?"
 msgstr "Incluir estas páginas num CMS web?"
 
@@ -37796,8 +37859,9 @@ msgid "URI"
 msgstr "URI"
 
 #: ../gramps/plugins/webreport/narrativeweb.py:2508
+#, fuzzy
 msgid "Where do you place your website? default = /NAVWEB"
-msgstr "Onde é que coloca a sua página web (a pré-definição é /NAVWEB)?"
+msgstr "Onde é que coloca a sua página web? predefinição= /NAVWEB"
 
 #: ../gramps/plugins/webreport/narrativeweb.py:2516
 msgid "Include the news and updates page"
@@ -37812,6 +37876,7 @@ msgid "Max days for updates"
 msgstr "Máximo de dias para actualizar"
 
 #: ../gramps/plugins/webreport/narrativeweb.py:2524
+#, fuzzy
 msgid "You want to see the last updates on how many days?"
 msgstr "Deseja ver o histórico de actualizações para quantos dias?"
 
@@ -37848,8 +37913,9 @@ msgstr "Título deste sítio"
 #: ../gramps/plugins/webreport/narrativeweb.py:2568
 #: ../gramps/plugins/webreport/narrativeweb.py:2576
 #: ../gramps/plugins/webreport/narrativeweb.py:2584
+#, fuzzy
 msgid "Enter a title in the respective language"
-msgstr "Insira um título no idioma apropriado"
+msgstr "Dê um título no idioma apropriado"
 
 #: ../gramps/plugins/webreport/narrativeweb.py:2554
 msgid "third language"
@@ -37937,7 +38003,7 @@ msgid ""
 "Show data only after this year. Default is current year -  'maximum age "
 "probably alive' which is defined in the dates preference tab."
 msgstr ""
-"Mostrar dados só depois do ano. A pré-definição é o ano actual - \"idade "
+"Mostrar dados só depois do ano. A predefinição é o ano actual - \"idade "
 "máxima provavelmente vivo\" que é definida no separador de preferências de "
 "data."
 

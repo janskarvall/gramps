@@ -86,7 +86,9 @@ class Span:
                 self.date2 = date1
                 self.negative = True
             if self.date1.get_modifier() == Date.MOD_NONE:
-                if   self.date2.get_modifier() == Date.MOD_NONE:
+                if   self.date2.get_modifier() in [Date.MOD_NONE,
+                                                   Date.MOD_FROM,
+                                                   Date.MOD_TO]:
                     val = self.date1.sortval - self.date2.sortval
                     self.sort = (val, 0)
                     self.minmax = (val, val)
@@ -111,7 +113,9 @@ class Span:
                     self.sort = (val1, val2 - val1)
                     self.minmax = (val1, val2)
             elif self.date1.get_modifier() == Date.MOD_BEFORE:
-                if   self.date2.get_modifier() == Date.MOD_NONE:
+                if   self.date2.get_modifier() in [Date.MOD_NONE,
+                                                   Date.MOD_FROM,
+                                                   Date.MOD_TO]:
                     val = self.date1.sortval - self.date2.sortval
                     self.sort = (val, 0)
                     self.minmax = (0, val)
@@ -132,7 +136,9 @@ class Span:
                     self.sort = (val, -Span.ABOUT)
                     self.minmax = (val - Span.ABOUT, val + Span.ABOUT)
             elif self.date1.get_modifier() == Date.MOD_AFTER:
-                if self.date2.get_modifier() == Date.MOD_NONE:
+                if self.date2.get_modifier() in [Date.MOD_NONE,
+                                                   Date.MOD_FROM,
+                                                   Date.MOD_TO]:
                     val = self.date1.sortval - self.date2.sortval
                     self.sort = (val, Span.AFTER)
                     self.minmax = (val, val + Span.AFTER)
@@ -153,7 +159,9 @@ class Span:
                     self.sort = (val, -Span.ABOUT)
                     self.minmax = (val - Span.ABOUT, val + Span.ABOUT)
             elif self.date1.get_modifier() == Date.MOD_ABOUT:
-                if self.date2.get_modifier() == Date.MOD_NONE:
+                if self.date2.get_modifier() in [Date.MOD_NONE,
+                                                   Date.MOD_FROM,
+                                                   Date.MOD_TO]:
                     val = self.date1.sortval - self.date2.sortval
                     self.sort = (val, -Span.ABOUT)
                     self.minmax = (val - Span.ABOUT, val + Span.ABOUT)
@@ -173,8 +181,64 @@ class Span:
                     val = self.date1.sortval - self.date2.sortval
                     self.sort = (val, -Span.ABOUT)
                     self.minmax = (val - Span.ABOUT, val + Span.ABOUT)
+            elif self.date1.get_modifier() == Date.MOD_FROM:
+                if   self.date2.get_modifier() in [Date.MOD_NONE,
+                                                   Date.MOD_FROM,
+                                                   Date.MOD_TO]:
+                    val = self.date1.sortval - self.date2.sortval
+                    self.sort = (val, 0)
+                    self.minmax = (val, val)
+                elif self.date2.get_modifier() == Date.MOD_BEFORE:
+                    val = self.date1.sortval - self.date2.sortval
+                    self.sort = (val, -Span.BEFORE)
+                    self.minmax = (val - Span.BEFORE, val)
+                elif self.date2.get_modifier() == Date.MOD_AFTER:
+                    val = self.date1.sortval - self.date2.sortval
+                    self.sort = (val, Span.AFTER)
+                    self.minmax = (val, val + Span.AFTER)
+                elif self.date2.get_modifier() == Date.MOD_ABOUT:
+                    val = self.date1.sortval - self.date2.sortval
+                    self.sort = (val, -Span.ABOUT)
+                    self.minmax = (val - Span.ABOUT, val + Span.ABOUT)
+                elif self.date2.is_compound():
+                    start, stop = self.date2.get_start_stop_range()
+                    start = Date(*start)
+                    stop = Date(*stop)
+                    val1 = self.date1.sortval - stop.sortval  # min
+                    val2 = self.date1.sortval - start.sortval # max
+                    self.sort = (val1, val2 - val1)
+                    self.minmax = (val1, val2)
+            elif self.date1.get_modifier() == Date.MOD_TO:
+                if   self.date2.get_modifier() in [Date.MOD_NONE,
+                                                   Date.MOD_FROM,
+                                                   Date.MOD_TO]:
+                    val = self.date1.sortval - self.date2.sortval
+                    self.sort = (val, 0)
+                    self.minmax = (val, val)
+                elif self.date2.get_modifier() == Date.MOD_BEFORE:
+                    val = self.date1.sortval - self.date2.sortval
+                    self.sort = (val, -Span.BEFORE)
+                    self.minmax = (val - Span.BEFORE, val)
+                elif self.date2.get_modifier() == Date.MOD_AFTER:
+                    val = self.date1.sortval - self.date2.sortval
+                    self.sort = (val, Span.AFTER)
+                    self.minmax = (val, val + Span.AFTER)
+                elif self.date2.get_modifier() == Date.MOD_ABOUT:
+                    val = self.date1.sortval - self.date2.sortval
+                    self.sort = (val, -Span.ABOUT)
+                    self.minmax = (val - Span.ABOUT, val + Span.ABOUT)
+                elif self.date2.is_compound():
+                    start, stop = self.date2.get_start_stop_range()
+                    start = Date(*start)
+                    stop = Date(*stop)
+                    val1 = self.date1.sortval - stop.sortval  # min
+                    val2 = self.date1.sortval - start.sortval # max
+                    self.sort = (val1, val2 - val1)
+                    self.minmax = (val1, val2)
             elif self.date1.is_compound():
-                if self.date2.get_modifier() == Date.MOD_NONE:
+                if self.date2.get_modifier() in [Date.MOD_NONE,
+                                                   Date.MOD_FROM,
+                                                   Date.MOD_TO]:
                     start, stop = self.date1.get_start_stop_range()
                     start = Date(*start)
                     stop = Date(*stop)
@@ -546,6 +610,8 @@ class Date:
     MOD_RANGE = 4
     MOD_SPAN = 5
     MOD_TEXTONLY = 6
+    MOD_FROM = 7
+    MOD_TO = 8
 
     QUAL_NONE = 0 # BITWISE
     QUAL_ESTIMATED = 1
@@ -756,9 +822,15 @@ class Date:
 
     def __eq__(self, other):
         """
-        Equality based on sort value, use is_equal/match instead if needed
+        Equality based on sort value unless any of the dates is a span in which
+        case match is used.
+        Use match instead if needed.
         """
         if isinstance(other, Date):
+            if (self.modifier in [Date.MOD_FROM, Date.MOD_TO, Date.MOD_SPAN]
+                or
+                other.modifier in [Date.MOD_FROM, Date.MOD_TO, Date.MOD_SPAN]):
+                return self.match(other, "==")
             return self.sortval == other.sortval
         else:
             #indicate this is not supported
@@ -766,9 +838,15 @@ class Date:
 
     def __ne__(self, other):
         """
-        Equality based on sort value, use is_equal/match instead if needed
+        Equality based on sort value unless any of the dates is a span in which
+        case match is used.
+        Use match instead if needed.
         """
         if isinstance(other, Date):
+            if (self.modifier in [Date.MOD_FROM, Date.MOD_TO, Date.MOD_SPAN]
+                or
+                other.modifier in [Date.MOD_FROM, Date.MOD_TO, Date.MOD_SPAN]):
+                return self.match(other, "!=")
             return self.sortval != other.sortval
         else:
             #indicate this is not supported
@@ -776,10 +854,16 @@ class Date:
 
     def __le__(self, other):
         """
-        <= based on sort value, use match instead if needed
+        <= based on sort value unless any of the dates is a span in which case
+        match is used.
+        Use match instead if needed.
         So this is different from using < which uses match!
         """
         if isinstance(other, Date):
+            if (self.modifier in [Date.MOD_FROM, Date.MOD_TO, Date.MOD_SPAN]
+                or
+                other.modifier in [Date.MOD_FROM, Date.MOD_TO, Date.MOD_SPAN]):
+                return self.match(other, "<=")
             return self.sortval <= other.sortval
         else:
             #indicate this is not supported
@@ -787,10 +871,16 @@ class Date:
 
     def __ge__(self, other):
         """
-        >= based on sort value, use match instead if needed
+        >= based on sort value unless any of the dates is a span in which case
+        match is used.
+        Use match instead if needed.
         So this is different from using > which uses match!
         """
         if isinstance(other, Date):
+            if (self.modifier in [Date.MOD_FROM, Date.MOD_TO, Date.MOD_SPAN]
+                or
+                other.modifier in [Date.MOD_FROM, Date.MOD_TO, Date.MOD_SPAN]):
+                return self.match(other, ">=")
             return self.sortval >= other.sortval
         else:
             #indicate this is not supported
@@ -881,6 +971,8 @@ class Date:
 
         Useful in doing range overlap comparisons between different dates.
 
+        For open ended spans, the value returned for the open end is (0, 0, 0)
+
         Note that we stay in (YR,MON,DAY)
         """
 
@@ -912,35 +1004,71 @@ class Date:
         start = yr_mon_day(datecopy.get_start_date())
         stop = yr_mon_day(datecopy.get_stop_date())
 
-        if stop == (0, 0, 0):
-            stop = start
+        if datecopy.get_modifier() == Date.MOD_SPAN:
+            if start == (0, 0, 0):
+                startmin = start
+            else:
+                startmin = list(start)
+                if startmin[1] == 0:
+                    startmin[1] = 1
+                if startmin[2] == 0:
+                    startmin[2] = 1
+            if stop == (0, 0, 0):
+                stopmax = stop
+            else:
+                stopmax = list(stop)
+                if stopmax[0] == 0: # then use start_year, if one
+                    stopmax[0] = start[Date._POS_YR]
+                if stopmax[1] == 0:
+                    stopmax[1] = 12
+                if stopmax[2] == 0:
+                    stopmax[2] = 31
+        elif datecopy.get_modifier() == Date.MOD_FROM:
+            startmin = list(start)
+            if startmin[1] == 0:
+                startmin[1] = 1
+            if startmin[2] == 0:
+                startmin[2] = 1
+            stopmax = (0, 0, 0)
+        elif datecopy.get_modifier() == Date.MOD_TO:
+            startmin = (0, 0, 0)
+            stopmax = list(stop)
+            if stopmax[0] == 0: # then use start_year, if one
+                stopmax[0] = start[Date._POS_YR]
+            if stopmax[1] == 0:
+                stopmax[1] = 12
+            if stopmax[2] == 0:
+                stopmax[2] = 31
+        else:
+            if stop == (0, 0, 0):
+                stop = start
 
-        stopmax = list(stop)
-        if stopmax[0] == 0: # then use start_year, if one
-            stopmax[0] = start[Date._POS_YR]
-        if stopmax[1] == 0:
-            stopmax[1] = 12
-        if stopmax[2] == 0:
-            stopmax[2] = 31
-        startmin = list(start)
-        if startmin[1] == 0:
-            startmin[1] = 1
-        if startmin[2] == 0:
-            startmin[2] = 1
-        # if BEFORE, AFTER, or ABOUT/EST, adjust:
-        if self.modifier == Date.MOD_BEFORE:
-            stopmax = date_offset(startmin, -1)
-            fdiff = config.get('behavior.date-before-range')
-            startmin = (stopmax[0] - fdiff, stopmax[1], stopmax[2])
-        elif self.modifier == Date.MOD_AFTER:
-            startmin = date_offset(stopmax, 1)
-            fdiff = config.get('behavior.date-after-range')
-            stopmax = (startmin[0] + fdiff, startmin[1], startmin[2])
-        elif (self.modifier == Date.MOD_ABOUT or
-              self.quality == Date.QUAL_ESTIMATED):
-            fdiff = config.get('behavior.date-about-range')
-            startmin = (startmin[0] - fdiff, startmin[1], startmin[2])
-            stopmax = (stopmax[0] + fdiff, stopmax[1], stopmax[2])
+            stopmax = list(stop)
+            if stopmax[0] == 0: # then use start_year, if one
+                stopmax[0] = start[Date._POS_YR]
+            if stopmax[1] == 0:
+                stopmax[1] = 12
+            if stopmax[2] == 0:
+                stopmax[2] = 31
+            startmin = list(start)
+            if startmin[1] == 0:
+                startmin[1] = 1
+            if startmin[2] == 0:
+                startmin[2] = 1
+            # if BEFORE, AFTER, or ABOUT/EST, adjust:
+            if self.modifier == Date.MOD_BEFORE:
+                stopmax = date_offset(startmin, -1)
+                fdiff = config.get('behavior.date-before-range')
+                startmin = (stopmax[0] - fdiff, stopmax[1], stopmax[2])
+            elif self.modifier == Date.MOD_AFTER:
+                startmin = date_offset(stopmax, 1)
+                fdiff = config.get('behavior.date-after-range')
+                stopmax = (startmin[0] + fdiff, startmin[1], startmin[2])
+            elif (self.modifier == Date.MOD_ABOUT or
+                  self.quality == Date.QUAL_ESTIMATED):
+                fdiff = config.get('behavior.date-about-range')
+                startmin = (startmin[0] - fdiff, startmin[1], startmin[2])
+                stopmax = (stopmax[0] + fdiff, stopmax[1], stopmax[2])
         # return tuples not lists, for comparisons
         return (tuple(startmin), tuple(stopmax))
 
@@ -955,6 +1083,10 @@ class Date:
             return other_date.sortval > self.sortval
         elif other_date.modifier == Date.MOD_AFTER:
             return other_date.sortval < self.sortval
+        elif other_date.modifier == Date.MOD_FROM:
+            return other_date.sortval < self.sortval
+        elif other_date.modifier == Date.MOD_TO:
+            return other_date.sortval > self.sortval
         elif other_date.is_compound():
             start, stop = other_date.get_start_stop_range()
             start = Date(*start)
@@ -970,15 +1102,18 @@ class Date:
 
         The other comparisons for Date (is_equal() and __cmp() don't actually
         look for anything other than a straight match, or a simple comparison
-        of the sortval.
+        of the sortval unless any of the dates is a span.
 
         ==========  =======================================================
         Comparison  Returns
         ==========  =======================================================
         =,==        True if any part of other_date matches any part of self
+        !=          True if no part of other_date matches any part of self
         <           True if any part of other_date < any part of self
+        <=          True if any part of other_date <= any part of self
         <<          True if all parts of other_date < all parts of self
         >           True if any part of other_date > any part of self
+        >=          True if any part of other_date >= any part of self
         >>          True if all parts of other_date > all parts of self
         ==========  =======================================================
         """
@@ -999,32 +1134,33 @@ class Date:
 
         if comparison == "=":
             # If some overlap then match is True, otherwise False.
-            return ((self_start <= other_start <= self_stop) or
-                    (self_start <= other_stop <= self_stop) or
-                    (other_start <= self_start <= other_stop) or
-                    (other_start <= self_stop <= other_stop))
+            return ((self_start <= other_stop or other_stop == (0, 0, 0) or self_start == (0, 0, 0))
+                    and (other_start <= self_stop or other_start == (0, 0, 0) or self_stop == (0, 0, 0)))
+        elif comparison == "!=":
+            return ((self_start > other_stop and self_start != (0, 0, 0) and other_stop != (0, 0, 0))
+                    or (self_stop < other_start) and self_stop != (0, 0, 0) and other_start != (0, 0, 0))
         elif comparison == "==":
             # If they match exactly on start and stop
             return ((self_start == other_start) and
-                    (other_stop == other_stop))
+                    (self_stop == other_stop))
         elif comparison == "<":
             # If any < any
-            return self_start < other_stop
+            return self_start < other_stop or self_start == (0, 0, 0) or other_stop == (0, 0, 0)
         elif comparison == "<=":
             # If any < any
-            return self_start <= other_stop
+            return self_start <= other_stop  or self_start == (0, 0, 0) or other_stop == (0, 0, 0)
         elif comparison == "<<":
             # If all < all
-            return self_stop < other_start
+            return self_stop < other_start and self_stop != (0, 0, 0) and other_start != (0, 0, 0)
         elif comparison == ">":
             # If any > any
-            return self_stop > other_start
+            return self_stop > other_start or self_stop == (0, 0, 0) or other_start == (0, 0, 0)
         elif comparison == ">=":
             # If any > any
-            return self_stop >= other_start
+            return self_stop >= other_start or self_stop == (0, 0, 0) or other_start == (0, 0, 0)
         elif comparison == ">>":
             # If all > all
-            return self_start > other_stop
+            return self_start > other_stop and self_start != (0, 0, 0) and other_stop != (0, 0, 0)
         else:
             raise AttributeError("invalid match comparison operator: '%s'" %
                                  comparison)
@@ -1035,8 +1171,9 @@ class Date:
 
         If the date is not valid, the text representation is displayed. If
         the date is a range or a span, a string in the form of
-        'YYYY-MM-DD - YYYY-MM-DD' is returned. Otherwise, a string in
-        the form of 'YYYY-MM-DD' is returned.
+        'YYYY-MM-DD - YYYY-MM-DD' is returned, unless if it is an open ended
+        span which is returned as either 'YYYY-MM-DD -' or '- YYYY-MM-DD'.
+        Otherwise, a string in the form of 'YYYY-MM-DD' is returned.
         """
         if self.quality == Date.QUAL_ESTIMATED:
             qual = "est "
@@ -1073,6 +1210,16 @@ class Date:
             val = "%04d/%d-%02d-%02d" % (
                 self.dateval[Date._POS_YR] - 1,
                 (self.dateval[Date._POS_YR]) % 10,
+                self.dateval[Date._POS_MON],
+                self.dateval[Date._POS_DAY])
+        elif self.get_modifier() == Date.MOD_FROM:
+            val = "%04d-%02d-%02d -" % (
+                self.dateval[Date._POS_YR],
+                self.dateval[Date._POS_MON],
+                self.dateval[Date._POS_DAY])
+        elif self.get_modifier() == Date.MOD_TO:
+            val = "- %04d-%02d-%02d" % (
+                self.dateval[Date._POS_YR],
                 self.dateval[Date._POS_MON],
                 self.dateval[Date._POS_DAY])
         elif self.is_compound():
@@ -1156,6 +1303,8 @@ class Date:
         MOD_AFTER     after
         MOD_ABOUT     about
         MOD_RANGE     date range
+        MOD_FROM      open ended date span
+        MOD_TO        open ended date span
         MOD_SPAN      date span
         MOD_TEXTONLY  text only
         ============  =====================
@@ -1167,8 +1316,8 @@ class Date:
         Set the modifier for the date.
         """
         if val not in (Date.MOD_NONE, Date.MOD_BEFORE, Date.MOD_AFTER,
-                       Date.MOD_ABOUT, Date.MOD_RANGE, Date.MOD_SPAN,
-                       Date.MOD_TEXTONLY):
+                       Date.MOD_ABOUT, Date.MOD_RANGE, Date.MOD_FROM,
+                       Date.MOD_TO, Date.MOD_SPAN, Date.MOD_TEXTONLY):
             raise DateError("Invalid modifier")
         self.modifier = val
 
@@ -1227,10 +1376,13 @@ class Date:
 
         If the date is a compound date (range or a span), it is the first part
         of the compound date. If the date is a text string, a tuple of
+        (0, 0, 0, False) is returned. If the date has modifier "to", a tuple of
         (0, 0, 0, False) is returned. Otherwise, a date of (DD, MM, YY, slash)
         is returned. If slash is True, then the date is in the form of 1530/1.
         """
         if self.modifier == Date.MOD_TEXTONLY:
+            val = Date.EMPTY
+        elif self.modifier == Date.MOD_TO:
             val = Date.EMPTY
         else:
             val = self.dateval[0:4]
@@ -1241,11 +1393,16 @@ class Date:
         Return a tuple representing the second half of a compound date.
 
         If the date is not a compound date, (including text strings) a tuple
-        of (0, 0, 0, False) is returned. Otherwise, a date of (DD, MM, YY, slash)
+        of (0, 0, 0, False) is returned. If the date has modifier "from", a tuple of
+        (0, 0, 0, False) is returned. Otherwise, a date of (DD, MM, YY, slash)
         is returned. If slash is True, then the date is in the form of 1530/1.
         """
         if self.is_compound():
             val = self.dateval[4:8]
+        elif self.modifier == Date.MOD_FROM:
+            val = Date.EMPTY
+        elif self.modifier == Date.MOD_TO:
+            val = self.dateval[0:4]
         else:
             val = Date.EMPTY
         return val
@@ -1619,14 +1776,15 @@ class Date:
             value = self.dateval
 
         if modifier in (Date.MOD_NONE, Date.MOD_BEFORE,
-                        Date.MOD_AFTER, Date.MOD_ABOUT) and len(value) < 4:
+                        Date.MOD_AFTER, Date.MOD_ABOUT,
+                        Date.MOD_FROM, Date.MOD_TO) and len(value) < 4:
             raise DateError("Invalid value. Should be: (DD, MM, YY, slash)")
         if modifier in (Date.MOD_RANGE, Date.MOD_SPAN) and len(value) < 8:
             raise DateError("Invalid value. Should be: (DD, MM, "
                             "YY, slash1, DD, MM, YY, slash2)")
         if modifier not in (Date.MOD_NONE, Date.MOD_BEFORE, Date.MOD_AFTER,
-                            Date.MOD_ABOUT, Date.MOD_RANGE, Date.MOD_SPAN,
-                            Date.MOD_TEXTONLY):
+                            Date.MOD_ABOUT, Date.MOD_RANGE, Date.MOD_FROM,
+                            Date.MOD_TO, Date.MOD_SPAN, Date.MOD_TEXTONLY):
             raise DateError("Invalid modifier")
         if quality not in (Date.QUAL_NONE, Date.QUAL_ESTIMATED,
                            Date.QUAL_CALCULATED):
@@ -1687,6 +1845,7 @@ class Date:
                               format(self.__dict__, sanity.__dict__))
                     err.date = self
                     raise
+        # FIXME: self.valid is not set. Not important?
 
     def __compare(self, sanity, value, year_delta):
         ziplist = zip(sanity, value)
@@ -1774,8 +1933,8 @@ class Date:
         Return True if the date contains no information (empty text).
         """
         return not((self.modifier == Date.MOD_TEXTONLY and self.text)
-               or self.get_start_date() != Date.EMPTY
-                or self.get_stop_date() != Date.EMPTY)
+                   or self.get_start_date() != Date.EMPTY
+                   or self.get_stop_date() != Date.EMPTY)
 
     def is_compound(self):
         """
@@ -1867,10 +2026,10 @@ class Date:
         Lookup date modifier keyword, even if translated.
         """
         mods = ["none", "before", "after", "about",
-                "range", "span", "textonly"]
+                "range", "from", "to", "span", "textonly"]
         ui_mods = [_("none", "date-modifier"),
                    _("before"), _("after"), _("about"),
-                   _("range"), _("span"), _("textonly")]
+                   _("range"), _("from"),_("to"), _("span"), _("textonly")]
         if modifier.lower() in mods:
             return mods.index(modifier.lower())
         elif modifier.lower() in ui_mods:

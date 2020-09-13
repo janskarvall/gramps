@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GRAMPS VIETNAMESE 4.2.8\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-06-05 19:16+0100\n"
+"POT-Creation-Date: 2021-06-29 14:29+0200\n"
 "PO-Revision-Date: 2021-06-04 21:08+0000\n"
 "Last-Translator: Nick Hall <nick-h@gramps-project.org>\n"
 "Language-Team: Vietnamese <https://hosted.weblate.org/projects/gramps-"
@@ -66,6 +66,11 @@ msgstr "Hệ thống gia phả Gramps "
 #: ../data/gramps.desktop.in:4
 msgid "Genealogy System"
 msgstr "Hệ thống Gia phả "
+
+#: ../data/gramps.desktop.in:7
+#, fuzzy
+msgid "gramps"
+msgstr "Gramps"
 
 #: ../data/gramps.desktop.in:12
 msgid "Genealogy;Family History;Research;Family Tree;GEDCOM;"
@@ -2347,20 +2352,35 @@ msgstr "{short_month} {year}"
 #. Translators: If there is no special inflection for
 #. "from <Month>" in your language, DON'T translate this.
 #. Otherwise, translate to "from" in ENGLISH!!! ENGLISH!!!
-#: ../gramps/gen/datehandler/_datedisplay.py:429
+#: ../gramps/gen/datehandler/_datedisplay.py:437
+#: ../gramps/gen/datehandler/_datedisplay.py:475
 msgctxt "from-date"
 msgid ""
 msgstr ""
 
+#: ../gramps/gen/datehandler/_datedisplay.py:438
+#, python-brace-format
+msgid "{date_quality}from {date_start}{nonstd_calendar_and_ny}"
+msgstr "{date_quality}từ {date_start}{nonstd_calendar_and_ny}"
+
+#. Translators: If there is no special inflection for
+#. "from <Month>" in your language, DON'T translate this.
+#. Otherwise, translate to "from" in ENGLISH!!! ENGLISH!!!
 #. Translators: If there is no special inflection for
 #. "to <Month>" in your language, DON'T translate this.
 #. Otherwise, translate to "to" in ENGLISH!!! ENGLISH!!!
-#: ../gramps/gen/datehandler/_datedisplay.py:434
+#: ../gramps/gen/datehandler/_datedisplay.py:456
+#: ../gramps/gen/datehandler/_datedisplay.py:480
 msgctxt "to-date"
 msgid ""
 msgstr ""
 
-#: ../gramps/gen/datehandler/_datedisplay.py:435
+#: ../gramps/gen/datehandler/_datedisplay.py:457
+#, python-brace-format
+msgid "{date_quality}to {date_stop}{nonstd_calendar_and_ny}"
+msgstr "{date_quality}đến {date_stop}{nonstd_calendar_and_ny}"
+
+#: ../gramps/gen/datehandler/_datedisplay.py:481
 #, python-brace-format
 msgid "{date_quality}from {date_start} to {date_stop}{nonstd_calendar_and_ny}"
 msgstr "{date_quality}từ {date_start} đến {date_stop}{nonstd_calendar_and_ny}"
@@ -2368,7 +2388,7 @@ msgstr "{date_quality}từ {date_start} đến {date_stop}{nonstd_calendar_and_n
 #. Translators: If there is no special inflection for
 #. "between <Month>" in your language, DON'T translate this.
 #. Otherwise, translate to "between" in ENGLISH!!! ENGLISH!!!
-#: ../gramps/gen/datehandler/_datedisplay.py:454
+#: ../gramps/gen/datehandler/_datedisplay.py:500
 msgctxt "between-date"
 msgid ""
 msgstr ""
@@ -2376,12 +2396,12 @@ msgstr ""
 #. Translators: If there is no special inflection for
 #. "and <Month>" in your language, DON'T translate this.
 #. Otherwise, translate to "and" in ENGLISH!!! ENGLISH!!!
-#: ../gramps/gen/datehandler/_datedisplay.py:459
+#: ../gramps/gen/datehandler/_datedisplay.py:505
 msgctxt "and-date"
 msgid ""
 msgstr ""
 
-#: ../gramps/gen/datehandler/_datedisplay.py:460
+#: ../gramps/gen/datehandler/_datedisplay.py:506
 #, python-brace-format
 msgid ""
 "{date_quality}between {date_start} and {date_stop}{nonstd_calendar_and_ny}"
@@ -2390,7 +2410,7 @@ msgstr "{date_quality}giữa {date_start} và {date_stop}{nonstd_calendar_and_ny
 #. Translators: If there is no special inflection for
 #. "before <Month>" in your language, DON'T translate this.
 #. Otherwise, translate to "before" in ENGLISH!!! ENGLISH!!!
-#: ../gramps/gen/datehandler/_datedisplay.py:493
+#: ../gramps/gen/datehandler/_datedisplay.py:547
 msgctxt "before-date"
 msgid ""
 msgstr ""
@@ -2398,7 +2418,7 @@ msgstr ""
 #. Translators: If there is no special inflection for
 #. "after <Month>" in your language, DON'T translate this.
 #. Otherwise, translate to "after" in ENGLISH!!! ENGLISH!!!
-#: ../gramps/gen/datehandler/_datedisplay.py:498
+#: ../gramps/gen/datehandler/_datedisplay.py:552
 msgctxt "after-date"
 msgid ""
 msgstr ""
@@ -2406,7 +2426,7 @@ msgstr ""
 #. Translators: If there is no special inflection for
 #. "about <Month>" in your language, DON'T translate this.
 #. Otherwise, translate to "about" in ENGLISH!!! ENGLISH!!!
-#: ../gramps/gen/datehandler/_datedisplay.py:503
+#: ../gramps/gen/datehandler/_datedisplay.py:557
 msgctxt "about-date"
 msgid ""
 msgstr ""
@@ -2414,7 +2434,7 @@ msgstr ""
 #. Translators: If there is no special inflection for
 #. "estimated <Month>" in your language, DON'T translate this.
 #. Otherwise, translate to "estimated" in ENGLISH!!! ENGLISH!!!
-#: ../gramps/gen/datehandler/_datedisplay.py:508
+#: ../gramps/gen/datehandler/_datedisplay.py:562
 msgctxt "estimated-date"
 msgid ""
 msgstr ""
@@ -2422,41 +2442,41 @@ msgstr ""
 #. Translators: If there is no special inflection for
 #. "calculated <Month>" in your language, DON'T translate this.
 #. Otherwise, translate to "calculated" in ENGLISH!!! ENGLISH!!!
-#: ../gramps/gen/datehandler/_datedisplay.py:513
+#: ../gramps/gen/datehandler/_datedisplay.py:567
 msgctxt "calculated-date"
 msgid ""
 msgstr ""
 
-#: ../gramps/gen/datehandler/_datedisplay.py:532
+#: ../gramps/gen/datehandler/_datedisplay.py:586
 #, python-brace-format
 msgid "{date_quality}{noncompound_modifier}{date}{nonstd_calendar_and_ny}"
 msgstr "{date_quality}{noncompound_modifier}{date}{nonstd_calendar_and_ny}"
 
 #. Translators: this month is ALREADY inflected: ignore it
-#: ../gramps/gen/datehandler/_datedisplay.py:651
+#: ../gramps/gen/datehandler/_datedisplay.py:705
 #, python-brace-format
 msgid "{long_month} {day:d}, {year}"
 msgstr "{long_month} {day:d}, {year}"
 
 #. Translators: this month is ALREADY inflected: ignore it
-#: ../gramps/gen/datehandler/_datedisplay.py:677
+#: ../gramps/gen/datehandler/_datedisplay.py:731
 #, python-brace-format
 msgid "{short_month} {day:d}, {year}"
 msgstr "{short_month} {day:d}, {year}"
 
 #. Translators: this month is ALREADY inflected: ignore it
-#: ../gramps/gen/datehandler/_datedisplay.py:703
+#: ../gramps/gen/datehandler/_datedisplay.py:757
 #, python-brace-format
 msgid "{day:d} {long_month} {year}"
 msgstr "{day:d} {long_month} {year}"
 
 #. Translators: this month is ALREADY inflected: ignore it
-#: ../gramps/gen/datehandler/_datedisplay.py:729
+#: ../gramps/gen/datehandler/_datedisplay.py:783
 #, python-brace-format
 msgid "{day:d} {short_month} {year}"
 msgstr "{day:d} {short_month} {year}"
 
-#: ../gramps/gen/datehandler/_dateparser.py:421
+#: ../gramps/gen/datehandler/_dateparser.py:430
 msgid "today"
 msgstr "Hôm n"
 
@@ -2643,37 +2663,37 @@ msgctxt "alternative month names for December"
 msgid "|"
 msgstr ""
 
-#: ../gramps/gen/datehandler/_datestrings.py:131 ../gramps/gen/lib/date.py:609
+#: ../gramps/gen/datehandler/_datestrings.py:131 ../gramps/gen/lib/date.py:675
 msgctxt "calendar"
 msgid "Gregorian"
 msgstr "Gregorian "
 
-#: ../gramps/gen/datehandler/_datestrings.py:132 ../gramps/gen/lib/date.py:610
+#: ../gramps/gen/datehandler/_datestrings.py:132 ../gramps/gen/lib/date.py:676
 msgctxt "calendar"
 msgid "Julian"
 msgstr "Julian "
 
-#: ../gramps/gen/datehandler/_datestrings.py:133 ../gramps/gen/lib/date.py:611
+#: ../gramps/gen/datehandler/_datestrings.py:133 ../gramps/gen/lib/date.py:677
 msgctxt "calendar"
 msgid "Hebrew"
 msgstr "Do Thái "
 
-#: ../gramps/gen/datehandler/_datestrings.py:134 ../gramps/gen/lib/date.py:612
+#: ../gramps/gen/datehandler/_datestrings.py:134 ../gramps/gen/lib/date.py:678
 msgctxt "calendar"
 msgid "French Republican"
 msgstr "Cộng hòa Pháp "
 
-#: ../gramps/gen/datehandler/_datestrings.py:135 ../gramps/gen/lib/date.py:613
+#: ../gramps/gen/datehandler/_datestrings.py:135 ../gramps/gen/lib/date.py:679
 msgctxt "calendar"
 msgid "Persian"
 msgstr "Persian  "
 
-#: ../gramps/gen/datehandler/_datestrings.py:136 ../gramps/gen/lib/date.py:614
+#: ../gramps/gen/datehandler/_datestrings.py:136 ../gramps/gen/lib/date.py:680
 msgctxt "calendar"
 msgid "Islamic"
 msgstr "Hồi giáo "
 
-#: ../gramps/gen/datehandler/_datestrings.py:137 ../gramps/gen/lib/date.py:615
+#: ../gramps/gen/datehandler/_datestrings.py:137 ../gramps/gen/lib/date.py:681
 msgctxt "calendar"
 msgid "Swedish"
 msgstr "Thụy Điển "
@@ -6588,7 +6608,7 @@ msgid "Notes"
 msgstr "Ghi chú "
 
 #: ../gramps/gen/lib/address.py:111 ../gramps/gen/lib/citation.py:106
-#: ../gramps/gen/lib/date.py:706 ../gramps/gen/lib/event.py:146
+#: ../gramps/gen/lib/date.py:772 ../gramps/gen/lib/event.py:146
 #: ../gramps/gen/lib/ldsord.py:182 ../gramps/gen/lib/media.py:163
 #: ../gramps/gen/lib/name.py:157 ../gramps/gen/lib/placename.py:101
 #: ../gramps/gen/lib/placeref.py:94
@@ -7104,55 +7124,55 @@ msgstr "Thay đổi lần cuối"
 msgid "Tags"
 msgstr "Thẻ "
 
-#: ../gramps/gen/lib/date.py:290 ../gramps/gen/lib/date.py:325
-#: ../gramps/gen/lib/date.py:331 ../gramps/gen/lib/date.py:333
-#: ../gramps/gen/lib/date.py:350
+#: ../gramps/gen/lib/date.py:354 ../gramps/gen/lib/date.py:389
+#: ../gramps/gen/lib/date.py:395 ../gramps/gen/lib/date.py:397
+#: ../gramps/gen/lib/date.py:414
 msgctxt "age"
 msgid "about"
 msgstr "khoảng "
 
 #. Translators: leave all/any {...} untranslated
-#: ../gramps/gen/lib/date.py:427 ../gramps/gen/lib/date.py:434
+#: ../gramps/gen/lib/date.py:491 ../gramps/gen/lib/date.py:498
 #, python-brace-format
 msgid "{number_of} year"
 msgid_plural "{number_of} years"
 msgstr[0] "{number_of} năm "
 
 #. Translators: leave all/any {...} untranslated
-#: ../gramps/gen/lib/date.py:443
+#: ../gramps/gen/lib/date.py:507
 #, python-brace-format
 msgid "{number_of} month"
 msgid_plural "{number_of} months"
 msgstr[0] "{number_of} th"
 
 #. Translators: leave all/any {...} untranslated
-#: ../gramps/gen/lib/date.py:454
+#: ../gramps/gen/lib/date.py:518
 #, python-brace-format
 msgid "{number_of} day"
 msgid_plural "{number_of} days"
 msgstr[0] "{number_of} ng"
 
-#: ../gramps/gen/lib/date.py:710
+#: ../gramps/gen/lib/date.py:776
 #: ../gramps/plugins/drawreport/drawplugins.gpr.py:75
 #: ../gramps/plugins/gramplet/gramplet.gpr.py:74
 #: ../gramps/plugins/gramplet/gramplet.gpr.py:80
 msgid "Calendar"
 msgstr "Lịch "
 
-#: ../gramps/gen/lib/date.py:712
+#: ../gramps/gen/lib/date.py:778
 msgid "Modifier"
 msgstr "Từ bổ nghĩa"
 
-#: ../gramps/gen/lib/date.py:714
+#: ../gramps/gen/lib/date.py:780
 msgid "Quality"
 msgstr "Chất lượng"
 
-#: ../gramps/gen/lib/date.py:716 ../gramps/gui/editors/filtereditor.py:836
+#: ../gramps/gen/lib/date.py:782 ../gramps/gui/editors/filtereditor.py:836
 #: ../gramps/gui/glade/rule.glade:967
 msgid "Values"
 msgstr "Giá trị "
 
-#: ../gramps/gen/lib/date.py:719 ../gramps/gen/lib/placename.py:99
+#: ../gramps/gen/lib/date.py:785 ../gramps/gen/lib/placename.py:99
 #: ../gramps/gen/lib/styledtext.py:322
 #: ../gramps/gen/plug/report/_constants.py:54 ../gramps/gui/clipboard.py:613
 #: ../gramps/gui/clipboard.py:621 ../gramps/gui/configure.py:1396
@@ -7164,56 +7184,65 @@ msgstr "Giá trị "
 msgid "Text"
 msgstr "Văn bản "
 
-#: ../gramps/gen/lib/date.py:721
+#: ../gramps/gen/lib/date.py:787
 msgid "Sort value"
 msgstr "Giá trị sắp xếp"
 
-#: ../gramps/gen/lib/date.py:723
+#: ../gramps/gen/lib/date.py:789
 msgid "New year begins"
 msgstr "Năm mới bắt đầu"
 
-#: ../gramps/gen/lib/date.py:1856
+#: ../gramps/gen/lib/date.py:2015
 msgctxt "date-quality"
 msgid "none"
 msgstr "không có"
 
-#: ../gramps/gen/lib/date.py:1857
+#: ../gramps/gen/lib/date.py:2016
 msgid "calculated"
 msgstr "được tính "
 
-#: ../gramps/gen/lib/date.py:1857
+#: ../gramps/gen/lib/date.py:2016
 msgid "estimated"
 msgstr "phỏng chừng "
 
-#: ../gramps/gen/lib/date.py:1871
+#: ../gramps/gen/lib/date.py:2030
 msgctxt "date-modifier"
 msgid "none"
 msgstr "không có"
 
-#: ../gramps/gen/lib/date.py:1872 ../gramps/plugins/webreport/basepage.py:3248
+#: ../gramps/gen/lib/date.py:2031 ../gramps/plugins/webreport/basepage.py:3248
 msgid "about"
 msgstr "chứng "
 
-#: ../gramps/gen/lib/date.py:1872 ../gramps/plugins/lib/libprogen.py:1841
+#: ../gramps/gen/lib/date.py:2031 ../gramps/plugins/lib/libprogen.py:1841
 #: ../gramps/plugins/webreport/basepage.py:3244
 msgid "after"
 msgstr "sau "
 
-#: ../gramps/gen/lib/date.py:1872 ../gramps/plugins/webreport/basepage.py:3246
+#: ../gramps/gen/lib/date.py:2031 ../gramps/plugins/webreport/basepage.py:3246
 msgid "before"
 msgstr "trước "
 
-#: ../gramps/gen/lib/date.py:1873
+#: ../gramps/gen/lib/date.py:2032
+msgid "from"
+msgstr ""
+
+#: ../gramps/gen/lib/date.py:2032
 msgid "range"
 msgstr "ngưỡng "
 
-#: ../gramps/gen/lib/date.py:1873
+#: ../gramps/gen/lib/date.py:2032
 msgid "span"
 msgstr "khoảng "
 
-#: ../gramps/gen/lib/date.py:1873
+#: ../gramps/gen/lib/date.py:2032
 msgid "textonly"
 msgstr "chỉ văn bản "
+
+#: ../gramps/gen/lib/date.py:2032
+#, fuzzy
+msgid "to"
+msgstr "Ngưng "
 
 #: ../gramps/gen/lib/event.py:136 ../gramps/gen/lib/eventref.py:109
 #: ../gramps/gui/clipboard.py:335 ../gramps/gui/configure.py:661
@@ -9260,7 +9289,7 @@ msgstr "Tập tin %s đã mở, trước tiên hãy đóng lại."
 #: ../gramps/plugins/export/exportcsv.py:261
 #: ../gramps/plugins/export/exportcsv.py:265
 #: ../gramps/plugins/export/exportftree.py:136
-#: ../gramps/plugins/export/exportgedcom.py:1597
+#: ../gramps/plugins/export/exportgedcom.py:1608
 #: ../gramps/plugins/export/exportgeneweb.py:109
 #: ../gramps/plugins/export/exportgeneweb.py:113
 #: ../gramps/plugins/export/exportvcalendar.py:123
@@ -11114,11 +11143,6 @@ msgstr "Đối tượng tham chiếu đến bởi ghi chú này bị mất ở t
 
 #: ../gramps/grampsapp.py:172
 #, fuzzy, python-format
-#| msgid ""
-#| "Your Python version does not meet the requirements. At least python "
-#| "%(v1)d.%(v2)d.%(v3)d is needed to start Gramps.\n"
-#| "\n"
-#| "Gramps will terminate now."
 msgid ""
 "Your Python version does not meet the requirements. At least Python %(v1)d."
 "%(v2)d.%(v3)d is needed to start Gramps.\n"
@@ -11137,17 +11161,11 @@ msgstr "Lỗi đặt cấu hình: "
 
 #: ../gramps/grampsapp.py:432
 #, fuzzy
-#| msgid "Error reading configuration"
 msgid "Could not read configuration"
 msgstr "Lỗi khi đọc cấu hình "
 
 #: ../gramps/grampsapp.py:436
 #, fuzzy, python-format
-#| msgid ""
-#| "A definition for the MIME-type %s could not be found \n"
-#| "\n"
-#| " Possibly the installation of Gramps was incomplete. Make sure the MIME-"
-#| "types of Gramps are properly installed."
 msgid ""
 "A definition for the media type %s could not be found \n"
 "\n"
@@ -13716,7 +13734,7 @@ msgstr "Sửa trích dẫn (%s)"
 msgid "Delete Citation (%s)"
 msgstr "Xóa trích dẫn (%s) "
 
-#: ../gramps/gui/editors/editdate.py:76 ../gramps/gui/editors/editdate.py:85
+#: ../gramps/gui/editors/editdate.py:76 ../gramps/gui/editors/editdate.py:87
 msgid "Regular"
 msgstr "Thông thường "
 
@@ -13737,31 +13755,40 @@ msgid "Range"
 msgstr "Ngưỡng "
 
 #: ../gramps/gui/editors/editdate.py:81
+msgid "From"
+msgstr ""
+
+#: ../gramps/gui/editors/editdate.py:82
+#, fuzzy
+msgid "To"
+msgstr "Đỉnh "
+
+#: ../gramps/gui/editors/editdate.py:83
 msgid "Span"
 msgstr "Khoảng "
 
-#: ../gramps/gui/editors/editdate.py:82
+#: ../gramps/gui/editors/editdate.py:84
 msgid "Text only"
 msgstr "Chỉ dùng văn bản "
 
-#: ../gramps/gui/editors/editdate.py:86
+#: ../gramps/gui/editors/editdate.py:88
 msgid "Estimated"
 msgstr "Phỏng chừng "
 
-#: ../gramps/gui/editors/editdate.py:87
+#: ../gramps/gui/editors/editdate.py:89
 msgid "Calculated"
 msgstr "Tính toán "
 
-#: ../gramps/gui/editors/editdate.py:99
+#: ../gramps/gui/editors/editdate.py:101
 msgctxt "manual"
 msgid "Editing_dates"
 msgstr "Sửa_ngày"
 
-#: ../gramps/gui/editors/editdate.py:126 ../gramps/gui/editors/editdate.py:279
+#: ../gramps/gui/editors/editdate.py:128 ../gramps/gui/editors/editdate.py:281
 msgid "Date selection"
 msgstr "Chọn ngày "
 
-#: ../gramps/gui/editors/editdate.py:269
+#: ../gramps/gui/editors/editdate.py:271
 #, python-brace-format
 msgid "Correct the date or switch from `{cur_mode}' to `{text_mode}'"
 msgstr "Chỉnh lại ngày tháng hay chuyển từ '{cur_mode}' sang '{text_mode}' "
@@ -15747,10 +15774,6 @@ msgstr "Mật: "
 
 #: ../gramps/gui/glade/editcitation.glade:181
 #, fuzzy
-#| msgid ""
-#| "The date of the entry in the source you are referencing, e.g. the date a "
-#| "house was visited during a census, or the date an entry was made in a "
-#| "birth log/registry. "
 msgid ""
 "The date of the entry in the source you are referencing, e.g. the date a "
 "house was visited during a census, or the date an entry was made in a birth "
@@ -16125,12 +16148,6 @@ msgstr "Xem trước hình "
 
 #: ../gramps/gui/glade/editmedia.glade:205
 #, fuzzy
-#| msgid ""
-#| "Path of the media object on your computer.\n"
-#| "Gramps does not store the media internally, it only stores the path! Set "
-#| "the 'Relative Path' in the Preferences to avoid retyping the common base "
-#| "directory where all your media is stored. The 'Media Manager' tool can "
-#| "help managing paths of a collection of media objects. "
 msgid ""
 "Path of the media object on your computer.\n"
 "Gramps does not store the media internally, it only stores the path! Set the "
@@ -16309,7 +16326,6 @@ msgstr "Một tên mô tả đặt thay cho hay thêm vào với ten6 chính th�
 
 #: ../gramps/gui/glade/editname.glade:333
 #, fuzzy
-#| msgid "Given Name(s) "
 msgid "Given Name(s)"
 msgstr "Tên"
 
@@ -16590,8 +16606,6 @@ msgstr ""
 #: ../gramps/gui/glade/editplace.glade:238
 #: ../gramps/gui/glade/editplaceref.glade:376
 #, fuzzy
-#| msgid ""
-#| "Field used to paste info from a web page like google, openstreetmap, ... "
 msgid "Field used to paste info from a web page like Google, OpenStreetMap..."
 msgstr ""
 "Trường dùng để dán thông tin từ trang web như google, openstreetmap, ..."
@@ -20800,9 +20814,6 @@ msgstr ""
 #: ../gramps/plugins/drawreport/ancestortree.py:966
 #: ../gramps/plugins/drawreport/descendtree.py:1699
 #, fuzzy
-#| msgid ""
-#| "i.e.\n"
-#| "United States of America/U.S.A"
 msgid ""
 "i.e.\n"
 "United States of America/U.S.A."
@@ -22150,12 +22161,12 @@ msgstr "EMAIL"
 msgid "WWW"
 msgstr "WWW"
 
-#: ../gramps/plugins/export/exportgedcom.py:1426
+#: ../gramps/plugins/export/exportgedcom.py:1437
 #, fuzzy
 msgid "Writing media"
 msgstr "Ghi ghi chú "
 
-#: ../gramps/plugins/export/exportgedcom.py:1600
+#: ../gramps/plugins/export/exportgedcom.py:1611
 msgid "GEDCOM Export failed"
 msgstr "Xuất GEDCOM thất bại"
 
@@ -24992,7 +25003,6 @@ msgstr "ANSEL"
 
 #: ../gramps/plugins/importer/importgedcom.glade:18
 #, fuzzy
-#| msgid "ANSI (iso-8859-1)"
 msgid "ANSI (ISO-8859-1)"
 msgstr "ANSI (iso-8859-1)"
 
@@ -25132,7 +25142,7 @@ msgstr "Bị biệt lập"
 msgid "GeneWeb import"
 msgstr "Nhập GeneWeb "
 
-#: ../gramps/plugins/importer/importgeneweb.py:912
+#: ../gramps/plugins/importer/importgeneweb.py:925
 #, python-brace-format
 msgid "Invalid date {date} in {gw_snippet}, preserving date as text."
 msgstr "Ngày không đúng {date} ở {gw_snippet}, giữ ngày tháng dạng văn b"
@@ -25698,14 +25708,6 @@ msgstr "Số đối tượng đa phương tiện nhập:\n"
 
 #: ../gramps/plugins/importer/importxml.py:302
 #, fuzzy, python-format
-#| msgid ""
-#| "\n"
-#| " The imported file was not self-contained.\n"
-#| "To correct for that, %(new)d objects were created and\n"
-#| "their typifying attribute was set to 'Unknown'.\n"
-#| "The breakdown per category is depicted by the\n"
-#| "number in parentheses. Where possible these\n"
-#| "'Unkown' objects are referenced by note %(unknown)s.\n"
 msgid ""
 "\n"
 "The imported file was not self-contained.\n"
@@ -25739,10 +25741,6 @@ msgstr ""
 
 #: ../gramps/plugins/importer/importxml.py:321
 #, fuzzy
-#| msgid ""
-#| "\n"
-#| "\n"
-#| "Objects that are candidates to be merged:\n"
 msgid ""
 "\n"
 "Objects that are candidates to be merged:\n"
@@ -25861,7 +25859,7 @@ msgid "Old xml file"
 msgstr "Bản xml cũ "
 
 #: ../gramps/plugins/importer/importxml.py:1212
-#: ../gramps/plugins/importer/importxml.py:2710
+#: ../gramps/plugins/importer/importxml.py:2714
 #, python-format
 msgid "Witness name: %s"
 msgstr "Tên chứng kiến: %s "
@@ -25897,17 +25895,17 @@ msgstr "Bất ky 2tham chiếu ghi chú nào phải có thông số 'hlink'."
 
 #. Translators: leave the {date} and {xml} untranslated in the format string,
 #. but you may re-order them if needed.
-#: ../gramps/plugins/importer/importxml.py:2528
+#: ../gramps/plugins/importer/importxml.py:2532
 #, python-brace-format
 msgid "Invalid date {date} in XML {xml}, preserving XML as text"
 msgstr "Ngày không đúng {date} ở XML {xml}, giữ XML như văn bản"
 
-#: ../gramps/plugins/importer/importxml.py:2580
+#: ../gramps/plugins/importer/importxml.py:2584
 #, python-format
 msgid "Witness comment: %s"
 msgstr "Ý kiến chứng kiến: %s "
 
-#: ../gramps/plugins/importer/importxml.py:3233
+#: ../gramps/plugins/importer/importxml.py:3237
 #, fuzzy, python-format
 msgctxt "father"
 msgid ""
@@ -25917,7 +25915,7 @@ msgstr ""
 "Lỗi: gia đình '%(family)s' cha '%(father)s' không tham chiếu ngược lại gia "
 "đình. Tham chiếu được thêm."
 
-#: ../gramps/plugins/importer/importxml.py:3249
+#: ../gramps/plugins/importer/importxml.py:3253
 #, fuzzy, python-format
 msgctxt "mother"
 msgid ""
@@ -25927,7 +25925,7 @@ msgstr ""
 "Lỗi: gia đình '%(family)s' mẹ '%(mother)s' không tham chiếu lại gia đình. "
 "Thêm tham chiếu."
 
-#: ../gramps/plugins/importer/importxml.py:3271
+#: ../gramps/plugins/importer/importxml.py:3275
 #, fuzzy, python-format
 msgctxt "child"
 msgid ""
@@ -33417,8 +33415,6 @@ msgstr[0] ""
 
 #: ../gramps/plugins/tool/check.py:2619
 #, fuzzy, python-brace-format
-#| msgid "Reference to {quantity} missing media object was kept\n"
-#| msgid_plural "References to {quantity} media objects were kept\n"
 msgid "Reference to {quantity} missing media object was kept\n"
 msgid_plural "References to {quantity} missing media objects were kept\n"
 msgstr[0] ""
@@ -36916,13 +36912,11 @@ msgstr "Báo cáo tường thuật web site "
 
 #: ../gramps/plugins/webreport/narrativeweb.py:1941
 #, fuzzy
-#| msgid "Store web pages in .tar.gz archive"
 msgid "Store website in .tar.gz archive"
 msgstr "Chứa trang web dạng lưu trữ .tar.gz "
 
 #: ../gramps/plugins/webreport/narrativeweb.py:1943
 #, fuzzy
-#| msgid "Whether to store the web pages in an archive file"
 msgid "Whether to store the website in an archive file"
 msgstr "Có lưu trữ trang web dạng tập tin lưu trữ không "
 
@@ -36937,19 +36931,16 @@ msgstr "Cây gia đình của tôi "
 
 #: ../gramps/plugins/webreport/narrativeweb.py:1960
 #, fuzzy
-#| msgid "Web site title"
 msgid "Website title"
 msgstr "Tiêu đề site "
 
 #: ../gramps/plugins/webreport/narrativeweb.py:1961
 #, fuzzy
-#| msgid "The title of the web site"
 msgid "The title of the website"
 msgstr "Tiêu đề của web site mới "
 
 #: ../gramps/plugins/webreport/narrativeweb.py:1966
 #, fuzzy
-#| msgid "Select filter to restrict people that appear on web site"
 msgid "Select filter to restrict people that appear on the website"
 msgstr "Chọn bộ lọc để hạn chế người xuât hiện ở web site "
 
@@ -37056,7 +37047,6 @@ msgstr ""
 
 #: ../gramps/plugins/webreport/narrativeweb.py:2065
 #, fuzzy
-#| msgid "This is a secure site (https)"
 msgid "This is a secure site (HTTPS)"
 msgstr "Đây là site có bảo mật (https)"
 
@@ -37111,7 +37101,6 @@ msgstr "Sắp xếp con theo thứ tự sinh "
 
 #: ../gramps/plugins/webreport/narrativeweb.py:2130
 #, fuzzy
-#| msgid "Whether to display children in birth order or in entry order?"
 msgid "Whether to display children in birth order or in entry order."
 msgstr "Có hiện con cái theo thứ tự sinh hay thứ tự nhập? "
 
@@ -37121,7 +37110,6 @@ msgstr "Chúng tôi có hiện tọa độ trong danh sách địa diểm không
 
 #: ../gramps/plugins/webreport/narrativeweb.py:2136
 #, fuzzy
-#| msgid "Whether to display latitude/longitude in the places list?"
 msgid "Whether to display latitude/longitude in the places list."
 msgstr "Có hiện kinh độ/vĩ độ cho các địa điểm trong danh sách không? "
 
@@ -37404,15 +37392,11 @@ msgstr "Có đưa cột cha mẹ vào không "
 
 #: ../gramps/plugins/webreport/narrativeweb.py:2358
 #, fuzzy
-#| msgid "Include half and/ or step-siblings on the individual pages"
 msgid "Include half and/or step-siblings on the individual pages"
 msgstr "Đựa anh chị em cùng cha  hay cùng mẹ vào trang cá nhân "
 
 #: ../gramps/plugins/webreport/narrativeweb.py:2361
 #, fuzzy
-#| msgid ""
-#| "Whether to include half and/ or step-siblings with the parents and "
-#| "siblings"
 msgid ""
 "Whether to include half and/or step-siblings with the parents and siblings"
 msgstr "Có đưa anh chị em cùng mẹ hoặc cha hay anh chị em kế vào không"
@@ -37440,19 +37424,16 @@ msgstr "Đưa trang nguồn vào"
 
 #: ../gramps/plugins/webreport/narrativeweb.py:2385
 #, fuzzy
-#| msgid "Whether or not to include the places Pages."
 msgid "Whether or not to include the place pages."
 msgstr "Có đưa trang trang địa điểm vào không."
 
 #: ../gramps/plugins/webreport/narrativeweb.py:2388
 #, fuzzy
-#| msgid "Include sources pages"
 msgid "Include source pages"
 msgstr "Đưa trang nguồn vào"
 
 #: ../gramps/plugins/webreport/narrativeweb.py:2390
 #, fuzzy
-#| msgid "Whether or not to include the sources Pages."
 msgid "Whether or not to include the source pages."
 msgstr "Có đưa trang trang nguồn vào không."
 
@@ -37462,7 +37443,6 @@ msgstr "Đưa trang kho vào "
 
 #: ../gramps/plugins/webreport/narrativeweb.py:2395
 #, fuzzy
-#| msgid "Whether or not to include the Repository Pages."
 msgid "Whether or not to include the repository pages."
 msgstr "Có đưa trang trang kho tư liệu vào không."
 
@@ -37557,9 +37537,6 @@ msgstr "Tuỳ chọn bản đồ Google/ gia đình "
 
 #: ../gramps/plugins/webreport/narrativeweb.py:2464
 #, fuzzy
-#| msgid ""
-#| "Select which option that you would like to have for the Google Maps "
-#| "Family Map pages..."
 msgid ""
 "Select which option that you would like to have for the Google Maps family-"
 "map pages..."
@@ -37604,13 +37581,11 @@ msgstr ""
 
 #: ../gramps/plugins/webreport/narrativeweb.py:2493
 #, fuzzy
-#| msgid "Other inclusion (CMS, Web Calendar, Php)"
 msgid "Other inclusion (CMS, web calendar, PHP)"
 msgstr "Đưa vào các site dạng khác (CMS, Web Calendar, Php)"
 
 #: ../gramps/plugins/webreport/narrativeweb.py:2497
 #, fuzzy
-#| msgid "Do we include these pages in a cms web ?"
 msgid "Do we include these pages in a CMS web?"
 msgstr "Bạn có đưa các trang này vào một site dùng CMS?"
 
@@ -37620,7 +37595,6 @@ msgstr "URI"
 
 #: ../gramps/plugins/webreport/narrativeweb.py:2508
 #, fuzzy
-#| msgid "Where do you place your web site ? default = /NAVWEB"
 msgid "Where do you place your website? default = /NAVWEB"
 msgstr "Bạn sẽ đặt web site của bạn ở đâu? Mặc định là = /NAVWEB"
 

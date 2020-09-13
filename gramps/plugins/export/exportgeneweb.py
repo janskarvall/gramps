@@ -472,6 +472,12 @@ class GeneWebWriter:
                 retval = "%s..%s" % (
                     self.format_single_date(date.get_start_date(), cal,mod),
                     self.format_single_date(date.get_stop_date(),cal,mod))
+            elif mod == Date.MOD_FROM:
+                retval = "%s..0" % (
+                    self.format_single_date(date.get_start_date(), cal,mod))
+            elif mod == Date.MOD_TO:
+                retval = "0..%s" % (
+                    self.format_single_date(date.get_stop_date(),cal,mod))
             else:
                 retval = self.format_single_date(date.get_start_date(),cal,mod)
         return retval

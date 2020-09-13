@@ -50,6 +50,12 @@ class DateParserCZ(DateParser):
     Converts a text string into a Date object
     """
 
+    modifier_to_int = {
+        'před'    : Date.MOD_BEFORE,
+        'po'      : Date.MOD_AFTER,
+        'kolem'   : Date.MOD_ABOUT,
+    }
+
     quality_to_int = {
         'přibližně'  : Date.QUAL_ESTIMATED,
         'odhadem'    : Date.QUAL_ESTIMATED,
@@ -68,15 +74,29 @@ class DateParserCZ(DateParser):
         self.dhformat = self.dhformat.replace('/', '') # so counteract that
 
     def init_strings(self):
+        """ Define span and range regular expressions"""
         DateParser.init_strings(self)
         self._text2 = re.compile(r'(\d+)?\.?\s+?%s\.?\s*((\d+)(/\d+)?)?\s*$'
                                  % self._mon_str, re.IGNORECASE)
-        self._span = re.compile(
-            r"(od)\s+(?P<start>.+)\s+(do)\s+(?P<stop>.+)",
-            re.IGNORECASE)
+        _span_1 = ['od']
+        _span_2 = ['do']
+        _range_1 = ['mezi']
+        _range_2 = ['a']
+        self._span = re.compile(r"(%s)?\s*(?P<start>.+)\s*(%s)\s*(?P<stop>.+)" %
+                                ('|'.join(_span_1), '|'.join(_span_2)),
+                                 re.IGNORECASE)
+        self._span_from = re.compile(
+            r"(%s)\s*(?P<start>.+)" %
+            ('|'.join(_span_1)), re.IGNORECASE)
+        self._span_to = re.compile(
+            r"(%s)\s*(?P<stop>.+)" %
+            ('|'.join(_span_2)), re.IGNORECASE)
         self._range = re.compile(
-            r"(mezi)\s+(?P<start>.+)\s+(a)\s+(?P<stop>.+)",
-            re.IGNORECASE)
+            r"(%s)\s+(?P<start>.+)\s+(%s)\s+(?P<stop>.+)" %
+            ('|'.join(_range_1), '|'.join(_range_2)), re.IGNORECASE)
+        self._range = re.compile(
+            r"(%s)\s+(?P<start>.+)\s+(%s)\s+(?P<stop>.+)" %
+            ('|'.join(_range_1), '|'.join(_range_2)), re.IGNORECASE)
 
 #-------------------------------------------------------------------------
 #

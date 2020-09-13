@@ -158,6 +158,10 @@ class DateParserPL(DateParser):
         DateParser.init_strings(self)
         self._span = re.compile(
             r"(od)\s+(?P<start>.+)\s+(do)\s+(?P<stop>.+)", re.IGNORECASE)
+        self._span_from = re.compile(r"(od)\s+(?P<start>.+)",
+                                re.IGNORECASE)
+        self._span_to = re.compile(r"(do)\s+(?P<stop>.+)",
+                                re.IGNORECASE)
         # Also handle a common mistakes
         self._range = re.compile(
             r"((?:po)?mi(?:ę|e)dzy)\s+(?P<start>.+)\s+(a)\s+(?P<stop>.+)",
@@ -289,20 +293,31 @@ class DateDisplayPL(DateDisplay):
         cal = date.get_calendar()
         qual = date.get_quality()
         start = date.get_start_date()
+        stop = date.get_stop_date()
         newyear = date.get_new_year()
 
         qual_str = self._qual_str[qual]
 
         if mod == Date.MOD_TEXTONLY:
             return date.get_text()
+        elif mod == Date.MOD_TO:
+            if stop == Date.EMPTY:
+                return ""
+            else:
+                d = self.display_cal[cal](stop)
+                scal = self.format_extras(cal, newyear)
+                return "%s%s %s%s" % (qual_str, 'do', d, scal)
         elif start == Date.EMPTY:
             return ""
+        elif mod == Date.MOD_FROM:
+            d = self.display_cal[cal](start)
+            scal = self.format_extras(cal, newyear)
+            return "%s%s %s%s" % (qual_str, 'od', d, scal)
         elif mod == Date.MOD_SPAN:
             d1 = self.display_cal[cal](start)
-            d2 = self.display_cal[cal](date.get_stop_date())
+            d2 = self.display_cal[cal](stop)
             scal = self.format_extras(cal, newyear)
-            return "%s%s %s %s %s%s" % (qual_str, 'od', d1, 'do', d2,
-                                        scal)
+            return "%s%s %s %s %s%s" % (qual_str, 'od', d1, 'do', d2, scal)
         elif mod == Date.MOD_RANGE:
             d1 = self.display_cal[cal](start)
             d2 = self.display_cal[cal](date.get_stop_date())

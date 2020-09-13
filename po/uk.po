@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gramps\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-06-05 19:16+0100\n"
+"POT-Creation-Date: 2021-06-29 14:29+0200\n"
 "PO-Revision-Date: 2020-01-21 13:35+0100\n"
 "Last-Translator: Fedir Zinchuk <fedikw@gmail.com>\n"
 "Language-Team: Ukrainian <fedikw@gmail.com>\n"
@@ -66,6 +66,11 @@ msgstr "Генеалогічна система Gramps"
 #: ../data/gramps.desktop.in:4
 msgid "Genealogy System"
 msgstr "Генеалогічна система"
+
+#: ../data/gramps.desktop.in:7
+#, fuzzy
+msgid "gramps"
+msgstr "Gramps"
 
 #: ../data/gramps.desktop.in:12
 msgid "Genealogy;Family History;Research;Family Tree;GEDCOM;"
@@ -2373,20 +2378,35 @@ msgstr "{short_month} {year}"
 #. Translators: If there is no special inflection for
 #. "from <Month>" in your language, DON'T translate this.
 #. Otherwise, translate to "from" in ENGLISH!!! ENGLISH!!!
-#: ../gramps/gen/datehandler/_datedisplay.py:429
+#: ../gramps/gen/datehandler/_datedisplay.py:437
+#: ../gramps/gen/datehandler/_datedisplay.py:475
 msgctxt "from-date"
 msgid ""
 msgstr "from"
 
+#: ../gramps/gen/datehandler/_datedisplay.py:438
+#, python-brace-format
+msgid "{date_quality}from {date_start}{nonstd_calendar_and_ny}"
+msgstr "{date_quality}з {date_start}{nonstd_calendar_and_ny}"
+
+#. Translators: If there is no special inflection for
+#. "from <Month>" in your language, DON'T translate this.
+#. Otherwise, translate to "from" in ENGLISH!!! ENGLISH!!!
 #. Translators: If there is no special inflection for
 #. "to <Month>" in your language, DON'T translate this.
 #. Otherwise, translate to "to" in ENGLISH!!! ENGLISH!!!
-#: ../gramps/gen/datehandler/_datedisplay.py:434
+#: ../gramps/gen/datehandler/_datedisplay.py:456
+#: ../gramps/gen/datehandler/_datedisplay.py:480
 msgctxt "to-date"
 msgid ""
 msgstr "to"
 
-#: ../gramps/gen/datehandler/_datedisplay.py:435
+#: ../gramps/gen/datehandler/_datedisplay.py:457
+#, python-brace-format
+msgid "{date_quality}to {date_stop}{nonstd_calendar_and_ny}"
+msgstr "{date_quality}до {date_stop}{nonstd_calendar_and_ny}"
+
+#: ../gramps/gen/datehandler/_datedisplay.py:481
 #, python-brace-format
 msgid "{date_quality}from {date_start} to {date_stop}{nonstd_calendar_and_ny}"
 msgstr "{date_quality}з {date_start} до {date_stop}{nonstd_calendar_and_ny}"
@@ -2394,7 +2414,7 @@ msgstr "{date_quality}з {date_start} до {date_stop}{nonstd_calendar_and_ny}"
 #. Translators: If there is no special inflection for
 #. "between <Month>" in your language, DON'T translate this.
 #. Otherwise, translate to "between" in ENGLISH!!! ENGLISH!!!
-#: ../gramps/gen/datehandler/_datedisplay.py:454
+#: ../gramps/gen/datehandler/_datedisplay.py:500
 msgctxt "between-date"
 msgid ""
 msgstr "between"
@@ -2402,12 +2422,12 @@ msgstr "between"
 #. Translators: If there is no special inflection for
 #. "and <Month>" in your language, DON'T translate this.
 #. Otherwise, translate to "and" in ENGLISH!!! ENGLISH!!!
-#: ../gramps/gen/datehandler/_datedisplay.py:459
+#: ../gramps/gen/datehandler/_datedisplay.py:505
 msgctxt "and-date"
 msgid ""
 msgstr "and"
 
-#: ../gramps/gen/datehandler/_datedisplay.py:460
+#: ../gramps/gen/datehandler/_datedisplay.py:506
 #, python-brace-format
 msgid ""
 "{date_quality}between {date_start} and {date_stop}{nonstd_calendar_and_ny}"
@@ -2416,7 +2436,7 @@ msgstr "{date_quality}між {date_start} та {date_stop}{nonstd_calendar_and_n
 #. Translators: If there is no special inflection for
 #. "before <Month>" in your language, DON'T translate this.
 #. Otherwise, translate to "before" in ENGLISH!!! ENGLISH!!!
-#: ../gramps/gen/datehandler/_datedisplay.py:493
+#: ../gramps/gen/datehandler/_datedisplay.py:547
 msgctxt "before-date"
 msgid ""
 msgstr "before"
@@ -2424,7 +2444,7 @@ msgstr "before"
 #. Translators: If there is no special inflection for
 #. "after <Month>" in your language, DON'T translate this.
 #. Otherwise, translate to "after" in ENGLISH!!! ENGLISH!!!
-#: ../gramps/gen/datehandler/_datedisplay.py:498
+#: ../gramps/gen/datehandler/_datedisplay.py:552
 msgctxt "after-date"
 msgid ""
 msgstr "after"
@@ -2432,7 +2452,7 @@ msgstr "after"
 #. Translators: If there is no special inflection for
 #. "about <Month>" in your language, DON'T translate this.
 #. Otherwise, translate to "about" in ENGLISH!!! ENGLISH!!!
-#: ../gramps/gen/datehandler/_datedisplay.py:503
+#: ../gramps/gen/datehandler/_datedisplay.py:557
 msgctxt "about-date"
 msgid ""
 msgstr "about"
@@ -2440,7 +2460,7 @@ msgstr "about"
 #. Translators: If there is no special inflection for
 #. "estimated <Month>" in your language, DON'T translate this.
 #. Otherwise, translate to "estimated" in ENGLISH!!! ENGLISH!!!
-#: ../gramps/gen/datehandler/_datedisplay.py:508
+#: ../gramps/gen/datehandler/_datedisplay.py:562
 msgctxt "estimated-date"
 msgid ""
 msgstr "estimated"
@@ -2448,41 +2468,41 @@ msgstr "estimated"
 #. Translators: If there is no special inflection for
 #. "calculated <Month>" in your language, DON'T translate this.
 #. Otherwise, translate to "calculated" in ENGLISH!!! ENGLISH!!!
-#: ../gramps/gen/datehandler/_datedisplay.py:513
+#: ../gramps/gen/datehandler/_datedisplay.py:567
 msgctxt "calculated-date"
 msgid ""
 msgstr "calculated"
 
-#: ../gramps/gen/datehandler/_datedisplay.py:532
+#: ../gramps/gen/datehandler/_datedisplay.py:586
 #, python-brace-format
 msgid "{date_quality}{noncompound_modifier}{date}{nonstd_calendar_and_ny}"
 msgstr "{date_quality}{noncompound_modifier}{date}{nonstd_calendar_and_ny}"
 
 #. Translators: this month is ALREADY inflected: ignore it
-#: ../gramps/gen/datehandler/_datedisplay.py:651
+#: ../gramps/gen/datehandler/_datedisplay.py:705
 #, python-brace-format
 msgid "{long_month} {day:d}, {year}"
 msgstr "{long_month} {day:d}, {year}"
 
 #. Translators: this month is ALREADY inflected: ignore it
-#: ../gramps/gen/datehandler/_datedisplay.py:677
+#: ../gramps/gen/datehandler/_datedisplay.py:731
 #, python-brace-format
 msgid "{short_month} {day:d}, {year}"
 msgstr "{short_month} {day:d}, {year}"
 
 #. Translators: this month is ALREADY inflected: ignore it
-#: ../gramps/gen/datehandler/_datedisplay.py:703
+#: ../gramps/gen/datehandler/_datedisplay.py:757
 #, python-brace-format
 msgid "{day:d} {long_month} {year}"
 msgstr "{day:d} {long_month} {year}"
 
 #. Translators: this month is ALREADY inflected: ignore it
-#: ../gramps/gen/datehandler/_datedisplay.py:729
+#: ../gramps/gen/datehandler/_datedisplay.py:783
 #, python-brace-format
 msgid "{day:d} {short_month} {year}"
 msgstr "{day:d} {short_month} {year}"
 
-#: ../gramps/gen/datehandler/_dateparser.py:421
+#: ../gramps/gen/datehandler/_dateparser.py:430
 msgid "today"
 msgstr "сьогодні"
 
@@ -2669,37 +2689,37 @@ msgctxt "alternative month names for December"
 msgid "|"
 msgstr "груд|груд.|грудень|грудню|грудні|xii"
 
-#: ../gramps/gen/datehandler/_datestrings.py:131 ../gramps/gen/lib/date.py:609
+#: ../gramps/gen/datehandler/_datestrings.py:131 ../gramps/gen/lib/date.py:675
 msgctxt "calendar"
 msgid "Gregorian"
 msgstr "Григоріанський"
 
-#: ../gramps/gen/datehandler/_datestrings.py:132 ../gramps/gen/lib/date.py:610
+#: ../gramps/gen/datehandler/_datestrings.py:132 ../gramps/gen/lib/date.py:676
 msgctxt "calendar"
 msgid "Julian"
 msgstr "Юліанський"
 
-#: ../gramps/gen/datehandler/_datestrings.py:133 ../gramps/gen/lib/date.py:611
+#: ../gramps/gen/datehandler/_datestrings.py:133 ../gramps/gen/lib/date.py:677
 msgctxt "calendar"
 msgid "Hebrew"
 msgstr "Єврейський"
 
-#: ../gramps/gen/datehandler/_datestrings.py:134 ../gramps/gen/lib/date.py:612
+#: ../gramps/gen/datehandler/_datestrings.py:134 ../gramps/gen/lib/date.py:678
 msgctxt "calendar"
 msgid "French Republican"
 msgstr "Французький республіканський"
 
-#: ../gramps/gen/datehandler/_datestrings.py:135 ../gramps/gen/lib/date.py:613
+#: ../gramps/gen/datehandler/_datestrings.py:135 ../gramps/gen/lib/date.py:679
 msgctxt "calendar"
 msgid "Persian"
 msgstr "Перський"
 
-#: ../gramps/gen/datehandler/_datestrings.py:136 ../gramps/gen/lib/date.py:614
+#: ../gramps/gen/datehandler/_datestrings.py:136 ../gramps/gen/lib/date.py:680
 msgctxt "calendar"
 msgid "Islamic"
 msgstr "Ісламський"
 
-#: ../gramps/gen/datehandler/_datestrings.py:137 ../gramps/gen/lib/date.py:615
+#: ../gramps/gen/datehandler/_datestrings.py:137 ../gramps/gen/lib/date.py:681
 msgctxt "calendar"
 msgid "Swedish"
 msgstr "Шведський"
@@ -2975,8 +2995,9 @@ msgstr "есфанд"
 #: ../gramps/gen/datehandler/_datestrings.py:225
 msgctxt "date modifier"
 msgid "before "
-msgstr "до "
+msgstr "раніше "
 
+# Changed above from "до " as "before" clashed with open ended "from",
 #. Translators: if the modifier is after the date
 #. put the space ahead of the word instead of after it
 #: ../gramps/gen/datehandler/_datestrings.py:228
@@ -6645,7 +6666,7 @@ msgid "Notes"
 msgstr "Примітки"
 
 #: ../gramps/gen/lib/address.py:111 ../gramps/gen/lib/citation.py:106
-#: ../gramps/gen/lib/date.py:706 ../gramps/gen/lib/event.py:146
+#: ../gramps/gen/lib/date.py:772 ../gramps/gen/lib/event.py:146
 #: ../gramps/gen/lib/ldsord.py:182 ../gramps/gen/lib/media.py:163
 #: ../gramps/gen/lib/name.py:157 ../gramps/gen/lib/placename.py:101
 #: ../gramps/gen/lib/placeref.py:94
@@ -7161,15 +7182,15 @@ msgstr "Востаннє змінено"
 msgid "Tags"
 msgstr "Мітки"
 
-#: ../gramps/gen/lib/date.py:290 ../gramps/gen/lib/date.py:325
-#: ../gramps/gen/lib/date.py:331 ../gramps/gen/lib/date.py:333
-#: ../gramps/gen/lib/date.py:350
+#: ../gramps/gen/lib/date.py:354 ../gramps/gen/lib/date.py:389
+#: ../gramps/gen/lib/date.py:395 ../gramps/gen/lib/date.py:397
+#: ../gramps/gen/lib/date.py:414
 msgctxt "age"
 msgid "about"
 msgstr "близько"
 
 #. Translators: leave all/any {...} untranslated
-#: ../gramps/gen/lib/date.py:427 ../gramps/gen/lib/date.py:434
+#: ../gramps/gen/lib/date.py:491 ../gramps/gen/lib/date.py:498
 #, python-brace-format
 msgid "{number_of} year"
 msgid_plural "{number_of} years"
@@ -7178,7 +7199,7 @@ msgstr[1] "{number_of} роки"
 msgstr[2] "{number_of} років"
 
 #. Translators: leave all/any {...} untranslated
-#: ../gramps/gen/lib/date.py:443
+#: ../gramps/gen/lib/date.py:507
 #, python-brace-format
 msgid "{number_of} month"
 msgid_plural "{number_of} months"
@@ -7187,7 +7208,7 @@ msgstr[1] "{number_of} місяці"
 msgstr[2] "{number_of} місяців"
 
 #. Translators: leave all/any {...} untranslated
-#: ../gramps/gen/lib/date.py:454
+#: ../gramps/gen/lib/date.py:518
 #, python-brace-format
 msgid "{number_of} day"
 msgid_plural "{number_of} days"
@@ -7195,27 +7216,27 @@ msgstr[0] "{number_of} день"
 msgstr[1] "{number_of} дні"
 msgstr[2] "{number_of} днів"
 
-#: ../gramps/gen/lib/date.py:710
+#: ../gramps/gen/lib/date.py:776
 #: ../gramps/plugins/drawreport/drawplugins.gpr.py:75
 #: ../gramps/plugins/gramplet/gramplet.gpr.py:74
 #: ../gramps/plugins/gramplet/gramplet.gpr.py:80
 msgid "Calendar"
 msgstr "Календар"
 
-#: ../gramps/gen/lib/date.py:712
+#: ../gramps/gen/lib/date.py:778
 msgid "Modifier"
 msgstr "Модифікатор"
 
-#: ../gramps/gen/lib/date.py:714
+#: ../gramps/gen/lib/date.py:780
 msgid "Quality"
 msgstr "Якість"
 
-#: ../gramps/gen/lib/date.py:716 ../gramps/gui/editors/filtereditor.py:836
+#: ../gramps/gen/lib/date.py:782 ../gramps/gui/editors/filtereditor.py:836
 #: ../gramps/gui/glade/rule.glade:967
 msgid "Values"
 msgstr "Значення"
 
-#: ../gramps/gen/lib/date.py:719 ../gramps/gen/lib/placename.py:99
+#: ../gramps/gen/lib/date.py:785 ../gramps/gen/lib/placename.py:99
 #: ../gramps/gen/lib/styledtext.py:322
 #: ../gramps/gen/plug/report/_constants.py:54 ../gramps/gui/clipboard.py:613
 #: ../gramps/gui/clipboard.py:621 ../gramps/gui/configure.py:1396
@@ -7227,56 +7248,65 @@ msgstr "Значення"
 msgid "Text"
 msgstr "Текст"
 
-#: ../gramps/gen/lib/date.py:721
+#: ../gramps/gen/lib/date.py:787
 msgid "Sort value"
 msgstr "Сортувати значення"
 
-#: ../gramps/gen/lib/date.py:723
+#: ../gramps/gen/lib/date.py:789
 msgid "New year begins"
 msgstr "Початок нового року"
 
-#: ../gramps/gen/lib/date.py:1856
+#: ../gramps/gen/lib/date.py:2015
 msgctxt "date-quality"
 msgid "none"
 msgstr "нічого"
 
-#: ../gramps/gen/lib/date.py:1857
+#: ../gramps/gen/lib/date.py:2016
 msgid "calculated"
 msgstr "обраховано"
 
-#: ../gramps/gen/lib/date.py:1857
+#: ../gramps/gen/lib/date.py:2016
 msgid "estimated"
 msgstr "оцінка"
 
-#: ../gramps/gen/lib/date.py:1871
+#: ../gramps/gen/lib/date.py:2030
 msgctxt "date-modifier"
 msgid "none"
 msgstr "нічого"
 
-#: ../gramps/gen/lib/date.py:1872 ../gramps/plugins/webreport/basepage.py:3248
+#: ../gramps/gen/lib/date.py:2031 ../gramps/plugins/webreport/basepage.py:3248
 msgid "about"
 msgstr "близько"
 
-#: ../gramps/gen/lib/date.py:1872 ../gramps/plugins/lib/libprogen.py:1841
+#: ../gramps/gen/lib/date.py:2031 ../gramps/plugins/lib/libprogen.py:1841
 #: ../gramps/plugins/webreport/basepage.py:3244
 msgid "after"
 msgstr "після"
 
-#: ../gramps/gen/lib/date.py:1872 ../gramps/plugins/webreport/basepage.py:3246
+#: ../gramps/gen/lib/date.py:2031 ../gramps/plugins/webreport/basepage.py:3246
 msgid "before"
 msgstr "до"
 
-#: ../gramps/gen/lib/date.py:1873
+#: ../gramps/gen/lib/date.py:2032
+msgid "from"
+msgstr ""
+
+#: ../gramps/gen/lib/date.py:2032
 msgid "range"
 msgstr "діапазон"
 
-#: ../gramps/gen/lib/date.py:1873
+#: ../gramps/gen/lib/date.py:2032
 msgid "span"
 msgstr "інтервал"
 
-#: ../gramps/gen/lib/date.py:1873
+#: ../gramps/gen/lib/date.py:2032
 msgid "textonly"
 msgstr "лише текст"
+
+#: ../gramps/gen/lib/date.py:2032
+#, fuzzy
+msgid "to"
+msgstr "Зупинити"
 
 #: ../gramps/gen/lib/event.py:136 ../gramps/gen/lib/eventref.py:109
 #: ../gramps/gui/clipboard.py:335 ../gramps/gui/configure.py:661
@@ -9323,7 +9353,7 @@ msgstr "Файл %s вже відкрито. Спершу закрийте йо�
 #: ../gramps/plugins/export/exportcsv.py:261
 #: ../gramps/plugins/export/exportcsv.py:265
 #: ../gramps/plugins/export/exportftree.py:136
-#: ../gramps/plugins/export/exportgedcom.py:1597
+#: ../gramps/plugins/export/exportgedcom.py:1608
 #: ../gramps/plugins/export/exportgeneweb.py:109
 #: ../gramps/plugins/export/exportgeneweb.py:113
 #: ../gramps/plugins/export/exportvcalendar.py:123
@@ -11152,11 +11182,6 @@ msgstr ""
 
 #: ../gramps/grampsapp.py:172
 #, fuzzy, python-format
-#| msgid ""
-#| "Your Python version does not meet the requirements. At least python "
-#| "%(v1)d.%(v2)d.%(v3)d is needed to start Gramps.\n"
-#| "\n"
-#| "Gramps will terminate now."
 msgid ""
 "Your Python version does not meet the requirements. At least Python %(v1)d."
 "%(v2)d.%(v3)d is needed to start Gramps.\n"
@@ -11175,17 +11200,11 @@ msgstr "Помилка конфігурації:"
 
 #: ../gramps/grampsapp.py:432
 #, fuzzy
-#| msgid "Error reading configuration"
 msgid "Could not read configuration"
 msgstr "Помилка читання конфігурації"
 
 #: ../gramps/grampsapp.py:436
 #, fuzzy, python-format
-#| msgid ""
-#| "A definition for the MIME-type %s could not be found \n"
-#| "\n"
-#| " Possibly the installation of Gramps was incomplete. Make sure the MIME-"
-#| "types of Gramps are properly installed."
 msgid ""
 "A definition for the media type %s could not be found \n"
 "\n"
@@ -13752,7 +13771,7 @@ msgstr "Редагувати цитату (%s)"
 msgid "Delete Citation (%s)"
 msgstr "Видалити цитату (%s)"
 
-#: ../gramps/gui/editors/editdate.py:76 ../gramps/gui/editors/editdate.py:85
+#: ../gramps/gui/editors/editdate.py:76 ../gramps/gui/editors/editdate.py:87
 msgid "Regular"
 msgstr "Звичайне"
 
@@ -13773,31 +13792,40 @@ msgid "Range"
 msgstr "Діапазон"
 
 #: ../gramps/gui/editors/editdate.py:81
+msgid "From"
+msgstr ""
+
+#: ../gramps/gui/editors/editdate.py:82
+#, fuzzy
+msgid "To"
+msgstr "Вгорі"
+
+#: ../gramps/gui/editors/editdate.py:83
 msgid "Span"
 msgstr "Інтервал"
 
-#: ../gramps/gui/editors/editdate.py:82
+#: ../gramps/gui/editors/editdate.py:84
 msgid "Text only"
 msgstr "Лише текст"
 
-#: ../gramps/gui/editors/editdate.py:86
+#: ../gramps/gui/editors/editdate.py:88
 msgid "Estimated"
 msgstr "Оцінка"
 
-#: ../gramps/gui/editors/editdate.py:87
+#: ../gramps/gui/editors/editdate.py:89
 msgid "Calculated"
 msgstr "Підраховано"
 
-#: ../gramps/gui/editors/editdate.py:99
+#: ../gramps/gui/editors/editdate.py:101
 msgctxt "manual"
 msgid "Editing_dates"
 msgstr ""
 
-#: ../gramps/gui/editors/editdate.py:126 ../gramps/gui/editors/editdate.py:279
+#: ../gramps/gui/editors/editdate.py:128 ../gramps/gui/editors/editdate.py:281
 msgid "Date selection"
 msgstr "Вибір дати"
 
-#: ../gramps/gui/editors/editdate.py:269
+#: ../gramps/gui/editors/editdate.py:271
 #, python-brace-format
 msgid "Correct the date or switch from `{cur_mode}' to `{text_mode}'"
 msgstr "Поправте дату або перемкніть з `{cur_mode}' на `{text_mode}'"
@@ -15785,10 +15813,6 @@ msgstr "Достовірність:"
 
 #: ../gramps/gui/glade/editcitation.glade:181
 #, fuzzy
-#| msgid ""
-#| "The date of the entry in the source you are referencing, e.g. the date a "
-#| "house was visited during a census, or the date an entry was made in a "
-#| "birth log/registry. "
 msgid ""
 "The date of the entry in the source you are referencing, e.g. the date a "
 "house was visited during a census, or the date an entry was made in a birth "
@@ -16161,12 +16185,6 @@ msgstr "Попередній перегляд зображення"
 
 #: ../gramps/gui/glade/editmedia.glade:205
 #, fuzzy
-#| msgid ""
-#| "Path of the media object on your computer.\n"
-#| "Gramps does not store the media internally, it only stores the path! Set "
-#| "the 'Relative Path' in the Preferences to avoid retyping the common base "
-#| "directory where all your media is stored. The 'Media Manager' tool can "
-#| "help managing paths of a collection of media objects. "
 msgid ""
 "Path of the media object on your computer.\n"
 "Gramps does not store the media internally, it only stores the path! Set the "
@@ -16347,7 +16365,6 @@ msgstr "Описове ім'я, що дається замість, або в д
 
 #: ../gramps/gui/glade/editname.glade:333
 #, fuzzy
-#| msgid "Given Name(s) "
 msgid "Given Name(s)"
 msgstr "Ім'я "
 
@@ -16633,8 +16650,6 @@ msgstr ""
 #: ../gramps/gui/glade/editplace.glade:238
 #: ../gramps/gui/glade/editplaceref.glade:376
 #, fuzzy
-#| msgid ""
-#| "Field used to paste info from a web page like google, openstreetmap, ... "
 msgid "Field used to paste info from a web page like Google, OpenStreetMap..."
 msgstr ""
 "Поле яке використовується для додавання інформації з веб ресурсів як google, "
@@ -20845,9 +20860,6 @@ msgstr ""
 #: ../gramps/plugins/drawreport/ancestortree.py:966
 #: ../gramps/plugins/drawreport/descendtree.py:1699
 #, fuzzy
-#| msgid ""
-#| "i.e.\n"
-#| "United States of America/U.S.A"
 msgid ""
 "i.e.\n"
 "United States of America/U.S.A."
@@ -22202,11 +22214,11 @@ msgstr "EMAIL"
 msgid "WWW"
 msgstr "WWW"
 
-#: ../gramps/plugins/export/exportgedcom.py:1426
+#: ../gramps/plugins/export/exportgedcom.py:1437
 msgid "Writing media"
 msgstr "Запис медіа"
 
-#: ../gramps/plugins/export/exportgedcom.py:1600
+#: ../gramps/plugins/export/exportgedcom.py:1611
 msgid "GEDCOM Export failed"
 msgstr "Експорт до GEDCOM провалився"
 
@@ -25026,7 +25038,6 @@ msgstr "ANSEL"
 
 #: ../gramps/plugins/importer/importgedcom.glade:18
 #, fuzzy
-#| msgid "ANSI (iso-8859-1)"
 msgid "ANSI (ISO-8859-1)"
 msgstr "ANSI (iso-8859-1)"
 
@@ -25166,7 +25177,7 @@ msgstr "Відокремлено"
 msgid "GeneWeb import"
 msgstr "Імпорт GeneWeb"
 
-#: ../gramps/plugins/importer/importgeneweb.py:912
+#: ../gramps/plugins/importer/importgeneweb.py:925
 #, python-brace-format
 msgid "Invalid date {date} in {gw_snippet}, preserving date as text."
 msgstr "Хибна дата {date} в {gw_snippet}, збереження дати у вигляді тексту."
@@ -25731,14 +25742,6 @@ msgstr "Кількість імпортованих об'єктів\n"
 
 #: ../gramps/plugins/importer/importxml.py:302
 #, fuzzy, python-format
-#| msgid ""
-#| "\n"
-#| " The imported file was not self-contained.\n"
-#| "To correct for that, %(new)d objects were created and\n"
-#| "their typifying attribute was set to 'Unknown'.\n"
-#| "The breakdown per category is depicted by the\n"
-#| "number in parentheses. Where possible these\n"
-#| "'Unkown' objects are referenced by note %(unknown)s.\n"
 msgid ""
 "\n"
 "The imported file was not self-contained.\n"
@@ -25772,10 +25775,6 @@ msgstr ""
 
 #: ../gramps/plugins/importer/importxml.py:321
 #, fuzzy
-#| msgid ""
-#| "\n"
-#| "\n"
-#| "Objects that are candidates to be merged:\n"
 msgid ""
 "\n"
 "Objects that are candidates to be merged:\n"
@@ -25898,7 +25897,7 @@ msgid "Old xml file"
 msgstr "Старий xml файл"
 
 #: ../gramps/plugins/importer/importxml.py:1212
-#: ../gramps/plugins/importer/importxml.py:2710
+#: ../gramps/plugins/importer/importxml.py:2714
 #, python-format
 msgid "Witness name: %s"
 msgstr "Ім'я свідка: %s"
@@ -25934,17 +25933,17 @@ msgstr "Будь яке посилання на примітку повинно 
 
 #. Translators: leave the {date} and {xml} untranslated in the format string,
 #. but you may re-order them if needed.
-#: ../gramps/plugins/importer/importxml.py:2528
+#: ../gramps/plugins/importer/importxml.py:2532
 #, python-brace-format
 msgid "Invalid date {date} in XML {xml}, preserving XML as text"
 msgstr "Хибна дата {date} в XML {xml}, збереження XML у вигляді тексту"
 
-#: ../gramps/plugins/importer/importxml.py:2580
+#: ../gramps/plugins/importer/importxml.py:2584
 #, python-format
 msgid "Witness comment: %s"
 msgstr "Коментар про свідка: %s"
 
-#: ../gramps/plugins/importer/importxml.py:3233
+#: ../gramps/plugins/importer/importxml.py:3237
 #, fuzzy, python-format
 msgctxt "father"
 msgid ""
@@ -25954,7 +25953,7 @@ msgstr ""
 "Помилка: сім’я '%(family)s', батько '%(father)s' не має зворотного посилання "
 "на сім’ю. Посилання додано."
 
-#: ../gramps/plugins/importer/importxml.py:3249
+#: ../gramps/plugins/importer/importxml.py:3253
 #, fuzzy, python-format
 msgctxt "mother"
 msgid ""
@@ -25964,7 +25963,7 @@ msgstr ""
 "Помилка: сім’я '%(family)s', мама '%(mother)s' не має зворотного посилання "
 "на сім’ю. Посилання додано."
 
-#: ../gramps/plugins/importer/importxml.py:3271
+#: ../gramps/plugins/importer/importxml.py:3275
 #, fuzzy, python-format
 msgctxt "child"
 msgid ""
@@ -33510,8 +33509,6 @@ msgstr[2] "{quantity} посилань на медіа, яких не існує
 
 #: ../gramps/plugins/tool/check.py:2619
 #, fuzzy, python-brace-format
-#| msgid "Reference to {quantity} missing media object was kept\n"
-#| msgid_plural "References to {quantity} media objects were kept\n"
 msgid "Reference to {quantity} missing media object was kept\n"
 msgid_plural "References to {quantity} missing media objects were kept\n"
 msgstr[0] "{quantity} посилання на відсутнє медіа збережено\n"
@@ -37038,13 +37035,11 @@ msgstr "Звіт-Розповідь для вебсайту"
 
 #: ../gramps/plugins/webreport/narrativeweb.py:1941
 #, fuzzy
-#| msgid "Store web pages in .tar.gz archive"
 msgid "Store website in .tar.gz archive"
 msgstr "Зберегти веб сторінки в .tar.gz архіві"
 
 #: ../gramps/plugins/webreport/narrativeweb.py:1943
 #, fuzzy
-#| msgid "Whether to store the web pages in an archive file"
 msgid "Whether to store the website in an archive file"
 msgstr "Чи зберегти сторінку в архіві"
 
@@ -37059,19 +37054,16 @@ msgstr "Моє Сімейне Дерево"
 
 #: ../gramps/plugins/webreport/narrativeweb.py:1960
 #, fuzzy
-#| msgid "Web site title"
 msgid "Website title"
 msgstr "Назва сайту"
 
 #: ../gramps/plugins/webreport/narrativeweb.py:1961
 #, fuzzy
-#| msgid "The title of the web site"
 msgid "The title of the website"
 msgstr "Назва веб сайту"
 
 #: ../gramps/plugins/webreport/narrativeweb.py:1966
 #, fuzzy
-#| msgid "Select filter to restrict people that appear on web site"
 msgid "Select filter to restrict people that appear on the website"
 msgstr "Оберіть фільтр для відбору осіб для сайту"
 
@@ -37179,7 +37171,6 @@ msgstr "Додати попередній/наступний в панелі н�
 
 #: ../gramps/plugins/webreport/narrativeweb.py:2065
 #, fuzzy
-#| msgid "This is a secure site (https)"
 msgid "This is a secure site (HTTPS)"
 msgstr "Це безпечний сайт (https)"
 
@@ -37233,7 +37224,6 @@ msgstr "Сортувати дітей за народженням"
 
 #: ../gramps/plugins/webreport/narrativeweb.py:2130
 #, fuzzy
-#| msgid "Whether to display children in birth order or in entry order?"
 msgid "Whether to display children in birth order or in entry order."
 msgstr ""
 "Чи сортувати дітей за датою народження, чи залишити сортування як в записах?"
@@ -37244,7 +37234,6 @@ msgstr "Чи відображаємо координати у списку мі�
 
 #: ../gramps/plugins/webreport/narrativeweb.py:2136
 #, fuzzy
-#| msgid "Whether to display latitude/longitude in the places list?"
 msgid "Whether to display latitude/longitude in the places list."
 msgstr "Чи відображати широту / довготу в списку місць?"
 
@@ -37529,15 +37518,11 @@ msgstr "Чи показувати колонку з інформацією пр�
 
 #: ../gramps/plugins/webreport/narrativeweb.py:2358
 #, fuzzy
-#| msgid "Include half and/ or step-siblings on the individual pages"
 msgid "Include half and/or step-siblings on the individual pages"
 msgstr "Включати напів- та/або зведених братів та сестер на сторінках особи"
 
 #: ../gramps/plugins/webreport/narrativeweb.py:2361
 #, fuzzy
-#| msgid ""
-#| "Whether to include half and/ or step-siblings with the parents and "
-#| "siblings"
 msgid ""
 "Whether to include half and/or step-siblings with the parents and siblings"
 msgstr "Чи включати напів- та/або зведених братів та сестер на сторінках особи"
@@ -37560,25 +37545,21 @@ msgstr "Чи додавати повний список подій та стор
 
 #: ../gramps/plugins/webreport/narrativeweb.py:2383
 #, fuzzy
-#| msgid "Include places pages"
 msgid "Include place pages"
 msgstr "Включати сторінки місць"
 
 #: ../gramps/plugins/webreport/narrativeweb.py:2385
 #, fuzzy
-#| msgid "Whether or not to include the places Pages."
 msgid "Whether or not to include the place pages."
 msgstr "Чи потрібно додавати місця сторінок."
 
 #: ../gramps/plugins/webreport/narrativeweb.py:2388
 #, fuzzy
-#| msgid "Include sources pages"
 msgid "Include source pages"
 msgstr "Включити сторінки джерел"
 
 #: ../gramps/plugins/webreport/narrativeweb.py:2390
 #, fuzzy
-#| msgid "Whether or not to include the sources Pages."
 msgid "Whether or not to include the source pages."
 msgstr "Чи потрібно додавати джерела сторінок."
 
@@ -37588,7 +37569,6 @@ msgstr "Включити сторінку сховищ"
 
 #: ../gramps/plugins/webreport/narrativeweb.py:2395
 #, fuzzy
-#| msgid "Whether or not to include the Repository Pages."
 msgid "Whether or not to include the repository pages."
 msgstr "Чи потрібно додавати сторінки сховищ."
 
@@ -37684,9 +37664,6 @@ msgstr "Google/ Параметри Сімейної мапи"
 
 #: ../gramps/plugins/webreport/narrativeweb.py:2464
 #, fuzzy
-#| msgid ""
-#| "Select which option that you would like to have for the Google Maps "
-#| "Family Map pages..."
 msgid ""
 "Select which option that you would like to have for the Google Maps family-"
 "map pages..."
@@ -37727,13 +37704,11 @@ msgstr "Виберіть яку опцію Ви хотіли б мати для 
 
 #: ../gramps/plugins/webreport/narrativeweb.py:2493
 #, fuzzy
-#| msgid "Other inclusion (CMS, Web Calendar, Php)"
 msgid "Other inclusion (CMS, web calendar, PHP)"
 msgstr "Інші включення (CMS, Web Calendar, Php)"
 
 #: ../gramps/plugins/webreport/narrativeweb.py:2497
 #, fuzzy
-#| msgid "Do we include these pages in a cms web ?"
 msgid "Do we include these pages in a CMS web?"
 msgstr "Чи включаємо ми ці сторінки до cms сайту?"
 

@@ -2475,8 +2475,12 @@ class GrampsParser(UpdateCallback):
                 mod = Date.MOD_ABOUT
             elif val == "after":
                 mod = Date.MOD_AFTER
-            else:
+            elif val == "before":
                 mod = Date.MOD_BEFORE
+            elif val == "from":
+                mod = Date.MOD_FROM
+            else:
+                mod = Date.MOD_TO
         else:
             mod = Date.MOD_NONE
 

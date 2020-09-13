@@ -78,6 +78,8 @@ MOD_TEXT = (
     (Date.MOD_AFTER      , _('After')),
     (Date.MOD_ABOUT      , _('About')),
     (Date.MOD_RANGE      , _('Range')),
+    (Date.MOD_FROM       , _('From')),
+    (Date.MOD_TO         , _('To')),
     (Date.MOD_SPAN       , _('Span')),
     (Date.MOD_TEXTONLY   , _('Text only')) )
 

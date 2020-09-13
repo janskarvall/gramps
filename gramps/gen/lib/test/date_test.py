@@ -38,7 +38,7 @@ from ...datehandler import get_date_formats, set_format
 from ...datehandler import parser as _dp
 from ...datehandler import displayer as _dd
 from ...datehandler._datedisplay import DateDisplayEn
-from ...lib.date import Date, DateError, Today, calendar_has_fixed_newyear
+from ...lib.date import Date, Span, DateError, Today, calendar_has_fixed_newyear
 
 date_tests = {}
 
@@ -47,7 +47,8 @@ testset = "basic test"
 dates = []
 calendar = Date.CAL_GREGORIAN
 for quality in (Date.QUAL_NONE, Date.QUAL_ESTIMATED, Date.QUAL_CALCULATED):
-    for modifier in (Date.MOD_NONE, Date.MOD_BEFORE, Date.MOD_AFTER, Date.MOD_ABOUT):
+    for modifier in (Date.MOD_NONE, Date.MOD_BEFORE, Date.MOD_AFTER, Date.MOD_ABOUT,
+                     Date.MOD_FROM, Date.MOD_TO):
         for month in range(1,13):
             d = Date()
             d.set(quality,modifier,calendar,(4,month,1789,False),"Text comment")
@@ -69,7 +70,8 @@ testset = "partial date"
 dates = []
 calendar = Date.CAL_GREGORIAN
 for quality in (Date.QUAL_NONE, Date.QUAL_ESTIMATED, Date.QUAL_CALCULATED):
-    for modifier in (Date.MOD_NONE, Date.MOD_BEFORE, Date.MOD_AFTER, Date.MOD_ABOUT):
+    for modifier in (Date.MOD_NONE, Date.MOD_BEFORE, Date.MOD_AFTER, Date.MOD_ABOUT,
+                     Date.MOD_FROM, Date.MOD_TO):
         d = Date()
         d.set(quality,modifier,calendar,(0,11,1789,False),"Text comment")
         dates.append( d)
@@ -101,6 +103,7 @@ for quality in (Date.QUAL_NONE, Date.QUAL_ESTIMATED, Date.QUAL_CALCULATED):
         d = Date()
         d.set(quality,modifier,calendar,(0,0,1789,False,0,0,1876,False),"Text comment")
         dates.append( d)
+
 date_tests[testset] = dates
 
 # slash-dates
@@ -108,7 +111,8 @@ testset = "slash-dates"
 dates = []
 calendar = Date.CAL_GREGORIAN
 for quality in (Date.QUAL_NONE, Date.QUAL_ESTIMATED, Date.QUAL_CALCULATED):
-    for modifier in (Date.MOD_NONE, Date.MOD_BEFORE, Date.MOD_AFTER, Date.MOD_ABOUT):
+    for modifier in (Date.MOD_NONE, Date.MOD_BEFORE, Date.MOD_AFTER, Date.MOD_ABOUT,
+                     Date.MOD_FROM, Date.MOD_TO):
         # normal date
         d = Date()
         d.set(quality,modifier,calendar,(4,11,1789,True),"Text comment")
@@ -123,6 +127,7 @@ for quality in (Date.QUAL_NONE, Date.QUAL_ESTIMATED, Date.QUAL_CALCULATED):
         d = Date()
         d.set(quality,modifier,calendar,(4,11,1789,True,5,10,1876,True),"Text comment")
         dates.append( d)
+
 date_tests[testset] = dates
 
 # BCE
@@ -130,7 +135,8 @@ testset = "B. C. E."
 dates = []
 calendar = Date.CAL_GREGORIAN
 for quality in (Date.QUAL_NONE, Date.QUAL_ESTIMATED, Date.QUAL_CALCULATED):
-    for modifier in (Date.MOD_NONE, Date.MOD_BEFORE, Date.MOD_AFTER, Date.MOD_ABOUT):
+    for modifier in (Date.MOD_NONE, Date.MOD_BEFORE, Date.MOD_AFTER, Date.MOD_ABOUT,
+                     Date.MOD_FROM, Date.MOD_TO):
         # normal date
         d = Date()
         d.set(quality,modifier,calendar,(4,11,-90,False),"Text comment")
@@ -139,7 +145,7 @@ for quality in (Date.QUAL_NONE, Date.QUAL_ESTIMATED, Date.QUAL_CALCULATED):
         d = Date()
         d.set(quality,modifier,calendar,(5,10,-90,False,4,11,-90,False),"Text comment")
         dates.append( d)
-        d = Date()
+
 date_tests[testset] = dates
 
 # test for all other different calendars
@@ -152,7 +158,8 @@ for calendar in (Date.CAL_JULIAN,
                  Date.CAL_PERSIAN,
                  ):
     for quality in (Date.QUAL_NONE, Date.QUAL_ESTIMATED, Date.QUAL_CALCULATED):
-        for modifier in (Date.MOD_NONE, Date.MOD_BEFORE, Date.MOD_AFTER, Date.MOD_ABOUT):
+        for modifier in (Date.MOD_NONE, Date.MOD_BEFORE, Date.MOD_AFTER, Date.MOD_ABOUT,
+                         Date.MOD_FROM, Date.MOD_TO):
             d = Date()
             d.set(quality,modifier,calendar,(4,11,1789,False),"Text comment")
             dates.append( d)
@@ -172,7 +179,8 @@ class Context:
 
 with Context(Date.CAL_SWEDISH) as calendar:
     for quality in (Date.QUAL_NONE, Date.QUAL_ESTIMATED, Date.QUAL_CALCULATED):
-        for modifier in (Date.MOD_NONE, Date.MOD_BEFORE, Date.MOD_AFTER, Date.MOD_ABOUT):
+        for modifier in (Date.MOD_NONE, Date.MOD_BEFORE, Date.MOD_AFTER, Date.MOD_ABOUT,
+                         Date.MOD_FROM, Date.MOD_TO):
             d = Date()
             d.set(quality,modifier,calendar,(4,11,1700,False),"Text comment")
             dates.append( d)
@@ -303,6 +311,14 @@ class MatchDateTest(BaseDateTest):
              ("from 1950 to 1955", "jan 1, 1955", True),
              ("from 1950 to 1955", "dec 31, 1949", False),
              ("from 1950 to 1955", "jan 1, 1956", False),
+             ("from 1950", "1940", False),
+             ("from 1950", "2000", True),
+             ("from 1950", "jan 1, 1950", True),
+             ("from 1950", "dec 31, 1949", False),
+             ("to 1950", "1940", True),
+             ("to 1950", "2000", False),
+             ("to 1950", "dec 31, 1950", True),
+             ("to 1950", "jan 1, 1951", False),
              ("after jul 4, 1980", "jul 4, 1980", False),
              ("after jul 4, 1980", "before jul 4, 1980", False),
              ("after jul 4, 1980", "about jul 4, 1980", True),
@@ -431,6 +447,415 @@ class ArithmeticDateTest(BaseDateTest):
             val2 = eval(exp2)
             self.assertEqual(val1, val2,
                         "'%s' should be '%s' but was '%s'" % (exp1, val2, val1))
+
+#-------------------------------------------------------------------------
+#
+# DateComparisonTest
+#
+#-------------------------------------------------------------------------
+@unittest.skipUnless(ENGLISH_DATE_HANDLER,
+        "This test of Date() matching logic can only run in English locale.")
+class DateComparisonTest(BaseDateTest):
+    """
+    Date comparison tests.
+    """
+    tests = [("1960", "=" ,"1960", True),
+             ("1960", "=" ,"1961", False),
+             ("1960", "!=" ,"1960", False),
+             ("1960", "!=" ,"1961", True),
+             ("1960", "==" ,"1960", True),
+             ("1960", "==" ,"1961", False),
+             ("1960", "<" ,"1959", False),
+             ("1960", "<" ,"1960", True),
+             ("1960", "<" ,"1961", True),
+             ("1960", ">" ,"1959", True),
+             ("1960", ">" ,"1960", True),
+             ("1960", ">" ,"1961", False),
+             ("1960", "<<" ,"1959", False),
+             ("1960", "<<" ,"1960", False),
+             ("1960", "<<" ,"1961", True),
+             ("1960", ">>" ,"1959", True),
+             ("1960", ">>" ,"1960", False),
+             ("1960", ">>" ,"1961", False),
+             ("1960", "<=" ,"1959", False),
+             ("1960", "<=" ,"1960", True),
+             ("1960", "<=" ,"1961", True),
+             ("1960", ">=" ,"1959", True),
+             ("1960", ">=" ,"1960", True),
+             ("1960", ">=" ,"1961", False),
+             ("1960-01-01", "=" ,"1960-01-01", True),
+             ("1960-01-01", "=" ,"1960-01-02", False),
+             ("1960-01-01", "!=" ,"1960-01-01", False),
+             ("1960-01-01", "!=" ,"1960-01-02", True),
+             ("1960-01-01", "==" ,"1960-01-01", True),
+             ("1960-01-01", "==" ,"1960-01-02", False),
+             ("1960-01-01", "<" ,"1959-12-31", False),
+             ("1960-01-01", "<" ,"1960-01-01", False),
+             ("1960-01-01", "<" ,"1960-01-02", True),
+             ("1960-01-01", ">" ,"1959-12-31", True),
+             ("1960-01-01", ">" ,"1960-01-01", False),
+             ("1960-01-01", ">" ,"1960-01-02", False),
+             ("1960-01-01", "<<" ,"1959-12-31", False),
+             ("1960-01-01", "<<" ,"1960-01-01", False),
+             ("1960-01-01", "<<" ,"1960-01-02", True),
+             ("1960-01-01", ">>" ,"1959-12-31", True),
+             ("1960-01-01", ">>" ,"1960-01-01", False),
+             ("1960-01-01", ">>" ,"1960-01-02", False),
+             ("before 1960-01-01", "=", "1959-12-31", True),
+             ("before 1960-01-01", "=", "1960-01-01", False),
+             ("about 1960-01-01", "=", "1959-12-31", True),
+             ("about 1960-01-01", "=", "1960-01-01", True),
+             ("about 1960-01-01", "=", "1960-01-02", True),
+             ("after 1960-01-01", "=", "1960-01-01", False),
+             ("after 1960-01-01", "=", "1960-01-02", True),
+             ("between 1960-01-01 and 1960-01-03", "=", "1959-12-31", False),
+             ("between 1960-01-01 and 1960-01-03", "=", "1960-01-01", True),
+             ("between 1960-01-01 and 1960-01-03", "=", "1960-01-02", True),
+             ("between 1960-01-01 and 1960-01-03", "=", "1960-01-02", True),
+             ("between 1960-01-01 and 1960-01-03", "=", "1960-01-04", False),
+             ("before 1960-01-01", "==", "1959-12-31", False), # !
+             ("before 1960-01-01", "==", "1960-01-01", True), # !
+             ("before 1960-01-01", "==", "1960-01-02", False), # !
+             ("about 1960-01-01", "==", "1959-12-31", False), # !
+             ("about 1960-01-01", "==", "1960-01-01", True),
+             ("about 1960-01-01", "==", "1960-01-02", False), # !
+             ("after 1960-01-01", "==", "1960-01-01", True), # !
+             ("after 1960-01-01", "==", "1960-01-02", False), # !
+             ("between 1960-01-01 and 1960-01-03", "==", "1959-12-31", False),
+             ("between 1960-01-01 and 1960-01-03", "==", "1960-01-01", True),
+             ("between 1960-01-01 and 1960-01-03", "==", "1960-01-02", False),
+             ("between 1960-01-01 and 1960-01-03", "==", "1960-01-02", False),
+             ("between 1960-01-01 and 1960-01-03", "==", "1960-01-04", False),
+             ("4713-01-01 B.C. (Julian)", "=" ,"to 1960", False), # Corner case, logically True.
+             ("4713-01-02 B.C. (Julian)", "=" ,"to 1960", True),
+             ("4713-01-02 B.C. (Julian)", "<" ,"to 1960", True),
+             ("4713-01-02 B.C. (Julian)", "<=" ,"to 1960", True),
+             ("4713-01-02 B.C. (Julian)", "<<" ,"to 1960", False),
+             ("from 1960", "=", "from 1960", True),
+             ("from 1960", "=", "from 1961", True),
+             ("from 1960", "!=", "from 1960", False),
+             ("from 1960", "!=", "from 1961", False),
+             ("from 1960", "==", "from 1960", True),
+             ("from 1960", "==", "from 1961", False),
+             ("from 1960", "<" ,"from 1959", True),
+             ("from 1960", "<" ,"from 1960", True),
+             ("from 1960", "<" ,"from 1961", True),
+             ("from 1960", ">" ,"from 1959", True),
+             ("from 1960", ">" ,"from 1960", True),
+             ("from 1960", ">" ,"from 1961", True),
+             ("from 1960", "<<" ,"from 1959", False),
+             ("from 1960", "<<" ,"from 1960", False),
+             ("from 1960", "<<" ,"from 1961", False),
+             ("from 1960", ">>" ,"from 1959", False),
+             ("from 1960", ">>" ,"from 1960", False),
+             ("from 1960", ">>" ,"from 1961", False),
+             ("from 1960", "<=" ,"from 1959", True),
+             ("from 1960", "<=" ,"from 1960", True),
+             ("from 1960", "<=" ,"from 1961", True),
+             ("from 1960", ">=" ,"from 1959", True),
+             ("from 1960", ">=" ,"from 1960", True),
+             ("from 1960", ">=" ,"from 1961", True),
+             ("from 1960", "=", "to 1959", False),
+             ("from 1960", "=", "to 1960", True),
+             ("from 1960", "=", "to 1961", True),
+             ("from 1960", "!=", "to 1959", True),
+             ("from 1960", "!=", "to 1960", False),
+             ("from 1960", "!=", "to 1961", False),
+             ("from 1960", "==", "to 1959", False),
+             ("from 1960", "==", "to 1960", False),
+             ("from 1960", "==", "to 1961", False),
+             ("from 1960", "<" ,"to 1959", False),
+             ("from 1960", "<" ,"to 1960", True),
+             ("from 1960", "<" ,"to 1961", True),
+             ("from 1960", ">" ,"to 1959", True),
+             ("from 1960", ">" ,"to 1960", True),
+             ("from 1960", ">" ,"to 1961", True),
+             ("from 1960", "<<" ,"to 1959", False),
+             ("from 1960", "<<" ,"to 1960", False),
+             ("from 1960", "<<" ,"to 1961", False),
+             ("from 1960", ">>" ,"to 1959", True),
+             ("from 1960", ">>" ,"to 1960", False),
+             ("from 1960", ">>" ,"to 1961", False),
+             ("from 1960", "<=" ,"to 1959", False),
+             ("from 1960", "<=" ,"to 1960", True),
+             ("from 1960", "<=" ,"to 1961", True),
+             ("from 1960", ">=" ,"to 1959", True),
+             ("from 1960", ">=" ,"to 1960", True),
+             ("from 1960", ">=" ,"to 1961", True),
+             ("to 1960", "=", "from 1959", True),
+             ("to 1960", "=", "from 1960", True),
+             ("to 1960", "=", "from 1961", False),
+             ("to 1960", "!=", "from 1959", False),
+             ("to 1960", "!=", "from 1960", False),
+             ("to 1960", "!=", "from 1961", True),
+             ("to 1960", "==", "from 1959", False),
+             ("to 1960", "==", "from 1960", False),
+             ("to 1960", "==", "from 1961", False),
+             ("to 1960", "<" ,"from 1959", True),
+             ("to 1960", "<" ,"from 1960", True),
+             ("to 1960", "<" ,"from 1961", True),
+             ("to 1960", ">" ,"from 1959", True),
+             ("to 1960", ">" ,"from 1960", True),
+             ("to 1960", ">" ,"from 1961", False),
+             ("to 1960", "<<" ,"from 1959", False),
+             ("to 1960", "<<" ,"from 1960", False),
+             ("to 1960", "<<" ,"from 1961", True),
+             ("to 1960", ">>" ,"from 1959", False),
+             ("to 1960", ">>" ,"from 1960", False),
+             ("to 1960", ">>" ,"from 1961", False),
+             ("to 1960", "<=" ,"from 1959", True),
+             ("to 1960", "<=" ,"from 1960", True),
+             ("to 1960", "<=" ,"from 1961", True),
+             ("to 1960", ">=" ,"from 1959", True),
+             ("to 1960", ">=" ,"from 1960", True),
+             ("to 1960", ">=" ,"from 1961", False),
+             ("to 1960", "=", "to 1959", True),
+             ("to 1960", "=", "to 1960", True),
+             ("to 1960", "=", "to 1961", True),
+             ("to 1960", "!=", "to 1959", False),
+             ("to 1960", "!=", "to 1960", False),
+             ("to 1960", "!=", "to 1961", False),
+             ("to 1960", "==", "to 1959", False),
+             ("to 1960", "==", "to 1960", True),
+             ("to 1960", "==", "to 1961", False),
+             ("to 1960", "<" ,"to 1959", True),
+             ("to 1960", "<" ,"to 1960", True),
+             ("to 1960", "<" ,"to 1961", True),
+             ("to 1960", ">" ,"to 1959", True),
+             ("to 1960", ">" ,"to 1960", True),
+             ("to 1960", ">" ,"to 1961", True),
+             ("to 1960", "<<" ,"to 1959", False),
+             ("to 1960", "<<" ,"to 1960", False),
+             ("to 1960", "<<" ,"to 1961", False),
+             ("to 1960", ">>" ,"to 1959", False),
+             ("to 1960", ">>" ,"to 1960", False),
+             ("to 1960", ">>" ,"to 1961", False),
+             ("to 1960", "<=" ,"to 1959", True),
+             ("to 1960", "<=" ,"to 1960", True),
+             ("to 1960", "<=" ,"to 1961", True),
+             ("to 1960", ">=" ,"to 1959", True),
+             ("to 1960", ">=" ,"to 1960", True),
+             ("to 1960", ">=" ,"to 1961", True),
+             ("from 1960 to 1961", "=", "from 1958 to 1959", False),
+             ("from 1960 to 1961", "=", "from 1959 to 1960", True),
+             ("from 1960 to 1961", "=", "from 1960 to 1961", True),
+             ("from 1960 to 1961", "=", "from 1961 to 1962", True),
+             ("from 1960 to 1961", "=", "from 1962 to 1963", False),
+             ("from 1960 to 1961", "!=", "from 1958 to 1959", True),
+             ("from 1960 to 1961", "!=", "from 1959 to 1960", False),
+             ("from 1960 to 1961", "!=", "from 1960 to 1961", False),
+             ("from 1960 to 1961", "!=", "from 1961 to 1962", False),
+             ("from 1960 to 1961", "!=", "from 1962 to 1963", True),
+             ("from 1960 to 1961", "==", "from 1959 to 1960", False),
+             ("from 1960 to 1961", "==", "from 1960 to 1961", True),
+             ("from 1960 to 1961", "==", "from 1961 to 1962", False),
+             ("from 1960 to 1961", "<", "from 1958 to 1959", False),
+             ("from 1960 to 1961", "<", "from 1959 to 1960", True),
+             ("from 1960 to 1961", "<", "from 1960 to 1961", True),
+             ("from 1960 to 1961", "<", "from 1961 to 1962", True),
+             ("from 1960 to 1961", "<", "from 1962 to 1963", True),
+             ("from 1960 to 1961", ">", "from 1958 to 1959", True),
+             ("from 1960 to 1961", ">", "from 1959 to 1960", True),
+             ("from 1960 to 1961", ">", "from 1960 to 1961", True),
+             ("from 1960 to 1961", ">", "from 1961 to 1962", True),
+             ("from 1960 to 1961", ">", "from 1962 to 1963", False),
+             ("from 1960 to 1961", "<<", "from 1958 to 1959", False),
+             ("from 1960 to 1961", "<<", "from 1959 to 1960", False),
+             ("from 1960 to 1961", "<<", "from 1960 to 1961", False),
+             ("from 1960 to 1961", "<<", "from 1961 to 1962", False),
+             ("from 1960 to 1961", "<<", "from 1962 to 1963", True),
+             ("from 1960 to 1961", ">>", "from 1958 to 1959", True),
+             ("from 1960 to 1961", ">>", "from 1959 to 1960", False),
+             ("from 1960 to 1961", ">>", "from 1960 to 1961", False),
+             ("from 1960 to 1961", ">>", "from 1961 to 1962", False),
+             ("from 1960 to 1961", ">>", "from 1962 to 1963", False),
+             ("from 1960 to 1961", "<=", "from 1958 to 1959", False),
+             ("from 1960 to 1961", "<=", "from 1959 to 1960", True),
+             ("from 1960 to 1961", "<=", "from 1960 to 1961", True),
+             ("from 1960 to 1961", "<=", "from 1961 to 1962", True),
+             ("from 1960 to 1961", "<=", "from 1962 to 1963", True),
+             ("from 1960 to 1961", ">=", "from 1958 to 1959", True),
+             ("from 1960 to 1961", ">=", "from 1959 to 1960", True),
+             ("from 1960 to 1961", ">=", "from 1960 to 1961", True),
+             ("from 1960 to 1961", ">=", "from 1961 to 1962", True),
+             ("from 1960 to 1961", ">=", "from 1962 to 1963", False),
+             ("from 1960-01-01 to 1961-01-01", "=", "from 1958-01-01 to 1959-12-31", False),
+             ("from 1960-01-01 to 1961-01-01", "=", "from 1958-01-01 to 1960-01-01", True),
+             ("from 1960-01-01 to 1961-01-01", "=", "from 1958-01-01 to 1961-01-01", True),
+             ("from 1960-01-01 to 1961-01-01", "=", "from 1958-01-01 to 1961-01-02", True),
+             ("from 1960-01-01 to 1961-01-01", "=", "from 1960-01-01 to 1960-12-31", True),
+             ("from 1960-01-01 to 1961-01-01", "=", "from 1960-01-01 to 1961-01-01", True),
+             ("from 1960-01-01 to 1961-01-01", "=", "from 1960-01-01 to 1961-01-02", True),
+             ("from 1960-01-01 to 1961-01-01", "=", "from 1960-12-31 to 1961-01-01", True),
+             ("from 1960-01-01 to 1961-01-01", "=", "from 1960-12-31 to 1961-01-02", True),
+             ("from 1960-01-01 to 1961-01-01", "=", "from 1961-01-01 to 1961-01-02", True),
+             ("from 1960-01-01 to 1961-01-01", "=", "from 1961-01-02 to 1961-01-03", False),
+             ("from 1960-01-01 to 1961-01-01", "!=", "from 1958-01-01 to 1959-12-31", True),
+             ("from 1960-01-01 to 1961-01-01", "!=", "from 1958-01-01 to 1960-01-01", False),
+             ("from 1960-01-01 to 1961-01-01", "!=", "from 1958-01-01 to 1961-01-01", False),
+             ("from 1960-01-01 to 1961-01-01", "!=", "from 1958-01-01 to 1961-01-02", False),
+             ("from 1960-01-01 to 1961-01-01", "!=", "from 1960-01-01 to 1960-12-31", False),
+             ("from 1960-01-01 to 1961-01-01", "!=", "from 1960-01-01 to 1961-01-01", False),
+             ("from 1960-01-01 to 1961-01-01", "!=", "from 1960-01-01 to 1961-01-02", False),
+             ("from 1960-01-01 to 1961-01-01", "!=", "from 1960-12-31 to 1961-01-01", False),
+             ("from 1960-01-01 to 1961-01-01", "!=", "from 1960-12-31 to 1961-01-02", False),
+             ("from 1960-01-01 to 1961-01-01", "!=", "from 1961-01-01 to 1961-01-02", False),
+             ("from 1960-01-01 to 1961-01-01", "!=", "from 1961-01-02 to 1961-01-03", True),
+             ("from 1960-01-01 to 1961-01-01", "==", "from 1958-01-01 to 1959-12-31", False),
+             ("from 1960-01-01 to 1961-01-01", "==", "from 1958-01-01 to 1960-01-01", False),
+             ("from 1960-01-01 to 1961-01-01", "==", "from 1958-01-01 to 1961-01-01", False),
+             ("from 1960-01-01 to 1961-01-01", "==", "from 1958-01-01 to 1961-01-02", False),
+             ("from 1960-01-01 to 1961-01-01", "==", "from 1960-01-01 to 1960-12-31", False),
+             ("from 1960-01-01 to 1961-01-01", "==", "from 1960-01-01 to 1961-01-01", True),
+             ("from 1960-01-01 to 1961-01-01", "==", "from 1960-01-01 to 1961-01-02", False),
+             ("from 1960-01-01 to 1961-01-01", "==", "from 1960-12-31 to 1961-01-01", False),
+             ("from 1960-01-01 to 1961-01-01", "==", "from 1960-12-31 to 1961-01-02", False),
+             ("from 1960-01-01 to 1961-01-01", "==", "from 1961-01-01 to 1961-01-02", False),
+             ("from 1960-01-01 to 1961-01-01", "==", "from 1961-01-02 to 1961-01-03", False),
+             ("from 1960-01-01 to 1961-01-01", "<", "from 1958-01-01 to 1959-12-31", False),
+             ("from 1960-01-01 to 1961-01-01", "<", "from 1958-01-01 to 1960-01-01", False),
+             ("from 1960-01-01 to 1961-01-01", "<", "from 1958-01-01 to 1961-01-01", True),
+             ("from 1960-01-01 to 1961-01-01", "<", "from 1958-01-01 to 1961-01-02", True),
+             ("from 1960-01-01 to 1961-01-01", "<", "from 1960-01-01 to 1960-12-31", True),
+             ("from 1960-01-01 to 1961-01-01", "<", "from 1960-01-01 to 1961-01-01", True),
+             ("from 1960-01-01 to 1961-01-01", "<", "from 1960-01-01 to 1961-01-02", True),
+             ("from 1960-01-01 to 1961-01-01", "<", "from 1960-12-31 to 1961-01-01", True),
+             ("from 1960-01-01 to 1961-01-01", "<", "from 1960-12-31 to 1961-01-02", True),
+             ("from 1960-01-01 to 1961-01-01", "<", "from 1961-01-01 to 1961-01-02", True),
+             ("from 1960-01-01 to 1961-01-01", "<", "from 1961-01-02 to 1961-01-03", True),
+             ("from 1960-01-01 to 1961-01-01", ">", "from 1958-01-01 to 1959-12-31", True),
+             ("from 1960-01-01 to 1961-01-01", ">", "from 1958-01-01 to 1960-01-01", True),
+             ("from 1960-01-01 to 1961-01-01", ">", "from 1958-01-01 to 1961-01-01", True),
+             ("from 1960-01-01 to 1961-01-01", ">", "from 1958-01-01 to 1961-01-02", True),
+             ("from 1960-01-01 to 1961-01-01", ">", "from 1960-01-01 to 1960-12-31", True),
+             ("from 1960-01-01 to 1961-01-01", ">", "from 1960-01-01 to 1961-01-01", True),
+             ("from 1960-01-01 to 1961-01-01", ">", "from 1960-01-01 to 1961-01-02", True),
+             ("from 1960-01-01 to 1961-01-01", ">", "from 1960-12-31 to 1961-01-01", True),
+             ("from 1960-01-01 to 1961-01-01", ">", "from 1960-12-31 to 1961-01-02", True),
+             ("from 1960-01-01 to 1961-01-01", ">", "from 1961-01-01 to 1961-01-02", False),
+             ("from 1960-01-01 to 1961-01-01", ">", "from 1961-01-02 to 1961-01-03", False),
+             ("from 1960-01-01 to 1961-01-01", "<<", "from 1958-01-01 to 1959-12-31", False),
+             ("from 1960-01-01 to 1961-01-01", "<<", "from 1958-01-01 to 1960-01-01", False),
+             ("from 1960-01-01 to 1961-01-01", "<<", "from 1958-01-01 to 1961-01-01", False),
+             ("from 1960-01-01 to 1961-01-01", "<<", "from 1958-01-01 to 1961-01-02", False),
+             ("from 1960-01-01 to 1961-01-01", "<<", "from 1960-01-01 to 1960-12-31", False),
+             ("from 1960-01-01 to 1961-01-01", "<<", "from 1960-01-01 to 1961-01-01", False),
+             ("from 1960-01-01 to 1961-01-01", "<<", "from 1960-01-01 to 1961-01-02", False),
+             ("from 1960-01-01 to 1961-01-01", "<<", "from 1960-12-31 to 1961-01-01", False),
+             ("from 1960-01-01 to 1961-01-01", "<<", "from 1960-12-31 to 1961-01-02", False),
+             ("from 1960-01-01 to 1961-01-01", "<<", "from 1961-01-01 to 1961-01-02", False),
+             ("from 1960-01-01 to 1961-01-01", "<<", "from 1961-01-02 to 1961-01-03", True),
+             ("from 1960-01-01 to 1961-01-01", ">>", "from 1958-01-01 to 1959-12-31", True),
+             ("from 1960-01-01 to 1961-01-01", ">>", "from 1958-01-01 to 1960-01-01", False),
+             ("from 1960-01-01 to 1961-01-01", ">>", "from 1958-01-01 to 1961-01-01", False),
+             ("from 1960-01-01 to 1961-01-01", ">>", "from 1958-01-01 to 1961-01-02", False),
+             ("from 1960-01-01 to 1961-01-01", ">>", "from 1960-01-01 to 1960-12-31", False),
+             ("from 1960-01-01 to 1961-01-01", ">>", "from 1960-01-01 to 1961-01-01", False),
+             ("from 1960-01-01 to 1961-01-01", ">>", "from 1960-01-01 to 1961-01-02", False),
+             ("from 1960-01-01 to 1961-01-01", ">>", "from 1960-12-31 to 1961-01-01", False),
+             ("from 1960-01-01 to 1961-01-01", ">>", "from 1960-12-31 to 1961-01-02", False),
+             ("from 1960-01-01 to 1961-01-01", ">>", "from 1961-01-01 to 1961-01-02", False),
+             ("from 1960-01-01 to 1961-01-01", ">>", "from 1961-01-02 to 1961-01-03", False),
+             ("from 1960-01-01 to 1961-01-01", "<=", "from 1958-01-01 to 1959-12-31", False),
+             ("from 1960-01-01 to 1961-01-01", "<=", "from 1958-01-01 to 1960-01-01", True),
+             ("from 1960-01-01 to 1961-01-01", "<=", "from 1958-01-01 to 1961-01-01", True),
+             ("from 1960-01-01 to 1961-01-01", "<=", "from 1958-01-01 to 1961-01-02", True),
+             ("from 1960-01-01 to 1961-01-01", "<=", "from 1960-01-01 to 1960-12-31", True),
+             ("from 1960-01-01 to 1961-01-01", "<=", "from 1960-01-01 to 1961-01-01", True),
+             ("from 1960-01-01 to 1961-01-01", "<=", "from 1960-01-01 to 1961-01-02", True),
+             ("from 1960-01-01 to 1961-01-01", "<=", "from 1960-12-31 to 1961-01-01", True),
+             ("from 1960-01-01 to 1961-01-01", "<=", "from 1960-12-31 to 1961-01-02", True),
+             ("from 1960-01-01 to 1961-01-01", "<=", "from 1961-01-01 to 1961-01-02", True),
+             ("from 1960-01-01 to 1961-01-01", "<=", "from 1961-01-02 to 1961-01-03", True),
+             ("from 1960-01-01 to 1961-01-01", ">=", "from 1958-01-01 to 1959-12-31", True),
+             ("from 1960-01-01 to 1961-01-01", ">=", "from 1958-01-01 to 1960-01-01", True),
+             ("from 1960-01-01 to 1961-01-01", ">=", "from 1958-01-01 to 1961-01-01", True),
+             ("from 1960-01-01 to 1961-01-01", ">=", "from 1958-01-01 to 1961-01-02", True),
+             ("from 1960-01-01 to 1961-01-01", ">=", "from 1960-01-01 to 1960-12-31", True),
+             ("from 1960-01-01 to 1961-01-01", ">=", "from 1960-01-01 to 1961-01-01", True),
+             ("from 1960-01-01 to 1961-01-01", ">=", "from 1960-01-01 to 1961-01-02", True),
+             ("from 1960-01-01 to 1961-01-01", ">=", "from 1960-12-31 to 1961-01-01", True),
+             ("from 1960-01-01 to 1961-01-01", ">=", "from 1960-12-31 to 1961-01-02", True),
+             ("from 1960-01-01 to 1961-01-01", ">=", "from 1961-01-01 to 1961-01-02", True),
+             ("from 1960-01-01 to 1961-01-01", ">=", "from 1961-01-02 to 1961-01-03", False),
+            ]
+
+    def convert_to_date(self, d):
+        return d if isinstance(d,Date) else _dp.parse(d)
+
+    def do_case(self, d1, op, d2, expected):
+        """
+        Compare two Gramps dates.
+        """
+        failstr = d1 + " " + op + " " + d2 + " should be {}".format(expected)
+        date1 = self.convert_to_date(d1)
+        date2 = self.convert_to_date(d2)
+        if op == "=":
+            self.assertEqual(date1.match(date2), expected, failstr)
+        elif op == "!=":
+            self.assertEqual(date1 != date2, expected, failstr)
+        elif op == "==":
+            self.assertEqual(date1 == date2, expected, failstr)
+        elif op == "<":
+            self.assertEqual(date1 < date2, expected, failstr)
+        elif op == "<<":
+            self.assertEqual(date1 << date2, expected, failstr)
+        elif op == ">":
+            self.assertEqual(date1 > date2, expected, failstr)
+        elif op == ">>":
+            self.assertEqual(date1 >> date2, expected, failstr)
+        elif op == "<=":
+            self.assertEqual(date1 <= date2, expected, failstr)
+        elif op == ">=":
+            self.assertEqual(date1 >= date2, expected, failstr)
+
+    def test_comparison(self):
+        for testdata in self.tests:
+            self.do_case(*testdata)
+
+#-------------------------------------------------------------------------
+#
+# AgeTest
+#
+#-------------------------------------------------------------------------
+@unittest.skipUnless(ENGLISH_DATE_HANDLER,
+        "This test of Date() matching logic can only run in English locale.")
+class AgeTest(BaseDateTest):
+    """
+    Age tests.
+    """
+    tests = [("1960", "1960", "0 days"), # NOK. No "()". Logically (less than 1 year).
+             ("1960-01", "1960-01", "unknown"), # NOK. No "()". Logically (less than 1 month)
+             ("1960-01", "1960-02", "unknown"), # NOK. No "()". Logically (between 1 month and 1 month, 27|28) days (2 months?)).
+             ("1960-01-01", "1960-01-02", "(1 days)"), # OK
+             ("1960-01-01", "1960-01-31", "(30 days)"), # OK
+             ("after 1960-01-01", "1960-01-31", "(less than 29 days)"), # OK
+             ("1960-01-01", "1960-02-02", "(1 months, 1 days)"), # OK
+             ("1960-01-01", "1961-02-02", "unknown"), # NOK, (1 years, 1 months, 1 days)
+             ("1960-01-01", "1965-01-01", "(5 years)"), # OK
+             ("1960-01-01", "1965-02-02", "(5 years, 1 months)"), # OK if 1 days is ignored..
+             ("about 1960-01-01", "before 1965-02-02", "(less than about 5 years, 1 months)"), # OK
+             ("about 1960-01-01", "after 1965-02-02", "(more than about 5 years, 1 months)"), # OK
+             ("1960", "2000", "(40 years)"), # OK? between 39 years, 1 days and 40 years, 364 days.
+             ("1760", "", "greater than 110 years"), # OK. No "()".
+             ("1960", "", "greater than 110 years"), # NOK. No "()".
+             ("2020", "", "greater than 110 years"), # NOK. No "()".
+             ("3020", "", "greater than 110 years"), # NOK. No "()".
+             ("", "2000", "(1999 years)"), # NOK. (unknown)?.
+           ]
+
+    def convert_to_date(self, d):
+        return d if isinstance(d,Date) else _dp.parse(d)
+
+    def do_case(self, d1, d2, exp_age):
+        span = Span(self.convert_to_date(d1), self.convert_to_date(d2))
+        age = span.as_age()
+        failstr = "Birth at " + d1 + ", death at " + d2 + " gives age " + age + ". Should be {}".format(exp_age)
+        self.assertEqual(age, exp_age, failstr)
+
+    def test_age(self):
+        for testdata in self.tests:
+            self.do_case(*testdata)
 
 #-------------------------------------------------------------------------
 #

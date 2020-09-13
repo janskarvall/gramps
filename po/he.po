@@ -8,9 +8,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 5.1.2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-06-05 19:16+0100\n"
-"PO-Revision-Date: 2021-06-10 17:50+0000\n"
-"Last-Translator: Avi Markovitz <avi.markovitz@gmail.com>\n"
+"POT-Creation-Date: 2021-06-29 14:29+0200\n"
+"PO-Revision-Date: 2021-06-04 21:07+0000\n"
+"Last-Translator: Nick Hall <nick-h@gramps-project.org>\n"
 "Language-Team: Hebrew <https://hosted.weblate.org/projects/gramps-project/"
 "gramps/he/>\n"
 "Language: he\n"
@@ -60,6 +60,10 @@ msgstr "צוות פתוח גרמפס"
 #: ../data/gramps.desktop.in:4
 msgid "Genealogy System"
 msgstr "מערכת גנאלוגית"
+
+#: ../data/gramps.desktop.in:7
+msgid "gramps"
+msgstr "גראמפס"
 
 #: ../data/gramps.desktop.in:12
 msgid "Genealogy;Family History;Research;Family Tree;GEDCOM;"
@@ -2264,20 +2268,35 @@ msgstr "{short_month} {year}"
 #. Translators: If there is no special inflection for
 #. "from <Month>" in your language, DON'T translate this.
 #. Otherwise, translate to "from" in ENGLISH!!! ENGLISH!!!
-#: ../gramps/gen/datehandler/_datedisplay.py:429
+#: ../gramps/gen/datehandler/_datedisplay.py:437
+#: ../gramps/gen/datehandler/_datedisplay.py:475
 msgctxt "from-date"
 msgid ""
 msgstr "from"
 
+#: ../gramps/gen/datehandler/_datedisplay.py:438
+#, python-brace-format
+msgid "{date_quality}from {date_start}{nonstd_calendar_and_ny}"
+msgstr "{date_quality}מ {date_start}{nonstd_calendar_and_ny}"
+
+#. Translators: If there is no special inflection for
+#. "from <Month>" in your language, DON'T translate this.
+#. Otherwise, translate to "from" in ENGLISH!!! ENGLISH!!!
 #. Translators: If there is no special inflection for
 #. "to <Month>" in your language, DON'T translate this.
 #. Otherwise, translate to "to" in ENGLISH!!! ENGLISH!!!
-#: ../gramps/gen/datehandler/_datedisplay.py:434
+#: ../gramps/gen/datehandler/_datedisplay.py:456
+#: ../gramps/gen/datehandler/_datedisplay.py:480
 msgctxt "to-date"
 msgid ""
 msgstr "to"
 
-#: ../gramps/gen/datehandler/_datedisplay.py:435
+#: ../gramps/gen/datehandler/_datedisplay.py:457
+#, python-brace-format
+msgid "{date_quality}to {date_stop}{nonstd_calendar_and_ny}"
+msgstr "{date_quality} {date_stop}{nonstd_calendar_and_ny}"
+
+#: ../gramps/gen/datehandler/_datedisplay.py:481
 #, python-brace-format
 msgid "{date_quality}from {date_start} to {date_stop}{nonstd_calendar_and_ny}"
 msgstr "{date_quality}מ- {date_start} עד {date_stop}{nonstd_calendar_and_ny}"
@@ -2285,7 +2304,7 @@ msgstr "{date_quality}מ- {date_start} עד {date_stop}{nonstd_calendar_and_ny}"
 #. Translators: If there is no special inflection for
 #. "between <Month>" in your language, DON'T translate this.
 #. Otherwise, translate to "between" in ENGLISH!!! ENGLISH!!!
-#: ../gramps/gen/datehandler/_datedisplay.py:454
+#: ../gramps/gen/datehandler/_datedisplay.py:500
 msgctxt "between-date"
 msgid ""
 msgstr "between"
@@ -2293,12 +2312,12 @@ msgstr "between"
 #. Translators: If there is no special inflection for
 #. "and <Month>" in your language, DON'T translate this.
 #. Otherwise, translate to "and" in ENGLISH!!! ENGLISH!!!
-#: ../gramps/gen/datehandler/_datedisplay.py:459
+#: ../gramps/gen/datehandler/_datedisplay.py:505
 msgctxt "and-date"
 msgid ""
 msgstr "and"
 
-#: ../gramps/gen/datehandler/_datedisplay.py:460
+#: ../gramps/gen/datehandler/_datedisplay.py:506
 #, python-brace-format
 msgid ""
 "{date_quality}between {date_start} and {date_stop}{nonstd_calendar_and_ny}"
@@ -2308,7 +2327,7 @@ msgstr ""
 #. Translators: If there is no special inflection for
 #. "before <Month>" in your language, DON'T translate this.
 #. Otherwise, translate to "before" in ENGLISH!!! ENGLISH!!!
-#: ../gramps/gen/datehandler/_datedisplay.py:493
+#: ../gramps/gen/datehandler/_datedisplay.py:547
 msgctxt "before-date"
 msgid ""
 msgstr "before"
@@ -2316,7 +2335,7 @@ msgstr "before"
 #. Translators: If there is no special inflection for
 #. "after <Month>" in your language, DON'T translate this.
 #. Otherwise, translate to "after" in ENGLISH!!! ENGLISH!!!
-#: ../gramps/gen/datehandler/_datedisplay.py:498
+#: ../gramps/gen/datehandler/_datedisplay.py:552
 msgctxt "after-date"
 msgid ""
 msgstr "after"
@@ -2324,7 +2343,7 @@ msgstr "after"
 #. Translators: If there is no special inflection for
 #. "about <Month>" in your language, DON'T translate this.
 #. Otherwise, translate to "about" in ENGLISH!!! ENGLISH!!!
-#: ../gramps/gen/datehandler/_datedisplay.py:503
+#: ../gramps/gen/datehandler/_datedisplay.py:557
 msgctxt "about-date"
 msgid ""
 msgstr "about"
@@ -2332,7 +2351,7 @@ msgstr "about"
 #. Translators: If there is no special inflection for
 #. "estimated <Month>" in your language, DON'T translate this.
 #. Otherwise, translate to "estimated" in ENGLISH!!! ENGLISH!!!
-#: ../gramps/gen/datehandler/_datedisplay.py:508
+#: ../gramps/gen/datehandler/_datedisplay.py:562
 msgctxt "estimated-date"
 msgid ""
 msgstr "estimated"
@@ -2340,41 +2359,41 @@ msgstr "estimated"
 #. Translators: If there is no special inflection for
 #. "calculated <Month>" in your language, DON'T translate this.
 #. Otherwise, translate to "calculated" in ENGLISH!!! ENGLISH!!!
-#: ../gramps/gen/datehandler/_datedisplay.py:513
+#: ../gramps/gen/datehandler/_datedisplay.py:567
 msgctxt "calculated-date"
 msgid ""
 msgstr "calculated"
 
-#: ../gramps/gen/datehandler/_datedisplay.py:532
+#: ../gramps/gen/datehandler/_datedisplay.py:586
 #, python-brace-format
 msgid "{date_quality}{noncompound_modifier}{date}{nonstd_calendar_and_ny}"
 msgstr "{date_quality}{noncompound_modifier}{date}{nonstd_calendar_and_ny}"
 
 #. Translators: this month is ALREADY inflected: ignore it
-#: ../gramps/gen/datehandler/_datedisplay.py:651
+#: ../gramps/gen/datehandler/_datedisplay.py:705
 #, python-brace-format
 msgid "{long_month} {day:d}, {year}"
 msgstr "{long_month} {day:d}, {year}"
 
 #. Translators: this month is ALREADY inflected: ignore it
-#: ../gramps/gen/datehandler/_datedisplay.py:677
+#: ../gramps/gen/datehandler/_datedisplay.py:731
 #, python-brace-format
 msgid "{short_month} {day:d}, {year}"
 msgstr "{short_month} {day:d}, {year}"
 
 #. Translators: this month is ALREADY inflected: ignore it
-#: ../gramps/gen/datehandler/_datedisplay.py:703
+#: ../gramps/gen/datehandler/_datedisplay.py:757
 #, python-brace-format
 msgid "{day:d} {long_month} {year}"
 msgstr "{day:d} {long_month} {year}"
 
 #. Translators: this month is ALREADY inflected: ignore it
-#: ../gramps/gen/datehandler/_datedisplay.py:729
+#: ../gramps/gen/datehandler/_datedisplay.py:783
 #, python-brace-format
 msgid "{day:d} {short_month} {year}"
 msgstr "{day:d} {short_month} {year}"
 
-#: ../gramps/gen/datehandler/_dateparser.py:421
+#: ../gramps/gen/datehandler/_dateparser.py:430
 msgid "today"
 msgstr "היום"
 
@@ -2561,37 +2580,37 @@ msgctxt "alternative month names for December"
 msgid "|"
 msgstr "|"
 
-#: ../gramps/gen/datehandler/_datestrings.py:131 ../gramps/gen/lib/date.py:609
+#: ../gramps/gen/datehandler/_datestrings.py:131 ../gramps/gen/lib/date.py:675
 msgctxt "calendar"
 msgid "Gregorian"
 msgstr "גרגוריאני"
 
-#: ../gramps/gen/datehandler/_datestrings.py:132 ../gramps/gen/lib/date.py:610
+#: ../gramps/gen/datehandler/_datestrings.py:132 ../gramps/gen/lib/date.py:676
 msgctxt "calendar"
 msgid "Julian"
 msgstr "יוליאני"
 
-#: ../gramps/gen/datehandler/_datestrings.py:133 ../gramps/gen/lib/date.py:611
+#: ../gramps/gen/datehandler/_datestrings.py:133 ../gramps/gen/lib/date.py:677
 msgctxt "calendar"
 msgid "Hebrew"
 msgstr "עברי"
 
-#: ../gramps/gen/datehandler/_datestrings.py:134 ../gramps/gen/lib/date.py:612
+#: ../gramps/gen/datehandler/_datestrings.py:134 ../gramps/gen/lib/date.py:678
 msgctxt "calendar"
 msgid "French Republican"
 msgstr "הרפובליקה הצרפתית"
 
-#: ../gramps/gen/datehandler/_datestrings.py:135 ../gramps/gen/lib/date.py:613
+#: ../gramps/gen/datehandler/_datestrings.py:135 ../gramps/gen/lib/date.py:679
 msgctxt "calendar"
 msgid "Persian"
 msgstr "פרסי"
 
-#: ../gramps/gen/datehandler/_datestrings.py:136 ../gramps/gen/lib/date.py:614
+#: ../gramps/gen/datehandler/_datestrings.py:136 ../gramps/gen/lib/date.py:680
 msgctxt "calendar"
 msgid "Islamic"
 msgstr "מוסלמי"
 
-#: ../gramps/gen/datehandler/_datestrings.py:137 ../gramps/gen/lib/date.py:615
+#: ../gramps/gen/datehandler/_datestrings.py:137 ../gramps/gen/lib/date.py:681
 msgctxt "calendar"
 msgid "Swedish"
 msgstr "שוודי"
@@ -6460,7 +6479,7 @@ msgid "Notes"
 msgstr "הערות"
 
 #: ../gramps/gen/lib/address.py:111 ../gramps/gen/lib/citation.py:106
-#: ../gramps/gen/lib/date.py:706 ../gramps/gen/lib/event.py:146
+#: ../gramps/gen/lib/date.py:772 ../gramps/gen/lib/event.py:146
 #: ../gramps/gen/lib/ldsord.py:182 ../gramps/gen/lib/media.py:163
 #: ../gramps/gen/lib/name.py:157 ../gramps/gen/lib/placename.py:101
 #: ../gramps/gen/lib/placeref.py:94
@@ -6976,15 +6995,15 @@ msgstr "שונה לאחרונה"
 msgid "Tags"
 msgstr "תגים"
 
-#: ../gramps/gen/lib/date.py:290 ../gramps/gen/lib/date.py:325
-#: ../gramps/gen/lib/date.py:331 ../gramps/gen/lib/date.py:333
-#: ../gramps/gen/lib/date.py:350
+#: ../gramps/gen/lib/date.py:354 ../gramps/gen/lib/date.py:389
+#: ../gramps/gen/lib/date.py:395 ../gramps/gen/lib/date.py:397
+#: ../gramps/gen/lib/date.py:414
 msgctxt "age"
 msgid "about"
 msgstr "בסביבות"
 
 #. Translators: leave all/any {...} untranslated
-#: ../gramps/gen/lib/date.py:427 ../gramps/gen/lib/date.py:434
+#: ../gramps/gen/lib/date.py:491 ../gramps/gen/lib/date.py:498
 #, python-brace-format
 msgid "{number_of} year"
 msgid_plural "{number_of} years"
@@ -6992,7 +7011,7 @@ msgstr[0] "{number_of} שנה"
 msgstr[1] "{number_of} שנים"
 
 #. Translators: leave all/any {...} untranslated
-#: ../gramps/gen/lib/date.py:443
+#: ../gramps/gen/lib/date.py:507
 #, python-brace-format
 msgid "{number_of} month"
 msgid_plural "{number_of} months"
@@ -7000,34 +7019,34 @@ msgstr[0] "{number_of} חודש"
 msgstr[1] "{number_of} חודשים"
 
 #. Translators: leave all/any {...} untranslated
-#: ../gramps/gen/lib/date.py:454
+#: ../gramps/gen/lib/date.py:518
 #, python-brace-format
 msgid "{number_of} day"
 msgid_plural "{number_of} days"
 msgstr[0] "{number_of} יום"
 msgstr[1] "{number_of} ימים"
 
-#: ../gramps/gen/lib/date.py:710
+#: ../gramps/gen/lib/date.py:776
 #: ../gramps/plugins/drawreport/drawplugins.gpr.py:75
 #: ../gramps/plugins/gramplet/gramplet.gpr.py:74
 #: ../gramps/plugins/gramplet/gramplet.gpr.py:80
 msgid "Calendar"
 msgstr "לוח-שנה"
 
-#: ../gramps/gen/lib/date.py:712
+#: ../gramps/gen/lib/date.py:778
 msgid "Modifier"
 msgstr "מסגל"
 
-#: ../gramps/gen/lib/date.py:714
+#: ../gramps/gen/lib/date.py:780
 msgid "Quality"
 msgstr "איכות"
 
-#: ../gramps/gen/lib/date.py:716 ../gramps/gui/editors/filtereditor.py:836
+#: ../gramps/gen/lib/date.py:782 ../gramps/gui/editors/filtereditor.py:836
 #: ../gramps/gui/glade/rule.glade:967
 msgid "Values"
 msgstr "ערכים"
 
-#: ../gramps/gen/lib/date.py:719 ../gramps/gen/lib/placename.py:99
+#: ../gramps/gen/lib/date.py:785 ../gramps/gen/lib/placename.py:99
 #: ../gramps/gen/lib/styledtext.py:322
 #: ../gramps/gen/plug/report/_constants.py:54 ../gramps/gui/clipboard.py:613
 #: ../gramps/gui/clipboard.py:621 ../gramps/gui/configure.py:1396
@@ -7039,56 +7058,65 @@ msgstr "ערכים"
 msgid "Text"
 msgstr "מלל"
 
-#: ../gramps/gen/lib/date.py:721
+#: ../gramps/gen/lib/date.py:787
 msgid "Sort value"
 msgstr "ערך מיון"
 
-#: ../gramps/gen/lib/date.py:723
+#: ../gramps/gen/lib/date.py:789
 msgid "New year begins"
 msgstr "שנה חדשה מתחילה"
 
-#: ../gramps/gen/lib/date.py:1856
+#: ../gramps/gen/lib/date.py:2015
 msgctxt "date-quality"
 msgid "none"
 msgstr "ללא"
 
-#: ../gramps/gen/lib/date.py:1857
+#: ../gramps/gen/lib/date.py:2016
 msgid "calculated"
 msgstr "מחושב"
 
-#: ../gramps/gen/lib/date.py:1857
+#: ../gramps/gen/lib/date.py:2016
 msgid "estimated"
 msgstr "משוער"
 
-#: ../gramps/gen/lib/date.py:1871
+#: ../gramps/gen/lib/date.py:2030
 msgctxt "date-modifier"
 msgid "none"
 msgstr "ללא"
 
-#: ../gramps/gen/lib/date.py:1872 ../gramps/plugins/webreport/basepage.py:3248
+#: ../gramps/gen/lib/date.py:2031 ../gramps/plugins/webreport/basepage.py:3248
 msgid "about"
 msgstr "בסביבות"
 
-#: ../gramps/gen/lib/date.py:1872 ../gramps/plugins/lib/libprogen.py:1841
+#: ../gramps/gen/lib/date.py:2031 ../gramps/plugins/lib/libprogen.py:1841
 #: ../gramps/plugins/webreport/basepage.py:3244
 msgid "after"
 msgstr "אחרי"
 
-#: ../gramps/gen/lib/date.py:1872 ../gramps/plugins/webreport/basepage.py:3246
+#: ../gramps/gen/lib/date.py:2031 ../gramps/plugins/webreport/basepage.py:3246
 msgid "before"
 msgstr "לפני"
 
-#: ../gramps/gen/lib/date.py:1873
+#: ../gramps/gen/lib/date.py:2032
+msgid "from"
+msgstr ""
+
+#: ../gramps/gen/lib/date.py:2032
 msgid "range"
 msgstr "טווח"
 
-#: ../gramps/gen/lib/date.py:1873
+#: ../gramps/gen/lib/date.py:2032
 msgid "span"
 msgstr "משתרע"
 
-#: ../gramps/gen/lib/date.py:1873
+#: ../gramps/gen/lib/date.py:2032
 msgid "textonly"
 msgstr "מלל בלבד"
+
+#: ../gramps/gen/lib/date.py:2032
+#, fuzzy
+msgid "to"
+msgstr "עצירה"
 
 #: ../gramps/gen/lib/event.py:136 ../gramps/gen/lib/eventref.py:109
 #: ../gramps/gui/clipboard.py:335 ../gramps/gui/configure.py:661
@@ -9128,7 +9156,7 @@ msgstr "הקובץ %s כבר פתוח, סגרי אותו קודם."
 #: ../gramps/plugins/export/exportcsv.py:261
 #: ../gramps/plugins/export/exportcsv.py:265
 #: ../gramps/plugins/export/exportftree.py:136
-#: ../gramps/plugins/export/exportgedcom.py:1597
+#: ../gramps/plugins/export/exportgedcom.py:1608
 #: ../gramps/plugins/export/exportgeneweb.py:109
 #: ../gramps/plugins/export/exportgeneweb.py:113
 #: ../gramps/plugins/export/exportvcalendar.py:123
@@ -9492,11 +9520,13 @@ msgid "Graphviz File"
 msgstr "קובץ גראפוויז"
 
 #: ../gramps/gen/plug/docgen/paperstyle.py:78
+#, fuzzy
 msgctxt "paper size"
 msgid "Letter"
 msgstr "Letter"
 
 #: ../gramps/gen/plug/docgen/paperstyle.py:80
+#, fuzzy
 msgctxt "paper size"
 msgid "Legal"
 msgstr "Legal"
@@ -10338,7 +10368,7 @@ msgstr "גרמנית"
 
 #: ../gramps/gen/utils/grampslocale.py:78
 msgid "German (Austria)"
-msgstr "גרמנית (אוסטריה)"
+msgstr ""
 
 #: ../gramps/gen/utils/grampslocale.py:79
 msgid "Greek"
@@ -13484,7 +13514,7 @@ msgstr "עריכת מובאה (%s)"
 msgid "Delete Citation (%s)"
 msgstr "מחיקת מובאה (%s)"
 
-#: ../gramps/gui/editors/editdate.py:76 ../gramps/gui/editors/editdate.py:85
+#: ../gramps/gui/editors/editdate.py:76 ../gramps/gui/editors/editdate.py:87
 msgid "Regular"
 msgstr "רגיל"
 
@@ -13505,31 +13535,40 @@ msgid "Range"
 msgstr "טווח"
 
 #: ../gramps/gui/editors/editdate.py:81
+msgid "From"
+msgstr ""
+
+#: ../gramps/gui/editors/editdate.py:82
+#, fuzzy
+msgid "To"
+msgstr "מעלה"
+
+#: ../gramps/gui/editors/editdate.py:83
 msgid "Span"
 msgstr "נמשך"
 
-#: ../gramps/gui/editors/editdate.py:82
+#: ../gramps/gui/editors/editdate.py:84
 msgid "Text only"
 msgstr "מלל בלבד"
 
-#: ../gramps/gui/editors/editdate.py:86
+#: ../gramps/gui/editors/editdate.py:88
 msgid "Estimated"
 msgstr "משוער"
 
-#: ../gramps/gui/editors/editdate.py:87
+#: ../gramps/gui/editors/editdate.py:89
 msgid "Calculated"
 msgstr "מחושב"
 
-#: ../gramps/gui/editors/editdate.py:99
+#: ../gramps/gui/editors/editdate.py:101
 msgctxt "manual"
 msgid "Editing_dates"
 msgstr "תאריכי_עריכה"
 
-#: ../gramps/gui/editors/editdate.py:126 ../gramps/gui/editors/editdate.py:279
+#: ../gramps/gui/editors/editdate.py:128 ../gramps/gui/editors/editdate.py:281
 msgid "Date selection"
 msgstr "נא לבחור תאריך"
 
-#: ../gramps/gui/editors/editdate.py:269
+#: ../gramps/gui/editors/editdate.py:271
 #, python-brace-format
 msgid "Correct the date or switch from `{cur_mode}' to `{text_mode}'"
 msgstr "תיקון תאריך או החלפה מ `{cur_mode}' ל `{text_mode}'"
@@ -17300,7 +17339,7 @@ msgstr ""
 
 #: ../gramps/gui/glade/updateaddons.glade:105
 msgid "_Select All"
-msgstr "_בחירת הכל"
+msgstr "_נא לבחור הכל"
 
 #: ../gramps/gui/glade/updateaddons.glade:120
 msgid "Select _None"
@@ -21798,11 +21837,11 @@ msgstr "דוא\"ל"
 msgid "WWW"
 msgstr "WWW"
 
-#: ../gramps/plugins/export/exportgedcom.py:1426
+#: ../gramps/plugins/export/exportgedcom.py:1437
 msgid "Writing media"
 msgstr "כתיבת מדיה"
 
-#: ../gramps/plugins/export/exportgedcom.py:1600
+#: ../gramps/plugins/export/exportgedcom.py:1611
 msgid "GEDCOM Export failed"
 msgstr "יצוא ג'דקום כשל"
 
@@ -24724,7 +24763,7 @@ msgstr "בניפרד"
 msgid "GeneWeb import"
 msgstr "יבוא ג'נא-ווב"
 
-#: ../gramps/plugins/importer/importgeneweb.py:912
+#: ../gramps/plugins/importer/importgeneweb.py:925
 #, python-brace-format
 msgid "Invalid date {date} in {gw_snippet}, preserving date as text."
 msgstr "תאריך שגוי {date} ב {gw_snippet}, שמירת תאריך כמלל."
@@ -25281,7 +25320,7 @@ msgid "Number of new objects imported:\n"
 msgstr "מספר עצמים חדשים שיובאו:\n"
 
 #: ../gramps/plugins/importer/importxml.py:302
-#, python-format
+#, fuzzy, python-format
 msgid ""
 "\n"
 "The imported file was not self-contained.\n"
@@ -25292,12 +25331,12 @@ msgid ""
 "'Unknown' objects are referenced by note %(unknown)s.\n"
 msgstr ""
 "\n"
-"הקובץ שיובא לא היה שלם.\n"
-"כדי לתקן זאת, נוצרו %(new)d עצמים\n"
-"והתכונה המאפיינת שלהם הוגדרה כ'לא ידוע'.\n"
-"התפלגות לסוגי-אב מתוארת על ידי\n"
+"הקובץ המיובא לא היה שלם.\n"
+"כדי לתקן זאת, נוצרו %(new)d עצמים ו-\n"
+"התכונה המאפיינת שלהם הוגדרה כ'לא ידוע'.\n"
+"התפלגות לכל קטגוריה מתוארת על ידי\n"
 "המספר בסוגריים. בכל מקום שמתאפשר,\n"
-"עצמים 'לא ידועים' אלו מפנים להערה %(unknown)s.\n"
+"עצמים 'לא ידועים' אלו מפנים להערה%(unknown)s.\n"
 
 #: ../gramps/plugins/importer/importxml.py:310
 msgid ""
@@ -25314,10 +25353,12 @@ msgstr ""
 "או, אם לא הוגדרה מחיצת מדיה, יחסיים למחיצת המשתמש.\n"
 
 #: ../gramps/plugins/importer/importxml.py:321
+#, fuzzy
 msgid ""
 "\n"
 "Objects that are candidates to be merged:\n"
 msgstr ""
+"\n"
 "\n"
 "עצמים מועמדים למיזוג:\n"
 
@@ -25431,7 +25472,7 @@ msgid "Old xml file"
 msgstr "קובץ XML ישן"
 
 #: ../gramps/plugins/importer/importxml.py:1212
-#: ../gramps/plugins/importer/importxml.py:2710
+#: ../gramps/plugins/importer/importxml.py:2714
 #, python-format
 msgid "Witness name: %s"
 msgstr "שם עד: %s"
@@ -25467,17 +25508,17 @@ msgstr "התכונה 'hlink' חייבת להימצא בכל הפנית הערה.
 
 #. Translators: leave the {date} and {xml} untranslated in the format string,
 #. but you may re-order them if needed.
-#: ../gramps/plugins/importer/importxml.py:2528
+#: ../gramps/plugins/importer/importxml.py:2532
 #, python-brace-format
 msgid "Invalid date {date} in XML {xml}, preserving XML as text"
 msgstr "תאריך שגוי {date} ב {xml} XML, שמירת XML כמלל"
 
-#: ../gramps/plugins/importer/importxml.py:2580
+#: ../gramps/plugins/importer/importxml.py:2584
 #, python-format
 msgid "Witness comment: %s"
 msgstr "הערת עד: %s"
 
-#: ../gramps/plugins/importer/importxml.py:3233
+#: ../gramps/plugins/importer/importxml.py:3237
 #, python-format
 msgctxt "father"
 msgid ""
@@ -25486,7 +25527,7 @@ msgid ""
 msgstr ""
 "שגיאה: משפחה '%(family)s' אב '%(father)s' אינו מפנה חזרה למשפחה. הפניה נוסף."
 
-#: ../gramps/plugins/importer/importxml.py:3249
+#: ../gramps/plugins/importer/importxml.py:3253
 #, python-format
 msgctxt "mother"
 msgid ""
@@ -25495,7 +25536,7 @@ msgid ""
 msgstr ""
 "שגיאה: משפחה '%(family)s' אם'%(mother)s' אינו מפנה חזרה למשפחה. הפניה נוסף."
 
-#: ../gramps/plugins/importer/importxml.py:3271
+#: ../gramps/plugins/importer/importxml.py:3275
 #, python-format
 msgctxt "child"
 msgid ""
@@ -31002,7 +31043,7 @@ msgstr "נא להקיש לבחירת מצג"
 
 #: ../gramps/plugins/sidebar/sidebar.gpr.py:33
 msgid "Category Sidebar"
-msgstr "סרגל צד סוגי-אב"
+msgstr "סרגל צד קטגוריות"
 
 #: ../gramps/plugins/sidebar/sidebar.gpr.py:34
 msgid "A sidebar to allow the selection of view categories"
@@ -31010,7 +31051,7 @@ msgstr "סרגל צד שמאפשר בחירת קטגוריות תצוגה"
 
 #: ../gramps/plugins/sidebar/sidebar.gpr.py:42
 msgid "Category"
-msgstr "סוג-אב"
+msgstr "קטגוריה"
 
 #: ../gramps/plugins/sidebar/sidebar.gpr.py:48
 msgid "Drop-down Sidebar"
@@ -32643,7 +32684,7 @@ msgstr "איתור קישורים משפחה שבורים"
 
 #: ../gramps/plugins/tool/check.py:702
 msgid "Looking for unused objects"
-msgstr "איתור עצמים שאינם בשימוש"
+msgstr "איתור עצמים שלא בשימוש"
 
 #: ../gramps/plugins/tool/check.py:780
 msgid "Select file"
@@ -33880,7 +33921,7 @@ msgstr "חיפוש הערות"
 #: ../gramps/plugins/tool/removeunused.glade:287
 #: ../gramps/plugins/tool/verify.glade:929
 msgid "_Mark all"
-msgstr "_החירת הכל"
+msgstr "_נא לבחור הכל"
 
 #: ../gramps/plugins/tool/removeunused.glade:303
 #: ../gramps/plugins/tool/verify.glade:945
@@ -33890,7 +33931,7 @@ msgstr "_ביטול בחירת הכל"
 #: ../gramps/plugins/tool/removeunused.glade:319
 #: ../gramps/plugins/tool/verify.glade:961
 msgid "In_vert marks"
-msgstr "הי_פוך בחירה"
+msgstr "ה_פוך סמנים"
 
 #: ../gramps/plugins/tool/removeunused.glade:344
 #: ../gramps/plugins/tool/verify.glade:904
@@ -33899,7 +33940,7 @@ msgstr "נא להקיש כפולה על השורה לתצוגת/עריכת נת�
 
 #: ../gramps/plugins/tool/removeunused.py:69
 msgid "Unused Objects"
-msgstr "אובייקטים שאינם בשימוש"
+msgstr "אובייקטים שלא בשימוש"
 
 #: ../gramps/plugins/tool/removeunused.py:188
 #: ../gramps/plugins/tool/verify.py:557
@@ -33908,7 +33949,7 @@ msgstr "סמן"
 
 #: ../gramps/plugins/tool/removeunused.py:303
 msgid "Remove unused objects"
-msgstr "הסרת אובייקטים שאינם בשימוש"
+msgstr "הסרת אובייקטים שלא בשימוש"
 
 #: ../gramps/plugins/tool/reorderids.glade:1406
 msgid "Enable ID reordering."
@@ -34005,7 +34046,7 @@ msgstr "האם להחליף את %s?"
 
 #: ../gramps/plugins/tool/reorderids.py:694
 msgid "Finding and assigning unused IDs."
-msgstr "איתור והקצאת מז‎הים שאינם בשימוש."
+msgstr "איתור והקצאת מז‎הים שלא בשימוש."
 
 #: ../gramps/plugins/tool/sortevents.py:76
 msgid "Sort Events"
@@ -34176,7 +34217,7 @@ msgstr "בדיקת מסד הנתונים לבעיות שְׁלֵמוּת, תיק
 
 #: ../gramps/plugins/tool/tools.gpr.py:107
 msgid "Compare Individual Events"
-msgstr "השוואת אירועי אנשים"
+msgstr "השווה אירועי אנשים"
 
 #: ../gramps/plugins/tool/tools.gpr.py:108
 msgid ""
@@ -34256,11 +34297,11 @@ msgstr "חישוב קשרי-גומלין בין שני אנשים"
 
 #: ../gramps/plugins/tool/tools.gpr.py:353
 msgid "Remove Unused Objects"
-msgstr "הסרת אובייקטים שאינם בשימוש"
+msgstr "הסרת אובייקטים שלא בשימוש"
 
 #: ../gramps/plugins/tool/tools.gpr.py:354
 msgid "Removes unused objects from the database"
-msgstr "הסרת אובייקטים שאינם בשימוש ממסד הנתונים"
+msgstr "הסרת אובייקטים שלא בשימוש ממסד הנתונים"
 
 #: ../gramps/plugins/tool/tools.gpr.py:376
 msgid "Reorders the Gramps IDs according to Gramps' default rules."
@@ -36263,7 +36304,7 @@ msgstr "דוח אתר מרשתת"
 
 #: ../gramps/plugins/webreport/media.py:290
 msgid "Below unused media objects"
-msgstr "אובייקטי מדיה שאינם בשימוש, מטה"
+msgstr "בתחתית אובייקטי מדיה שלא בשימוש"
 
 #: ../gramps/plugins/webreport/media.py:414
 #, python-format
@@ -36356,21 +36397,24 @@ msgid "Creating address book pages ..."
 msgstr "יוצר עמודי ספר כתובות..."
 
 #: ../gramps/plugins/webreport/narrativeweb.py:1826
-#, python-format
+#, fuzzy, python-format
 msgid "Narrative Website Report for the %s language"
-msgstr "דוח אתר מרשתת מילולי לשפה ה %s"
+msgstr "דוח אתר מרשתת מילולי לשפה ה- %s"
 
 #: ../gramps/plugins/webreport/narrativeweb.py:1828
+#, fuzzy
 msgid "Narrative Website Report"
 msgstr "דוח אתר מרשתת מילולי"
 
 #: ../gramps/plugins/webreport/narrativeweb.py:1941
+#, fuzzy
 msgid "Store website in .tar.gz archive"
-msgstr "אחסון אתר מרשתת בקובץ .tar.gz"
+msgstr "אחסון עמודי מרשתת בקובץ .tar.gz"
 
 #: ../gramps/plugins/webreport/narrativeweb.py:1943
+#, fuzzy
 msgid "Whether to store the website in an archive file"
-msgstr "האם לאחסן את אתר המרשתת בקובץ ארכיב"
+msgstr "האם לאחסן את עמודי המרשתת בקובץ ארכיב"
 
 #: ../gramps/plugins/webreport/narrativeweb.py:1954
 #: ../gramps/plugins/webreport/webcal.py:1746
@@ -36382,16 +36426,19 @@ msgid "My Family Tree"
 msgstr "אילן יוחסין שלי"
 
 #: ../gramps/plugins/webreport/narrativeweb.py:1960
+#, fuzzy
 msgid "Website title"
-msgstr "כותרת אתר מרשתת"
+msgstr "כותרת עמוד מרשתת"
 
 #: ../gramps/plugins/webreport/narrativeweb.py:1961
+#, fuzzy
 msgid "The title of the website"
-msgstr "כותרת אתר המרשתת"
+msgstr "כותרת עמוד המרשתת"
 
 #: ../gramps/plugins/webreport/narrativeweb.py:1966
+#, fuzzy
 msgid "Select filter to restrict people that appear on the website"
-msgstr "נא לבחור מסנן על מנת להגביל את האנשים שיופיעו באתר המרשתת"
+msgstr "נא לבחור מסנן על מנת להגביל את האנשים שיופיעו באתר"
 
 #: ../gramps/plugins/webreport/narrativeweb.py:1975
 msgid "Show the relationship between the current person and the active person"
@@ -36491,8 +36538,9 @@ msgid "Add previous/next to the navigation bar."
 msgstr "הוספת הקודם/הבא לסרגל הניווט."
 
 #: ../gramps/plugins/webreport/narrativeweb.py:2065
+#, fuzzy
 msgid "This is a secure site (HTTPS)"
-msgstr "זהו אתר מאובטח (HTTPS)"
+msgstr "זהו אתר מאובטח (https)"
 
 #: ../gramps/plugins/webreport/narrativeweb.py:2067
 msgid "Whether to use http:// or https://"
@@ -36698,7 +36746,7 @@ msgstr "אפשר יצירת מפתח תמונות"
 
 #: ../gramps/plugins/webreport/narrativeweb.py:2241
 msgid "Include unused images and media objects"
-msgstr "הכללת תמונות ואובייקטי מדיה שאינם בשימוש"
+msgstr "הכללת תמונות ואובייקטי מדיה שלא בשימוש"
 
 #: ../gramps/plugins/webreport/narrativeweb.py:2242
 msgid "Whether to include unused or unreferenced media objects"
@@ -36829,10 +36877,12 @@ msgid "Whether to include a parents column"
 msgstr "האם לכלול עמודת הורים"
 
 #: ../gramps/plugins/webreport/narrativeweb.py:2358
+#, fuzzy
 msgid "Include half and/or step-siblings on the individual pages"
-msgstr "הכללת אחים למחצה ו/או אחים חורגים בעמוד האישי"
+msgstr "הכללת חצאי אחים ו/או אחים חורגים בעמוד האישי"
 
 #: ../gramps/plugins/webreport/narrativeweb.py:2361
+#, fuzzy
 msgid ""
 "Whether to include half and/or step-siblings with the parents and siblings"
 msgstr "האם לכלול אחים למחצה ו/או אחים חורגים עם ההורים והצאצאים"
@@ -36854,26 +36904,31 @@ msgid "Add a complete events list and relevant pages or not"
 msgstr "הוספת רשימת אירועים מלאה ודפים רלבנטיים או לא"
 
 #: ../gramps/plugins/webreport/narrativeweb.py:2383
+#, fuzzy
 msgid "Include place pages"
-msgstr "הכללת עמודי מקום"
+msgstr "הכללת עמודי מקומות"
 
 #: ../gramps/plugins/webreport/narrativeweb.py:2385
+#, fuzzy
 msgid "Whether or not to include the place pages."
-msgstr "האם לכלול עמודי מקום."
+msgstr "האם לכלול עמודי מקומות."
 
 #: ../gramps/plugins/webreport/narrativeweb.py:2388
+#, fuzzy
 msgid "Include source pages"
-msgstr "הכללת עמודי מקור"
+msgstr "הכללת עמודי מקורות"
 
 #: ../gramps/plugins/webreport/narrativeweb.py:2390
+#, fuzzy
 msgid "Whether or not to include the source pages."
-msgstr "האם לכלול עמודי מקור."
+msgstr "האם לכלול עמודי מקורות."
 
 #: ../gramps/plugins/webreport/narrativeweb.py:2393
 msgid "Include repository pages"
 msgstr "הכללת עמודי מאגר"
 
 #: ../gramps/plugins/webreport/narrativeweb.py:2395
+#, fuzzy
 msgid "Whether or not to include the repository pages."
 msgstr "האם לכלול עמודי מאגר."
 
@@ -36910,8 +36965,9 @@ msgid "Place Map Options"
 msgstr "אפשרויות מפת מקומות"
 
 #: ../gramps/plugins/webreport/narrativeweb.py:2425
+#, fuzzy
 msgid "Stamen Map"
-msgstr "סטאמן_מאפ"
+msgstr "סטאמן-מאפ"
 
 #: ../gramps/plugins/webreport/narrativeweb.py:2426
 msgid "Google"
@@ -36964,6 +37020,7 @@ msgid "Google/ FamilyMap Option"
 msgstr "גוגל/ אפשרויות FamilyMap"
 
 #: ../gramps/plugins/webreport/narrativeweb.py:2464
+#, fuzzy
 msgid ""
 "Select which option that you would like to have for the Google Maps family-"
 "map pages..."
@@ -36994,24 +37051,28 @@ msgid "Stamen Option"
 msgstr "אפשרויות סטאמן"
 
 #: ../gramps/plugins/webreport/narrativeweb.py:2481
+#, fuzzy
 msgid ""
 "Select which option that you would like to have for the Stamen map map-"
 "pages..."
-msgstr "נא לבחור באפשרות לעמודי מפת סטאמן_מאפ ..."
+msgstr "נא לבחור אפשרות לעמודי מפת סטאמן ..."
 
 #: ../gramps/plugins/webreport/narrativeweb.py:2493
+#, fuzzy
 msgid "Other inclusion (CMS, web calendar, PHP)"
-msgstr "הכללות אחרות (CMS, web calendar, PHP)"
+msgstr "הכללות אחרות (CMS, Web Calendar, Php)"
 
 #: ../gramps/plugins/webreport/narrativeweb.py:2497
+#, fuzzy
 msgid "Do we include these pages in a CMS web?"
-msgstr "האם לכלול עמודים אלו ברשת CMS?"
+msgstr "האם לכלול עמידים אלו ברשת cms ?"
 
 #: ../gramps/plugins/webreport/narrativeweb.py:2502
 msgid "URI"
 msgstr "URI"
 
 #: ../gramps/plugins/webreport/narrativeweb.py:2508
+#, fuzzy
 msgid "Where do you place your website? default = /NAVWEB"
 msgstr "היכן ממוקם אתר המרשתת? ברירת מחדל =/NAVWEB"
 
@@ -37028,6 +37089,7 @@ msgid "Max days for updates"
 msgstr "מספר ימים מרבי לעדכון"
 
 #: ../gramps/plugins/webreport/narrativeweb.py:2524
+#, fuzzy
 msgid "You want to see the last updates on how many days?"
 msgstr "לכמה ימים להציג עדכונים אחרונים?"
 
@@ -37064,8 +37126,9 @@ msgstr "כותרת אתר זה"
 #: ../gramps/plugins/webreport/narrativeweb.py:2568
 #: ../gramps/plugins/webreport/narrativeweb.py:2576
 #: ../gramps/plugins/webreport/narrativeweb.py:2584
+#, fuzzy
 msgid "Enter a title in the respective language"
-msgstr "הזנת כותרת בשפה המתאימה"
+msgstr "מתן כותרת בשפה המתאימה"
 
 #: ../gramps/plugins/webreport/narrativeweb.py:2554
 msgid "third language"
@@ -38262,9 +38325,6 @@ msgstr "ללא עמוד סגנון"
 
 #~ msgid "Until"
 #~ msgstr "עד"
-
-#~ msgid "gramps"
-#~ msgstr "גראמפס"
 
 #~ msgid "Given Name"
 #~ msgstr "שם פרטי"

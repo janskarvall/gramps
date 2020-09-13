@@ -366,17 +366,25 @@ class DateDisplay:
         cal = date.get_calendar()
         qual = date.get_quality()
         start = date.get_start_date()
+        stop = date.get_stop_date()
         newyear = date.get_new_year()
 
         qual_str = self._qual_str[qual]
 
         if mod == Date.MOD_TEXTONLY:
             return date.get_text()
+        elif mod == Date.MOD_TO:
+            if stop == Date.EMPTY:
+                return ""
+            else:
+                text = self.display_iso(stop)
+                scal = self.format_extras(cal, newyear)
+                return "%s%s%s%s" % (qual_str, self._mod_str[mod], text, scal)
         elif start == Date.EMPTY:
             return ""
         elif mod == Date.MOD_SPAN or mod == Date.MOD_RANGE:
             d1 = self.display_iso(start)
-            d2 = self.display_iso(date.get_stop_date())
+            d2 = self.display_iso(stop)
             scal = self.format_extras(cal, newyear)
             return "%s %s - %s%s" % (qual_str, d1, d2, scal)
         else:
@@ -413,6 +421,44 @@ class DateDisplay:
             return self._bce_str % value
         else:
             return value
+
+    def dd_from(self,date):
+        """
+        Return a text string representing the open ended span date
+        (it may be overridden if a locale-specific date displayer exists)
+        """
+        cal = date.get_calendar()
+        qual_str = self._qual_str[date.get_quality()]
+        scal = self.format_extras(cal, date.get_new_year())
+        d = self.display_cal[cal](date.get_start_date(),
+            # Translators: If there is no special inflection for
+            # "from <Month>" in your language, DON'T translate this.
+            # Otherwise, translate to "from" in ENGLISH!!! ENGLISH!!!
+                                   inflect=self._("", "from-date"))
+        return self._("{date_quality}from {date_start}"
+                      "{nonstd_calendar_and_ny}").format(
+                          date_quality=qual_str,
+                          date_start=d,
+                          nonstd_calendar_and_ny=scal)
+
+    def dd_to(self,date):
+        """
+        Return a text string representing the open ended span date
+        (it may be overridden if a locale-specific date displayer exists)
+        """
+        cal = date.get_calendar()
+        qual_str = self._qual_str[date.get_quality()]
+        scal = self.format_extras(cal, date.get_new_year())
+        d = self.display_cal[cal](date.get_stop_date(),
+            # Translators: If there is no special inflection for
+            # "from <Month>" in your language, DON'T translate this.
+            # Otherwise, translate to "from" in ENGLISH!!! ENGLISH!!!
+                                   inflect=self._("", "to-date"))
+        return self._("{date_quality}to {date_stop}"
+                      "{nonstd_calendar_and_ny}").format(
+                          date_quality=qual_str,
+                          date_stop=d,
+                          nonstd_calendar_and_ny=scal)
 
     def dd_span(self, date):
         """
@@ -472,6 +518,7 @@ class DateDisplay:
         cal = date.get_calendar()
         qual = date.get_quality()
         start = date.get_start_date()
+        stop = date.get_stop_date()
         newyear = date.get_new_year()
 
         qual_str = self._qual_str[qual]
@@ -479,8 +526,15 @@ class DateDisplay:
 
         if mod == Date.MOD_TEXTONLY:
             return date.get_text()
+        elif mod == Date.MOD_TO:
+            if stop == Date.EMPTY:
+                return ""
+            else:
+                return self.dd_to(date)
         elif start == Date.EMPTY:
             return ""
+        elif mod == Date.MOD_FROM:
+            return self.dd_from(date)
         elif mod == Date.MOD_SPAN:
             return self.dd_span(date)
         elif mod == Date.MOD_RANGE:

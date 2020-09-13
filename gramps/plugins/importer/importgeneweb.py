@@ -895,13 +895,26 @@ class GeneWebParser:
             groups = matches.groups()
             mod = _mod_map.get(groups[0],Date.MOD_NONE)
             if groups[3] == "..":
-                mod = Date.MOD_SPAN
-                cal2 = _cal_map.get(groups[5],Date.CAL_GREGORIAN)
-                sub2 = self.sub_date(groups[4])
+                if groups[4] == "0":
+                    mod = Date.MOD_FROM
+                    cal1 = _cal_map.get(groups[2],Date.CAL_GREGORIAN)
+                    sub1 = self.sub_date(groups[1])
+                    sub2 = (0,0,0)
+                elif groups[1] == "0":
+                    mod = Date.MOD_TO
+                    cal1 = _cal_map.get(groups[5],Date.CAL_GREGORIAN)
+                    sub1 = self.sub_date(groups[4])
+                    sub2 = (0,0,0)
+                else:
+                    mod = Date.MOD_SPAN
+                    cal1 = _cal_map.get(groups[2],Date.CAL_GREGORIAN)
+                    cal2 = _cal_map.get(groups[5],Date.CAL_GREGORIAN)
+                    sub1 = self.sub_date(groups[1])
+                    sub2 = self.sub_date(groups[4])
             else:
+                cal1 = _cal_map.get(groups[2],Date.CAL_GREGORIAN)
+                sub1 = self.sub_date(groups[1])
                 sub2 = (0,0,0)
-            cal1 = _cal_map.get(groups[2],Date.CAL_GREGORIAN)
-            sub1 = self.sub_date(groups[1])
             try:
                 date.set(Date.QUAL_NONE,mod, cal1,
                          (sub1[0],sub1[1],sub1[2],0,sub2[0],sub2[1],sub2[2],0))

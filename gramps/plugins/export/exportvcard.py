@@ -275,6 +275,8 @@ class VCardWriter:
                 if (mod != Date.MOD_TEXTONLY and
                     not b_date.is_empty() and
                     not mod == Date.MOD_SPAN and
+                    not mod == Date.MOD_FROM and
+                    not mod == Date.MOD_TO and
                     not mod == Date.MOD_RANGE):
                     (day, month, year, slash) = b_date.get_start_date()
                     if day > 0 and month > 0 and year > 0:

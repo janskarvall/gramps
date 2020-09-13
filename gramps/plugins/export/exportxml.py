@@ -966,7 +966,7 @@ class GrampsXmlWriter(UpdateCallback):
                                 dualdated_str, newyear_str))
         elif mode != Date.MOD_TEXTONLY:
             date_str = self.get_iso_date(date.get_start_date())
-            if date_str == "":
+            if date_str == "" and mode != Date.MOD_TO:
                 return
 
             if mode == Date.MOD_BEFORE:
@@ -975,6 +975,11 @@ class GrampsXmlWriter(UpdateCallback):
                 mode_str = ' type="after"'
             elif mode == Date.MOD_ABOUT:
                 mode_str = ' type="about"'
+            elif mode == Date.MOD_FROM:
+                mode_str = ' type="from"'
+            elif mode == Date.MOD_TO:
+                date_str = self.get_iso_date(date.get_stop_date())
+                mode_str = ' type="to"'
             else:
                 mode_str = ""
 

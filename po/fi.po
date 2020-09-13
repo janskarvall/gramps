@@ -5,13 +5,12 @@
 # Niemelä <niememat@gmail.com>, 2017, 2018.
 # Matti Niemelä <niememat@gmail.com>, 2014, 2015, 2016, 2017, 2019, 2021.
 # Nick Hall <nick-h@gramps-project.org>, 2021.
-# PeterJPower <pekka.valta@kolumbus.fi>, 2021.
 msgid ""
 msgstr ""
 "Project-Id-Version: Gramps_5_fi\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-06-05 19:16+0100\n"
-"PO-Revision-Date: 2021-06-19 18:58+0000\n"
+"POT-Creation-Date: 2021-06-29 14:29+0200\n"
+"PO-Revision-Date: 2021-06-05 08:56+0000\n"
 "Last-Translator: Matti Niemelä <niememat@gmail.com>\n"
 "Language-Team: Finnish <https://hosted.weblate.org/projects/gramps-project/"
 "gramps/fi/>\n"
@@ -20,7 +19,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.7\n"
+"X-Generator: Weblate 4.7-dev\n"
 "Generated-By: pygettext.py 1.4\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-Basepath: ../Gramps/gramps\n"
@@ -68,6 +67,11 @@ msgstr "Gramps kehitystiimi"
 msgid "Genealogy System"
 msgstr "Sukututkimusjärjestelmä"
 
+#: ../data/gramps.desktop.in:7
+#, fuzzy
+msgid "gramps"
+msgstr "Gramps"
+
 #: ../data/gramps.desktop.in:12
 msgid "Genealogy;Family History;Research;Family Tree;GEDCOM;"
 msgstr "Sukututkimus;Suvun tarina;Tutkimus;Sukupuu;GEDCOM;"
@@ -100,7 +104,7 @@ msgstr "Bulgaria"
 
 #: ../data/holidays.xml:52
 msgid "Canada"
-msgstr "Kanada"
+msgstr "Canada"
 
 #: ../data/holidays.xml:84
 msgid "Chile"
@@ -108,39 +112,39 @@ msgstr "Chile"
 
 #: ../data/holidays.xml:107
 msgid "China"
-msgstr "Kiina"
+msgstr "China"
 
 #: ../data/holidays.xml:110
 msgid "Croatia"
-msgstr "Kroatia"
+msgstr "Croatia"
 
 #: ../data/holidays.xml:126
 msgid "Czech Republic"
-msgstr "Tšekin tasavalta"
+msgstr "Czech Republic"
 
 #: ../data/holidays.xml:141
 msgid "England"
-msgstr "Iso-Britania"
+msgstr "England"
 
 #: ../data/holidays.xml:171
 msgid "Finland"
-msgstr "Suomi"
+msgstr "Finland"
 
 #: ../data/holidays.xml:265
 msgid "France"
-msgstr "Ranska"
+msgstr "France"
 
 #: ../data/holidays.xml:301
 msgid "Germany"
-msgstr "Saksa"
+msgstr "Germany"
 
 #: ../data/holidays.xml:318
 msgid "Japan"
-msgstr "Japani"
+msgstr "Japan"
 
 #: ../data/holidays.xml:341
 msgid "Jewish Holidays"
-msgstr "Juutalaiset juhlapyhät"
+msgstr "Juutalaisten juhlapäivät"
 
 #: ../data/holidays.xml:342
 msgid "Purim"
@@ -196,27 +200,27 @@ msgstr "Sukkot"
 
 #: ../data/holidays.xml:355
 msgid "2 of Sukot"
-msgstr "2. Sukkot"
+msgstr "2. Sukot"
 
 #: ../data/holidays.xml:356
 msgid "3 of Sukot"
-msgstr "3. Sukkot"
+msgstr "3. Sukot"
 
 #: ../data/holidays.xml:357
 msgid "4 of Sukot"
-msgstr "4. Sukkot"
+msgstr "4. Sukot"
 
 #: ../data/holidays.xml:358
 msgid "5 of Sukot"
-msgstr "5. Sukkot"
+msgstr "5. Sukot"
 
 #: ../data/holidays.xml:359
 msgid "6 of Sukot"
-msgstr "6. Sukkot"
+msgstr "6. Sukot"
 
 #: ../data/holidays.xml:360
 msgid "7 of Sukot"
-msgstr "7. Sukkot"
+msgstr "7. Sukot"
 
 #: ../data/holidays.xml:361
 msgid "Simhat Tora"
@@ -228,40 +232,40 @@ msgstr "Hanukka"
 
 #: ../data/holidays.xml:363
 msgid "2 of Hanuka"
-msgstr "2. Hanukka"
+msgstr "2. Hanuka"
 
 #: ../data/holidays.xml:364
 msgid "3 of Hanuka"
-msgstr "3. Hanukka"
+msgstr "3. Hanuka"
 
 #: ../data/holidays.xml:365
 msgid "4 of Hanuka"
-msgstr "4. Hanukka"
+msgstr "4. Hanuka"
 
 #: ../data/holidays.xml:366
 msgid "5 of Hanuka"
-msgstr "5. Hanukka"
+msgstr "5. Hanuka"
 
 #: ../data/holidays.xml:367
 msgid "6 of Hanuka"
-msgstr "6. Hanukka"
+msgstr "6. Hanuka"
 
 #: ../data/holidays.xml:368
 msgid "7 of Hanuka"
-msgstr "7. Hanukka"
+msgstr "7. Hanuka"
 
 #: ../data/holidays.xml:369
 msgid "8 of Hanuka"
-msgstr "8. Hanukka"
+msgstr "8. Hanuka"
 
 #: ../data/holidays.xml:371
 msgid "New Zealand"
-msgstr "Uusi -Seelanti"
+msgstr "New Zealand"
 
 # 20200823
 #: ../data/holidays.xml:387
 msgid "Russia"
-msgstr "Venäjä"
+msgstr "Russia"
 
 #: ../data/holidays.xml:403
 msgid "Serbia"
@@ -278,15 +282,15 @@ msgstr "Slovakia"
 
 #: ../data/holidays.xml:450 ../gramps/plugins/mapservices/eniroswedenmap.py:47
 msgid "Sweden"
-msgstr "Ruotsi"
+msgstr "Sweden"
 
 #: ../data/holidays.xml:477
 msgid "Ukraine"
-msgstr "Ukraina"
+msgstr "Ukraine"
 
 #: ../data/holidays.xml:504
 msgid "United States of America"
-msgstr "Yhdysvallat"
+msgstr "United States of America"
 
 #: ../data/tips.xml:4
 msgid ""
@@ -812,7 +816,7 @@ msgid ""
 "the database. These can be graphic images, videos, sound clips, "
 "spreadsheets, documents, and more."
 msgstr ""
-"<b>Medianäkymä</b><br/>Medianäkymä näyttää luettelon kaikista sukupuuhun "
+"<b>Medianäkymä</b><br/>Medianäkymä näyttää listan kaikista sukupuuhun "
 "liitetyistä mediatiedostoista. Tiedostot voivat olla kuvia, videoita, ääniä, "
 "taulukoita, dokumentteja jne."
 
@@ -2363,20 +2367,35 @@ msgstr "{short_month} {year}"
 #. Translators: If there is no special inflection for
 #. "from <Month>" in your language, DON'T translate this.
 #. Otherwise, translate to "from" in ENGLISH!!! ENGLISH!!!
-#: ../gramps/gen/datehandler/_datedisplay.py:429
+#: ../gramps/gen/datehandler/_datedisplay.py:437
+#: ../gramps/gen/datehandler/_datedisplay.py:475
 msgctxt "from-date"
 msgid ""
 msgstr "from"
 
+#: ../gramps/gen/datehandler/_datedisplay.py:438
+#, python-brace-format
+msgid "{date_quality}from {date_start}{nonstd_calendar_and_ny}"
+msgstr "{date_quality}{date_start} - {nonstd_calendar_and_ny}"
+
+#. Translators: If there is no special inflection for
+#. "from <Month>" in your language, DON'T translate this.
+#. Otherwise, translate to "from" in ENGLISH!!! ENGLISH!!!
 #. Translators: If there is no special inflection for
 #. "to <Month>" in your language, DON'T translate this.
 #. Otherwise, translate to "to" in ENGLISH!!! ENGLISH!!!
-#: ../gramps/gen/datehandler/_datedisplay.py:434
+#: ../gramps/gen/datehandler/_datedisplay.py:456
+#: ../gramps/gen/datehandler/_datedisplay.py:480
 msgctxt "to-date"
 msgid ""
 msgstr "to"
 
-#: ../gramps/gen/datehandler/_datedisplay.py:435
+#: ../gramps/gen/datehandler/_datedisplay.py:457
+#, python-brace-format
+msgid "{date_quality}to {date_stop}{nonstd_calendar_and_ny}"
+msgstr "{date_quality} - {date_stop}{nonstd_calendar_and_ny}"
+
+#: ../gramps/gen/datehandler/_datedisplay.py:481
 #, python-brace-format
 msgid "{date_quality}from {date_start} to {date_stop}{nonstd_calendar_and_ny}"
 msgstr "{date_quality}{date_start} - {date_stop}{nonstd_calendar_and_ny}"
@@ -2384,7 +2403,7 @@ msgstr "{date_quality}{date_start} - {date_stop}{nonstd_calendar_and_ny}"
 #. Translators: If there is no special inflection for
 #. "between <Month>" in your language, DON'T translate this.
 #. Otherwise, translate to "between" in ENGLISH!!! ENGLISH!!!
-#: ../gramps/gen/datehandler/_datedisplay.py:454
+#: ../gramps/gen/datehandler/_datedisplay.py:500
 msgctxt "between-date"
 msgid ""
 msgstr "between"
@@ -2392,12 +2411,12 @@ msgstr "between"
 #. Translators: If there is no special inflection for
 #. "and <Month>" in your language, DON'T translate this.
 #. Otherwise, translate to "and" in ENGLISH!!! ENGLISH!!!
-#: ../gramps/gen/datehandler/_datedisplay.py:459
+#: ../gramps/gen/datehandler/_datedisplay.py:505
 msgctxt "and-date"
 msgid ""
 msgstr "and"
 
-#: ../gramps/gen/datehandler/_datedisplay.py:460
+#: ../gramps/gen/datehandler/_datedisplay.py:506
 #, python-brace-format
 msgid ""
 "{date_quality}between {date_start} and {date_stop}{nonstd_calendar_and_ny}"
@@ -2407,7 +2426,7 @@ msgstr ""
 #. Translators: If there is no special inflection for
 #. "before <Month>" in your language, DON'T translate this.
 #. Otherwise, translate to "before" in ENGLISH!!! ENGLISH!!!
-#: ../gramps/gen/datehandler/_datedisplay.py:493
+#: ../gramps/gen/datehandler/_datedisplay.py:547
 msgctxt "before-date"
 msgid ""
 msgstr "before"
@@ -2415,7 +2434,7 @@ msgstr "before"
 #. Translators: If there is no special inflection for
 #. "after <Month>" in your language, DON'T translate this.
 #. Otherwise, translate to "after" in ENGLISH!!! ENGLISH!!!
-#: ../gramps/gen/datehandler/_datedisplay.py:498
+#: ../gramps/gen/datehandler/_datedisplay.py:552
 msgctxt "after-date"
 msgid ""
 msgstr "after"
@@ -2423,7 +2442,7 @@ msgstr "after"
 #. Translators: If there is no special inflection for
 #. "about <Month>" in your language, DON'T translate this.
 #. Otherwise, translate to "about" in ENGLISH!!! ENGLISH!!!
-#: ../gramps/gen/datehandler/_datedisplay.py:503
+#: ../gramps/gen/datehandler/_datedisplay.py:557
 msgctxt "about-date"
 msgid ""
 msgstr "about"
@@ -2431,7 +2450,7 @@ msgstr "about"
 #. Translators: If there is no special inflection for
 #. "estimated <Month>" in your language, DON'T translate this.
 #. Otherwise, translate to "estimated" in ENGLISH!!! ENGLISH!!!
-#: ../gramps/gen/datehandler/_datedisplay.py:508
+#: ../gramps/gen/datehandler/_datedisplay.py:562
 msgctxt "estimated-date"
 msgid ""
 msgstr "estimated"
@@ -2439,41 +2458,41 @@ msgstr "estimated"
 #. Translators: If there is no special inflection for
 #. "calculated <Month>" in your language, DON'T translate this.
 #. Otherwise, translate to "calculated" in ENGLISH!!! ENGLISH!!!
-#: ../gramps/gen/datehandler/_datedisplay.py:513
+#: ../gramps/gen/datehandler/_datedisplay.py:567
 msgctxt "calculated-date"
 msgid ""
 msgstr "calculated"
 
-#: ../gramps/gen/datehandler/_datedisplay.py:532
+#: ../gramps/gen/datehandler/_datedisplay.py:586
 #, python-brace-format
 msgid "{date_quality}{noncompound_modifier}{date}{nonstd_calendar_and_ny}"
 msgstr "{date_quality}{noncompound_modifier}{date}{nonstd_calendar_and_ny}"
 
 #. Translators: this month is ALREADY inflected: ignore it
-#: ../gramps/gen/datehandler/_datedisplay.py:651
+#: ../gramps/gen/datehandler/_datedisplay.py:705
 #, python-brace-format
 msgid "{long_month} {day:d}, {year}"
 msgstr "{long_month} {day:d}, {year}"
 
 #. Translators: this month is ALREADY inflected: ignore it
-#: ../gramps/gen/datehandler/_datedisplay.py:677
+#: ../gramps/gen/datehandler/_datedisplay.py:731
 #, python-brace-format
 msgid "{short_month} {day:d}, {year}"
 msgstr "{short_month} {day:d}, {year}"
 
 #. Translators: this month is ALREADY inflected: ignore it
-#: ../gramps/gen/datehandler/_datedisplay.py:703
+#: ../gramps/gen/datehandler/_datedisplay.py:757
 #, python-brace-format
 msgid "{day:d} {long_month} {year}"
 msgstr "{day:d} {long_month} {year}"
 
 #. Translators: this month is ALREADY inflected: ignore it
-#: ../gramps/gen/datehandler/_datedisplay.py:729
+#: ../gramps/gen/datehandler/_datedisplay.py:783
 #, python-brace-format
 msgid "{day:d} {short_month} {year}"
 msgstr "{day:d} {short_month} {year}"
 
-#: ../gramps/gen/datehandler/_dateparser.py:421
+#: ../gramps/gen/datehandler/_dateparser.py:430
 msgid "today"
 msgstr "tänään"
 
@@ -2688,37 +2707,37 @@ msgctxt "alternative month names for December"
 msgid "|"
 msgstr "Joulukuu"
 
-#: ../gramps/gen/datehandler/_datestrings.py:131 ../gramps/gen/lib/date.py:609
+#: ../gramps/gen/datehandler/_datestrings.py:131 ../gramps/gen/lib/date.py:675
 msgctxt "calendar"
 msgid "Gregorian"
 msgstr "gregoriaaninen"
 
-#: ../gramps/gen/datehandler/_datestrings.py:132 ../gramps/gen/lib/date.py:610
+#: ../gramps/gen/datehandler/_datestrings.py:132 ../gramps/gen/lib/date.py:676
 msgctxt "calendar"
 msgid "Julian"
 msgstr "juliaaninen"
 
-#: ../gramps/gen/datehandler/_datestrings.py:133 ../gramps/gen/lib/date.py:611
+#: ../gramps/gen/datehandler/_datestrings.py:133 ../gramps/gen/lib/date.py:677
 msgctxt "calendar"
 msgid "Hebrew"
 msgstr "juutalainen"
 
-#: ../gramps/gen/datehandler/_datestrings.py:134 ../gramps/gen/lib/date.py:612
+#: ../gramps/gen/datehandler/_datestrings.py:134 ../gramps/gen/lib/date.py:678
 msgctxt "calendar"
 msgid "French Republican"
 msgstr "Ranskan vallankumous"
 
-#: ../gramps/gen/datehandler/_datestrings.py:135 ../gramps/gen/lib/date.py:613
+#: ../gramps/gen/datehandler/_datestrings.py:135 ../gramps/gen/lib/date.py:679
 msgctxt "calendar"
 msgid "Persian"
 msgstr "persialainen"
 
-#: ../gramps/gen/datehandler/_datestrings.py:136 ../gramps/gen/lib/date.py:614
+#: ../gramps/gen/datehandler/_datestrings.py:136 ../gramps/gen/lib/date.py:680
 msgctxt "calendar"
 msgid "Islamic"
 msgstr "islamilainen"
 
-#: ../gramps/gen/datehandler/_datestrings.py:137 ../gramps/gen/lib/date.py:615
+#: ../gramps/gen/datehandler/_datestrings.py:137 ../gramps/gen/lib/date.py:681
 msgctxt "calendar"
 msgid "Swedish"
 msgstr "ruotsalainen"
@@ -6696,7 +6715,7 @@ msgid "Notes"
 msgstr "Lisätiedot"
 
 #: ../gramps/gen/lib/address.py:111 ../gramps/gen/lib/citation.py:106
-#: ../gramps/gen/lib/date.py:706 ../gramps/gen/lib/event.py:146
+#: ../gramps/gen/lib/date.py:772 ../gramps/gen/lib/event.py:146
 #: ../gramps/gen/lib/ldsord.py:182 ../gramps/gen/lib/media.py:163
 #: ../gramps/gen/lib/name.py:157 ../gramps/gen/lib/placename.py:101
 #: ../gramps/gen/lib/placeref.py:94
@@ -7212,15 +7231,15 @@ msgstr "Viimeisin muutos"
 msgid "Tags"
 msgstr "Tagit"
 
-#: ../gramps/gen/lib/date.py:290 ../gramps/gen/lib/date.py:325
-#: ../gramps/gen/lib/date.py:331 ../gramps/gen/lib/date.py:333
-#: ../gramps/gen/lib/date.py:350
+#: ../gramps/gen/lib/date.py:354 ../gramps/gen/lib/date.py:389
+#: ../gramps/gen/lib/date.py:395 ../gramps/gen/lib/date.py:397
+#: ../gramps/gen/lib/date.py:414
 msgctxt "age"
 msgid "about"
 msgstr "noin"
 
 #. Translators: leave all/any {...} untranslated
-#: ../gramps/gen/lib/date.py:427 ../gramps/gen/lib/date.py:434
+#: ../gramps/gen/lib/date.py:491 ../gramps/gen/lib/date.py:498
 #, python-brace-format
 msgid "{number_of} year"
 msgid_plural "{number_of} years"
@@ -7228,7 +7247,7 @@ msgstr[0] "{number_of} vuosi"
 msgstr[1] "{number_of} vuotta"
 
 #. Translators: leave all/any {...} untranslated
-#: ../gramps/gen/lib/date.py:443
+#: ../gramps/gen/lib/date.py:507
 #, python-brace-format
 msgid "{number_of} month"
 msgid_plural "{number_of} months"
@@ -7236,34 +7255,34 @@ msgstr[0] "{number_of} kuukausi"
 msgstr[1] "{number_of} kuukautta"
 
 #. Translators: leave all/any {...} untranslated
-#: ../gramps/gen/lib/date.py:454
+#: ../gramps/gen/lib/date.py:518
 #, python-brace-format
 msgid "{number_of} day"
 msgid_plural "{number_of} days"
 msgstr[0] "{number_of} päivä"
 msgstr[1] "{number_of} päivää"
 
-#: ../gramps/gen/lib/date.py:710
+#: ../gramps/gen/lib/date.py:776
 #: ../gramps/plugins/drawreport/drawplugins.gpr.py:75
 #: ../gramps/plugins/gramplet/gramplet.gpr.py:74
 #: ../gramps/plugins/gramplet/gramplet.gpr.py:80
 msgid "Calendar"
 msgstr "Kalenteri"
 
-#: ../gramps/gen/lib/date.py:712
+#: ../gramps/gen/lib/date.py:778
 msgid "Modifier"
 msgstr "Määrite"
 
-#: ../gramps/gen/lib/date.py:714
+#: ../gramps/gen/lib/date.py:780
 msgid "Quality"
 msgstr "Laatu"
 
-#: ../gramps/gen/lib/date.py:716 ../gramps/gui/editors/filtereditor.py:836
+#: ../gramps/gen/lib/date.py:782 ../gramps/gui/editors/filtereditor.py:836
 #: ../gramps/gui/glade/rule.glade:967
 msgid "Values"
 msgstr "Arvot"
 
-#: ../gramps/gen/lib/date.py:719 ../gramps/gen/lib/placename.py:99
+#: ../gramps/gen/lib/date.py:785 ../gramps/gen/lib/placename.py:99
 #: ../gramps/gen/lib/styledtext.py:322
 #: ../gramps/gen/plug/report/_constants.py:54 ../gramps/gui/clipboard.py:613
 #: ../gramps/gui/clipboard.py:621 ../gramps/gui/configure.py:1396
@@ -7275,56 +7294,65 @@ msgstr "Arvot"
 msgid "Text"
 msgstr "Teksti"
 
-#: ../gramps/gen/lib/date.py:721
+#: ../gramps/gen/lib/date.py:787
 msgid "Sort value"
 msgstr "Lajittele arvot"
 
-#: ../gramps/gen/lib/date.py:723
+#: ../gramps/gen/lib/date.py:789
 msgid "New year begins"
 msgstr "Uusi vuosi alkaa"
 
-#: ../gramps/gen/lib/date.py:1856
+#: ../gramps/gen/lib/date.py:2015
 msgctxt "date-quality"
 msgid "none"
 msgstr "ei valintaa"
 
-#: ../gramps/gen/lib/date.py:1857
+#: ../gramps/gen/lib/date.py:2016
 msgid "calculated"
 msgstr "laskettuna"
 
-#: ../gramps/gen/lib/date.py:1857
+#: ../gramps/gen/lib/date.py:2016
 msgid "estimated"
 msgstr "arvioitu"
 
-#: ../gramps/gen/lib/date.py:1871
+#: ../gramps/gen/lib/date.py:2030
 msgctxt "date-modifier"
 msgid "none"
 msgstr "ei valintaa"
 
-#: ../gramps/gen/lib/date.py:1872 ../gramps/plugins/webreport/basepage.py:3248
+#: ../gramps/gen/lib/date.py:2031 ../gramps/plugins/webreport/basepage.py:3248
 msgid "about"
 msgstr "noin"
 
-#: ../gramps/gen/lib/date.py:1872 ../gramps/plugins/lib/libprogen.py:1841
+#: ../gramps/gen/lib/date.py:2031 ../gramps/plugins/lib/libprogen.py:1841
 #: ../gramps/plugins/webreport/basepage.py:3244
 msgid "after"
 msgstr "jälkeen"
 
-#: ../gramps/gen/lib/date.py:1872 ../gramps/plugins/webreport/basepage.py:3246
+#: ../gramps/gen/lib/date.py:2031 ../gramps/plugins/webreport/basepage.py:3246
 msgid "before"
 msgstr "ennen"
 
-#: ../gramps/gen/lib/date.py:1873
+#: ../gramps/gen/lib/date.py:2032
+msgid "from"
+msgstr ""
+
+#: ../gramps/gen/lib/date.py:2032
 msgid "range"
 msgstr "aikavälillä"
 
-#: ../gramps/gen/lib/date.py:1873
+#: ../gramps/gen/lib/date.py:2032
 msgid "span"
 msgstr "ajanjaksona"
 
-#: ../gramps/gen/lib/date.py:1873
+#: ../gramps/gen/lib/date.py:2032
 msgid "textonly"
 msgstr "vain tekstinä"
+
+#: ../gramps/gen/lib/date.py:2032
+#, fuzzy
+msgid "to"
+msgstr "Keskeytä"
 
 #: ../gramps/gen/lib/event.py:136 ../gramps/gen/lib/eventref.py:109
 #: ../gramps/gui/clipboard.py:335 ../gramps/gui/configure.py:661
@@ -7665,7 +7693,7 @@ msgstr "Avioliittosopimus"
 
 #: ../gramps/gen/lib/eventtype.py:202
 msgid "Marriage Banns"
-msgstr "Avioliittokuulutus"
+msgstr "Kuulutukset"
 
 #: ../gramps/gen/lib/eventtype.py:203
 msgid "Engagement"
@@ -9373,7 +9401,7 @@ msgstr "Tiedosto %s on jo käytössä, sulje se ensin."
 #: ../gramps/plugins/export/exportcsv.py:261
 #: ../gramps/plugins/export/exportcsv.py:265
 #: ../gramps/plugins/export/exportftree.py:136
-#: ../gramps/plugins/export/exportgedcom.py:1597
+#: ../gramps/plugins/export/exportgedcom.py:1608
 #: ../gramps/plugins/export/exportgeneweb.py:109
 #: ../gramps/plugins/export/exportgeneweb.py:113
 #: ../gramps/plugins/export/exportvcalendar.py:123
@@ -10318,7 +10346,7 @@ msgid ""
 "If you're sure there is no problem with other files, delete it, and restart "
 "Gramps."
 msgstr ""
-"Virhe koottaessa luetteloa viimeksi käytetyistä DBs tiedostoista {fname}: "
+"Virhe koottaessa listaa viimeksi käytetyistä DBs tiedostoista {fname}: "
 "{error}.\n"
 "Tämä saattaa olla merkki vaurioista tiedostoissa.\n"
 "Jos olet varma, että muissa tiedostoissa ei ole mitään ongelmaa, poista se, "
@@ -10599,7 +10627,7 @@ msgstr "saksa"
 
 #: ../gramps/gen/utils/grampslocale.py:78
 msgid "German (Austria)"
-msgstr "Saksa (Itävalta)"
+msgstr ""
 
 #: ../gramps/gen/utils/grampslocale.py:79
 msgid "Greek"
@@ -13791,7 +13819,7 @@ msgstr "Muokkaa lainausta (%s)"
 msgid "Delete Citation (%s)"
 msgstr "Poista lainaus (%s)"
 
-#: ../gramps/gui/editors/editdate.py:76 ../gramps/gui/editors/editdate.py:85
+#: ../gramps/gui/editors/editdate.py:76 ../gramps/gui/editors/editdate.py:87
 msgid "Regular"
 msgstr "Tavanomainen"
 
@@ -13812,32 +13840,41 @@ msgid "Range"
 msgstr "Aikavälillä"
 
 #: ../gramps/gui/editors/editdate.py:81
+msgid "From"
+msgstr ""
+
+#: ../gramps/gui/editors/editdate.py:82
+#, fuzzy
+msgid "To"
+msgstr "Ylhäällä"
+
+#: ../gramps/gui/editors/editdate.py:83
 msgid "Span"
 msgstr "Ajanjaksona"
 
-#: ../gramps/gui/editors/editdate.py:82
+#: ../gramps/gui/editors/editdate.py:84
 msgid "Text only"
 msgstr "Vain tekstinä"
 
-#: ../gramps/gui/editors/editdate.py:86
+#: ../gramps/gui/editors/editdate.py:88
 msgid "Estimated"
 msgstr "Arvioitu"
 
-#: ../gramps/gui/editors/editdate.py:87
+#: ../gramps/gui/editors/editdate.py:89
 msgid "Calculated"
 msgstr "Laskettu"
 
 # WIKI_HELP_SEC osa3
-#: ../gramps/gui/editors/editdate.py:99
+#: ../gramps/gui/editors/editdate.py:101
 msgctxt "manual"
 msgid "Editing_dates"
 msgstr "P.C3.A4iv.C3.A4m.C3.A4.C3.A4rien_muokkaus"
 
-#: ../gramps/gui/editors/editdate.py:126 ../gramps/gui/editors/editdate.py:279
+#: ../gramps/gui/editors/editdate.py:128 ../gramps/gui/editors/editdate.py:281
 msgid "Date selection"
 msgstr "Päivämäärän valinta"
 
-#: ../gramps/gui/editors/editdate.py:269
+#: ../gramps/gui/editors/editdate.py:271
 #, python-brace-format
 msgid "Correct the date or switch from `{cur_mode}' to `{text_mode}'"
 msgstr "Korjaa päivämäärä tai vaihda `{cur_mode}' muotoon`{text_mode}'"
@@ -20135,7 +20172,8 @@ msgstr ""
 
 #: ../gramps/gui/widgets/grampletpane.py:816
 msgid "Drag Properties Button to move and click it for setup"
-msgstr "Napsauta laajennuskirjaston valintapainiketta asetusten valintaa varten"
+msgstr ""
+"Vedä Ominaisuudet painiketta siirtääksesi ja napsauta sitä asetuksia varten"
 
 #: ../gramps/gui/widgets/grampletpane.py:1017
 msgid "Right click to add gramplets"
@@ -22259,11 +22297,11 @@ msgstr "EMAIL"
 msgid "WWW"
 msgstr "WWW"
 
-#: ../gramps/plugins/export/exportgedcom.py:1426
+#: ../gramps/plugins/export/exportgedcom.py:1437
 msgid "Writing media"
 msgstr "Kirjoitetaan media"
 
-#: ../gramps/plugins/export/exportgedcom.py:1600
+#: ../gramps/plugins/export/exportgedcom.py:1611
 msgid "GEDCOM Export failed"
 msgstr "GEDCOM vienti epäonnistui"
 
@@ -25218,7 +25256,7 @@ msgstr "Ero"
 msgid "GeneWeb import"
 msgstr "GeneWeb tuonti"
 
-#: ../gramps/plugins/importer/importgeneweb.py:912
+#: ../gramps/plugins/importer/importgeneweb.py:925
 #, python-brace-format
 msgid "Invalid date {date} in {gw_snippet}, preserving date as text."
 msgstr ""
@@ -25788,7 +25826,7 @@ msgid "Number of new objects imported:\n"
 msgstr "Tuotujen uusien kohteiden määrä:\n"
 
 #: ../gramps/plugins/importer/importxml.py:302
-#, python-format
+#, fuzzy, python-format
 msgid ""
 "\n"
 "The imported file was not self-contained.\n"
@@ -25799,7 +25837,7 @@ msgid ""
 "'Unknown' objects are referenced by note %(unknown)s.\n"
 msgstr ""
 "\n"
-"Tuotu tiedosto ei sisältänyt kaikkea tarpeellista.\n"
+" Tuotu tiedosto ei sisältänyt kaikkea tarpeellista.\n"
 "Sen korjaamiseksi luotiin %(new)d kohteet ja niiden ominaisuudeksi \n"
 "asetettiin \"Tuntematon\"'.\n"
 "Kategorioiden alajako ilmaistaan suluissa olevalla numerolla\n"
@@ -25821,10 +25859,12 @@ msgstr ""
 "suhteellisiksi kotihakemistoosi.\n"
 
 #: ../gramps/plugins/importer/importxml.py:321
+#, fuzzy
 msgid ""
 "\n"
 "Objects that are candidates to be merged:\n"
 msgstr ""
+"\n"
 "\n"
 "Sulauttamiseen soveltuvat kohteet:\n"
 
@@ -25939,7 +25979,7 @@ msgid "Old xml file"
 msgstr "Vanha xml-tiedosto"
 
 #: ../gramps/plugins/importer/importxml.py:1212
-#: ../gramps/plugins/importer/importxml.py:2710
+#: ../gramps/plugins/importer/importxml.py:2714
 #, python-format
 msgid "Witness name: %s"
 msgstr "Todistajan nimi: %s"
@@ -25975,17 +26015,17 @@ msgstr "Lisätietojen viitteessä täytyy olla \"hlink\" attribuutti."
 
 #. Translators: leave the {date} and {xml} untranslated in the format string,
 #. but you may re-order them if needed.
-#: ../gramps/plugins/importer/importxml.py:2528
+#: ../gramps/plugins/importer/importxml.py:2532
 #, python-brace-format
 msgid "Invalid date {date} in XML {xml}, preserving XML as text"
 msgstr "XML {xml} Kelpaamaton päiväys {date}, säilytetään XML tekstinä"
 
-#: ../gramps/plugins/importer/importxml.py:2580
+#: ../gramps/plugins/importer/importxml.py:2584
 #, python-format
 msgid "Witness comment: %s"
 msgstr "Todistajan-kommentti: %s"
 
-#: ../gramps/plugins/importer/importxml.py:3233
+#: ../gramps/plugins/importer/importxml.py:3237
 #, python-format
 msgctxt "father"
 msgid ""
@@ -25995,7 +26035,7 @@ msgstr ""
 "Virhe: perheessä '%(family)s' isä '%(father)s' ei viittaa takaisin "
 "perheeseen. Viite lisätty."
 
-#: ../gramps/plugins/importer/importxml.py:3249
+#: ../gramps/plugins/importer/importxml.py:3253
 #, python-format
 msgctxt "mother"
 msgid ""
@@ -26005,7 +26045,7 @@ msgstr ""
 "Virhe: perheessä '%(family)s' äiti '%(mother)s' ei viittaa takaisin "
 "perheeseen. Viite lisätty."
 
-#: ../gramps/plugins/importer/importxml.py:3271
+#: ../gramps/plugins/importer/importxml.py:3275
 #, python-format
 msgctxt "child"
 msgid ""
@@ -26280,7 +26320,7 @@ msgstr "SOUR (lähde) Gramps ID %s"
 #: ../gramps/plugins/lib/libgedcom.py:6770
 #, python-format
 msgid "OBJE (multi-media object) Gramps ID %s"
-msgstr "OBJE (multimediakohteen) Gramps ID %s"
+msgstr "OBJE (multi-media object) Gramps ID %s"
 
 #: ../gramps/plugins/lib/libgedcom.py:6988
 #, python-format
@@ -31617,11 +31657,11 @@ msgstr "Kategoria"
 
 #: ../gramps/plugins/sidebar/sidebar.gpr.py:48
 msgid "Drop-down Sidebar"
-msgstr "Sivupalkki pudotusvalikoilla"
+msgstr "Sivupalkki joka on pudotuslista"
 
 #: ../gramps/plugins/sidebar/sidebar.gpr.py:49
 msgid "Selection of categories and views from drop-down lists"
-msgstr "Kategorioiden ja näkyminen valinta pudotusvalikoista"
+msgstr "Kategorioiden ja näkyminen valinta pudotuslistoista"
 
 #: ../gramps/plugins/sidebar/sidebar.gpr.py:57
 msgid "Drop-Down"
@@ -31633,7 +31673,7 @@ msgstr "Laajentuva sivupalkki"
 
 #: ../gramps/plugins/sidebar/sidebar.gpr.py:64
 msgid "Selection of views from lists with expanders"
-msgstr "Näkymien valinta laajennetuista pudotusvalikoista"
+msgstr "Näkyminen valinta listoista laajentajista"
 
 #: ../gramps/plugins/sidebar/sidebar.gpr.py:72
 msgid "Expander"
@@ -37009,19 +37049,22 @@ msgid "Creating address book pages ..."
 msgstr "Luodaan osoitekirjasivuja..."
 
 #: ../gramps/plugins/webreport/narrativeweb.py:1826
-#, python-format
+#, fuzzy, python-format
 msgid "Narrative Website Report for the %s language"
 msgstr "Kertova-nettisivusto raportti kielelle %s"
 
 #: ../gramps/plugins/webreport/narrativeweb.py:1828
+#, fuzzy
 msgid "Narrative Website Report"
 msgstr "Kertova-nettisivusto raportti"
 
 #: ../gramps/plugins/webreport/narrativeweb.py:1941
+#, fuzzy
 msgid "Store website in .tar.gz archive"
 msgstr "Talleta nettisivut .tar.gz arkistoon"
 
 #: ../gramps/plugins/webreport/narrativeweb.py:1943
+#, fuzzy
 msgid "Whether to store the website in an archive file"
 msgstr "Talletetaanko nettisivut .tar.gz arkistoon"
 
@@ -37035,17 +37078,19 @@ msgid "My Family Tree"
 msgstr "Sukupuuni"
 
 #: ../gramps/plugins/webreport/narrativeweb.py:1960
+#, fuzzy
 msgid "Website title"
 msgstr "Nettisivuston otsikko"
 
 #: ../gramps/plugins/webreport/narrativeweb.py:1961
+#, fuzzy
 msgid "The title of the website"
 msgstr "Nettisivuston otsikko"
 
 #: ../gramps/plugins/webreport/narrativeweb.py:1966
+#, fuzzy
 msgid "Select filter to restrict people that appear on the website"
-msgstr ""
-"Valitse suodin, jos haluat rajoittaa verkkosivustolla esiintyviä ihmisiä"
+msgstr "Valitse suodin rajoittamaan henkilöitä jotka näkyvät nettisivustossa"
 
 #: ../gramps/plugins/webreport/narrativeweb.py:1975
 msgid "Show the relationship between the current person and the active person"
@@ -37149,8 +37194,9 @@ msgid "Add previous/next to the navigation bar."
 msgstr "Lisää edellinen/seuraava navigointipalkkiin."
 
 #: ../gramps/plugins/webreport/narrativeweb.py:2065
+#, fuzzy
 msgid "This is a secure site (HTTPS)"
-msgstr "Tämä on suojattu sivusto (HTTPS)"
+msgstr "Tämä on suojattu sivusto (https)"
 
 #: ../gramps/plugins/webreport/narrativeweb.py:2067
 msgid "Whether to use http:// or https://"
@@ -37221,8 +37267,8 @@ msgstr "Lajittele viittaukset joko päivämäärän tai nimen mukaan"
 #: ../gramps/plugins/webreport/narrativeweb.py:2142
 msgid "Sort the places references by date or by name. Not set means by date."
 msgstr ""
-"Lajittele paikkaviittaukset päivämäärän tai nimen mukaan. Ei valittu, "
-"lajitellaan päivämäärän mukaan."
+"Lajittele paikkaviittaukset päivämäärän tai nimen mukaan. Ei asetettu, "
+"valitaan päivämäärän mukaan."
 
 #: ../gramps/plugins/webreport/narrativeweb.py:2146
 msgid "Graph generations"
@@ -37491,10 +37537,12 @@ msgid "Whether to include a parents column"
 msgstr "Lisätäänkö vanhempien sarake"
 
 #: ../gramps/plugins/webreport/narrativeweb.py:2358
+#, fuzzy
 msgid "Include half and/or step-siblings on the individual pages"
 msgstr "Lisää hakemistosivuille sarake sisaruspuolille"
 
 #: ../gramps/plugins/webreport/narrativeweb.py:2361
+#, fuzzy
 msgid ""
 "Whether to include half and/or step-siblings with the parents and siblings"
 msgstr ""
@@ -37518,18 +37566,22 @@ msgid "Add a complete events list and relevant pages or not"
 msgstr "Lisätäänkö täydellinen tapahtumalista ja ao. sivut vai ei"
 
 #: ../gramps/plugins/webreport/narrativeweb.py:2383
+#, fuzzy
 msgid "Include place pages"
 msgstr "Lisää paikkasivut"
 
 #: ../gramps/plugins/webreport/narrativeweb.py:2385
+#, fuzzy
 msgid "Whether or not to include the place pages."
 msgstr "Lisätäänkö paikkasivut."
 
 #: ../gramps/plugins/webreport/narrativeweb.py:2388
+#, fuzzy
 msgid "Include source pages"
 msgstr "Lisää lähdesivut"
 
 #: ../gramps/plugins/webreport/narrativeweb.py:2390
+#, fuzzy
 msgid "Whether or not to include the source pages."
 msgstr "Lisätäänkö lähdesivut."
 
@@ -37538,6 +37590,7 @@ msgid "Include repository pages"
 msgstr "Lisää arkistosivut"
 
 #: ../gramps/plugins/webreport/narrativeweb.py:2395
+#, fuzzy
 msgid "Whether or not to include the repository pages."
 msgstr "Lisätäänkö arkistosivut."
 
@@ -37575,8 +37628,9 @@ msgstr "Paikkakarttojen valinnat"
 
 # 10
 #: ../gramps/plugins/webreport/narrativeweb.py:2425
+#, fuzzy
 msgid "Stamen Map"
-msgstr "Stamen Map"
+msgstr "StamenMap"
 
 #: ../gramps/plugins/webreport/narrativeweb.py:2426
 msgid "Google"
@@ -37633,10 +37687,11 @@ msgid "Google/ FamilyMap Option"
 msgstr "Google/Perhekartan valinnat"
 
 #: ../gramps/plugins/webreport/narrativeweb.py:2464
+#, fuzzy
 msgid ""
 "Select which option that you would like to have for the Google Maps family-"
 "map pages..."
-msgstr "Valitse haluamasi vaihtoehto Google Mapsin perhekarttasivuille ..."
+msgstr "Valitse miten haluat Google Mapin näyttävän perhekarttasi..."
 
 #: ../gramps/plugins/webreport/narrativeweb.py:2468
 msgid "Google maps API key"
@@ -37668,24 +37723,28 @@ msgstr "Stamen valinnat"
 
 # 10
 #: ../gramps/plugins/webreport/narrativeweb.py:2481
+#, fuzzy
 msgid ""
 "Select which option that you would like to have for the Stamen map map-"
 "pages..."
-msgstr "Valitse haluamasi vaihtoehto Stamen map karttasivuille ..."
+msgstr "Valitse haluamasi vaihtoehto Stamenmap-karttasivuille ..."
 
 #: ../gramps/plugins/webreport/narrativeweb.py:2493
+#, fuzzy
 msgid "Other inclusion (CMS, web calendar, PHP)"
-msgstr "Muut mukaan otettavat (CMS, verkkokalenteri, Php)"
+msgstr "Muut mukaan otettavat (CMS, Web Calendar, Php)"
 
 #: ../gramps/plugins/webreport/narrativeweb.py:2497
+#, fuzzy
 msgid "Do we include these pages in a CMS web?"
-msgstr "Lisätäänkö nämä sivut CMS nettiin ?"
+msgstr "Lisätäänkö nämä sivut cms nettiin ?"
 
 #: ../gramps/plugins/webreport/narrativeweb.py:2502
 msgid "URI"
 msgstr "URI-tunnus"
 
 #: ../gramps/plugins/webreport/narrativeweb.py:2508
+#, fuzzy
 msgid "Where do you place your website? default = /NAVWEB"
 msgstr "Minne haluat tallentaa nettisivusi? oletus = /NAVWEB"
 
@@ -37702,6 +37761,7 @@ msgid "Max days for updates"
 msgstr "Päivityspäiviä enintään"
 
 #: ../gramps/plugins/webreport/narrativeweb.py:2524
+#, fuzzy
 msgid "You want to see the last updates on how many days?"
 msgstr "Kuinka monelta päivältä haluat nähdä viimeiset päivitykset ?"
 
@@ -37738,6 +37798,7 @@ msgstr "Sivuston otsikko"
 #: ../gramps/plugins/webreport/narrativeweb.py:2568
 #: ../gramps/plugins/webreport/narrativeweb.py:2576
 #: ../gramps/plugins/webreport/narrativeweb.py:2584
+#, fuzzy
 msgid "Enter a title in the respective language"
 msgstr "Anna otsikko oletuskielellä"
 

@@ -1246,26 +1246,37 @@ class GedcomWriter(UpdateCallback):
         expected format.
         """
         self._datewritten = True
-        start = date.get_start_date()
-        if start != Date.EMPTY:
-            cal = date.get_calendar()
-            mod = date.get_modifier()
-            quality = None if mod else date.get_quality()
-            if mod == Date.MOD_SPAN:
-                val = "FROM %s TO %s" % (
-                    libgedcom.make_gedcom_date(start, cal, mod, None),
-                    libgedcom.make_gedcom_date(date.get_stop_date(),
-                                               cal, mod, None))
-            elif mod == Date.MOD_RANGE:
-                val = "BET %s AND %s" % (
-                    libgedcom.make_gedcom_date(start, cal, mod, None),
-                    libgedcom.make_gedcom_date(date.get_stop_date(),
-                                               cal, mod, None))
-            else:
-                val = libgedcom.make_gedcom_date(start, cal, mod, quality)
-            self._writeln(level, 'DATE', val)
+        cal = date.get_calendar()
+        mod = date.get_modifier()
+        quality = None if mod else date.get_quality()
+        val = None
+        if mod == Date.MOD_FROM:
+            val = "FROM %s" % (
+                libgedcom.make_gedcom_date(date.get_start_date(),
+                                           cal, mod, None))
+        elif mod == Date.MOD_TO:
+            val = "TO %s" % (
+                libgedcom.make_gedcom_date(date.get_stop_date(),
+                                           cal, mod, None))
+        elif mod == Date.MOD_SPAN:
+            val = "FROM %s TO %s" % (
+                libgedcom.make_gedcom_date(date.get_start_date(),
+                                           cal, mod, None),
+                libgedcom.make_gedcom_date(date.get_stop_date(),
+                                           cal, mod, None))
+        elif mod == Date.MOD_RANGE:
+            val = "BET %s AND %s" % (
+                libgedcom.make_gedcom_date(date.get_start_date(),
+                                           cal, mod, None),
+                libgedcom.make_gedcom_date(date.get_stop_date(),
+                                           cal, mod, None))
+        elif date.get_start_date() != Date.EMPTY:
+            val = libgedcom.make_gedcom_date(date.get_start_date(),
+                                             cal, mod, quality)
         elif date.get_text():
-            self._writeln(level, 'DATE', date.get_text())
+            val = date.get_text()
+        if val:
+            self._writeln(level, 'DATE', val)
         else:
             self._datewritten = False
 
